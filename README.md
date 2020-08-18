@@ -21,6 +21,23 @@ composer require northeastern-web/blade-components
 
 ## Usage
 
+### Tighten Jigsaw
+
+To use the components in a [tightenco/jigsaw](https://jigsaw.tighten.co), load the `Northeastern\Blade\JigsawServiceProvider` class in the Jigsaw `beforeBuild` event:
+
+```php
+// bootstrap.php
+
+use Northeastern\Blade\JigsawServiceProvider;
+use TightenCo\Jigsaw\Jigsaw;
+
+$events->beforeBuild(function (Jigsaw $jigsaw) {
+    (new JigsawServiceProvider($jigsaw->app))->boot();
+});
+```
+
+## Components
+
 ### Local Header
 
 To use the local header component, add the following markup to your Blade template.
