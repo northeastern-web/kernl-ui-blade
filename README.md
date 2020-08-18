@@ -2,6 +2,12 @@
 
 Package of Blade components for Northeastern University websites
 
+## Prequisites
+
+In order to use this package, your project must be using the [@northeastern-web/kernl-ui JavaScript and CSS package](https://npmjs.com/package/@northeastern-web/kernl-ui).
+
+Your project also must support the new Laravel Blade 7 components.
+
 ## Installation
 
 You can install the package via composer:
@@ -16,8 +22,6 @@ composer require northeastern-web/blade-components
     "minimum-stability": "dev",
     "prefer-stable": true
 ```
-
-> Note: In order to use this package, your project must support the new Blade 7 components.
 
 ## Usage
 
