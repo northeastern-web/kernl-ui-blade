@@ -23,6 +23,23 @@ composer require northeastern-web/blade-components
     "prefer-stable": true
 ```
 
+If your project is using PurgeCss, merge the default PurgeCss content from the `@northeaster-web/kernl-ui` package in your `tailwind.config.js`:
+
+```js
+// tailwind.config.js
+const defaultConfig = require('@northeastern-web/kernl-ui/defaultConfig');
+
+module.exports = {
+    purge: {
+        content: [
+            ...defaultConfig.purge.content,
+            // Your project specific content...
+        ],
+    },
+    // Other stuff...
+}
+```
+
 ## Usage
 
 ### Tighten Jigsaw
