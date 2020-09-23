@@ -3,7 +3,6 @@
 namespace Northeastern\Blade;
 
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvider;
 
 class JigsawServiceProvider extends ServiceProvider
 {
