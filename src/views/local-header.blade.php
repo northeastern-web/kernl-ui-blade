@@ -94,7 +94,7 @@
                         aria-label="Close navigation"
                         @click="navIsOpen = false"
                     >
-                        <i data-feather="x" class="w-6 h-6 text-gray-600"></i>
+                        <svg class="w-6 h-6 text-gray-600" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                 </div>
 
@@ -115,7 +115,7 @@
                                 >
                                     {{ $link['text'] }}
 
-                                    <i class="ml-2 w-4 h-4 text-gray-900" data-feather="chevron-down"></i>
+                                    <svg class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
                                 <ul
                                     x-transition:enter="ease-out duration-300"
@@ -151,6 +151,9 @@
                             @endif
                         </li>
                     @endforeach
+                    @isset($afterLinksMobile)
+                        {{ $afterLinksMobile }}
+                    @endif
                 </ul>
             </div>
         </div>
@@ -177,11 +180,11 @@
                                 @keydown.enter.prevent="toggle({{ $loop->index }})"
                                 @keydown.arrow-down.prevent="focusNextLink($event, {{ $loop->index }})"
                             >
-                                <span class="py-1 border-b-2 {{ \Illuminate\Support\Str::startsWith($currentPath, $link['href']) ? 'border-gray-900' : 'border-transparent' }}">
+                                <span class="py-1 border-b-2 {{ isset($link['match']) && \Illuminate\Support\Str::of($currentPath)->start('/')->is($link['match']) ? 'border-gray-900' : 'border-transparent' }}">
                                     {{ $link['text'] }}
                                 </span>
 
-                                <i class="ml-2 w-4 h-4 text-gray-900" data-feather="chevron-down"></i>
+                                <svg class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </a>
                             <div
                                 :class="{ 'flex': activeSection === {{ $loop->index }}, 'hidden': activeSection !== {{ $loop->index }} }"
@@ -216,17 +219,15 @@
                                 class="inline-flex px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
                                 href="{{ $link['href'] }}"
                             >
-                                <span class="py-1 border-b-2 {{ \Illuminate\Support\Str::startsWith($currentPath, $link['href']) ? 'border-gray-900' : 'border-transparent' }}">
+                                <span class="py-1 border-b-2 {{ isset($link['match']) && \Illuminate\Support\Str::of($currentPath)->start('/')->is($link['match']) ? 'border-gray-900' : 'border-transparent' }}">
                                     {{ $link['text'] }}
                                 </span>
                             </a>
                         </li>
                     @endif
                 @endforeach
-                @isset($searchModal)
-                    <li>
-                        {{ $searchModal }}
-                    </li>
+                @isset($afterLinksDesktop)
+                    {{ $afterLinksDesktop }}
                 @endif
             </ul>
         </div>
