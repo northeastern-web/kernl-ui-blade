@@ -13,7 +13,7 @@ Your project also must support the new Laravel Blade 7 components.
 You can install the package via composer:
 
 ```bash
-composer require northeastern-web/blade-components
+composer require northeastern-web/kernl-ui-blade
 ```
 
 > Note: You may need to add the following to your `composer.json` file before installing the package.
