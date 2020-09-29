@@ -1,11 +1,11 @@
 {
-    "name": "northeastern-web/blade-components",
+    "name": "northeastern-web/kernl-ui-blade",
     "description": "Package of Blade components for Northeastern University websites",
     "keywords": [
         "northeastern-web",
         "support"
     ],
-    "homepage": "https://github.com/northeastern-web/blade-components",
+    "homepage": "https://github.com/northeastern-web/kernl-ui-blade",
     "license": "MIT",
     "authors": [
         {
