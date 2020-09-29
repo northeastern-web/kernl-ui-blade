@@ -68,8 +68,11 @@ To use the local header component, add the following markup to your Blade templa
     <x-slot name="logo">
         <!-- Insert SVG logo here with class="w-full" applied -->
     </x-slot>
-    <x-slot name="searchModal">
-        <!-- If you have a search modal implemented, add the markup/component here. Otherwise omit this slot. -->
+    <x-slot name="afterLinksMobile">
+        <!-- Insert any additional elements that should be included after the links in the mobile menu (logout forms, etc.). This slot it optional. -->
+    </x-slot>
+    <x-slot name="afterLinksDesktop">
+        <!-- Insert any additional elements that should be included after the links in the desktop menu (logout forms, search modal, etc.) -->
     </x-slot>
 </x-kernl-local-header>
 ```
@@ -82,10 +85,13 @@ To use the local header component, add the following markup to your Blade templa
         [
             'text' => 'Our Programs',
             'href' => '/programs',
+            // The `match` key is used to determine if top-level links should have the active state show. Uses Laravel's Str::is() helper under the hood, so wildcards or arrays of possible matches are allowed. If no active state should be shown, omit this key.
+            'match' => '/programs*',
         ],
         [
             'text' => 'About',
             'href' => '/about',
+            'match' => '/about*',
             'children' => [
                 [
                     'text' => 'Careers',
