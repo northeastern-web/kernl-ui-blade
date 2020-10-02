@@ -151,7 +151,7 @@ Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 
 To use the Carousel Base and Base Slide component, add the following markup to your Blade template.
 
-```
+```blade
 <x-kernl-carousel.base>
     <x-kernl-carousel.base.slide
         :index="0"
