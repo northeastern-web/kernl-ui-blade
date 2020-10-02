@@ -8,6 +8,8 @@ use Northeastern\Blade\Components\Accordion\Item as AccordionItem;
 use Northeastern\Blade\Components\Accordion\WithLeftIcon as AccordionWithLeftIcon;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
 use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
+use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
+use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\LocalHeader;
 
 class ServiceProvider extends BaseServiceProvider
@@ -19,5 +21,7 @@ class ServiceProvider extends BaseServiceProvider
         AccordionWithLeftIcon::class => 'kernl-accordion.with-left-icon',
         CarouselBase::class => 'kernl-carousel.base',
         CarouselBaseSlide::class => 'kernl-carousel.base.slide',
+        CarouselSplit::class => 'kernl-carousel.split',
+        CarouselSplitSlide::class => 'kernl-carousel.split.slide',
     ];
 }

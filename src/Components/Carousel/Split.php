@@ -4,7 +4,7 @@ namespace Northeastern\Blade\Components\Carousel;
 use Illuminate\Support\Facades\View;
 use Illuminate\View\Component;
 
-class Base extends Component
+class Split extends Component
 {
     public $delay;
 
@@ -15,6 +15,6 @@ class Base extends Component
 
     public function render()
     {
-        return View::make('kernl-ui::carousel.base');
+        return View::make('kernl-ui::carousel.split');
     }
 }

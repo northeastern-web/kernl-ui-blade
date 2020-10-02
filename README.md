@@ -166,6 +166,7 @@ To use the Carousel Base and Base Slide component, add the following markup to y
     >
         Example carousel slide with background image
     </x-kernl-carousel.base.slide>
+    <!-- More slides -->
 </x-kernl-carousel.base>
 ```
 
@@ -178,3 +179,43 @@ To use the Carousel Base and Base Slide component, add the following markup to y
 - `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
 - `background-classes` - (optional) Any classes you want to apply to the outter element.
 - `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
+
+Any additional attributes you add to the Base Slide component (`style`, etc.), will be passed through to the background element.
+
+### Split and Split Slide
+
+To use the Split Carousel and Split Slide component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-carousel.split>
+    <x-kernl-carousel.split.slide
+        :index="0"
+        background-classes="text-white bg-red-800"
+        style="background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60')"
+    >
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo doloremque culpa iure cumque voluptatum! Iure provident eligendi ex. Quidem atque commodi vero facilis totam maxime alias, cum quod voluptate nulla!</p>
+    </x-kernl-carousel.split.slide>
+    <x-kernl-carousel.split.slide
+        :index="1"
+        background-classes="text-gray-200 bg-blue-800 bg-cover bg-no-repeat bg-center"
+        slot-classes="max-w-6xl"
+        style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60')"
+    >
+        <p>Northeastern takes learning to a deeper level. In every program—from certificate to doctorate degree—students turn their ideas into action.</p>
+        <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa omnis dicta, perspiciatis libero ipsam quae dolore facere atque ipsa.</p>
+    </x-kernl-carousel.split.slide>
+    <!-- More slides -->
+</x-kernl-carousel.split>
+```
+
+#### `x-kernl-carousel.split` Props
+
+- `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
+
+#### `x-kernl-carousel.split.slide` Props
+
+- `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
+- `background-classes` - (optional) Any classes you want to apply to the outter element.
+- `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
+
+Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
