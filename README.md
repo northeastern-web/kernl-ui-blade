@@ -144,3 +144,37 @@ Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 
 - `title` - The title that should be shown on the accordion button
 - `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
+
+## Carousels
+
+### Base and Base Slide
+
+To use the Carousel Base and Base Slide component, add the following markup to your Blade template.
+
+```
+<x-kernl-carousel.base>
+    <x-kernl-carousel.base.slide
+        :index="0"
+        background-classes="text-white bg-red-800"
+    >
+        Example carousel slide
+    <x-kernl-carousel.base.slide
+        :index="1"
+        background-classes="text-white bg-blue-800 bg-cover bg-no-repeat bg-center"
+        slot-classes="max-w-6xl"
+        style="background-image: url('...background-image-url')"
+    >
+        Example carousel slide with background image
+    </x-kernl-carousel.base.slide>
+</x-kernl-carousel.base>
+```
+
+#### `x-kernl-carousel.base` Props
+
+- `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
+
+#### `x-kernl-carousel.base.slide` Props
+
+- `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
+- `background-classes` - (optional) Any classes you want to apply to the outter element.
+- `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
