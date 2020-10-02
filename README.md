@@ -59,11 +59,7 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 
 ## Components
 
-- [Local Header](#local-header)
-- [Accordions](#accordions)
-- [Carousels](#carousels)
-
-### Local Header{#local-header}
+### Local Header
 
 To use the local header component, add the following markup to your Blade template.
 
@@ -111,7 +107,7 @@ To use the local header component, add the following markup to your Blade templa
     ```
 - `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
 
-### Accordions{#accordions}
+### Accordions
 
 To use the accordion component, add the following markup to your Blade template.
 
@@ -149,7 +145,7 @@ Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 - `title` - The title that should be shown on the accordion button
 - `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
 
-## Carousels{#carousels}
+## Carousels
 
 ### Base and Base Slide
 
