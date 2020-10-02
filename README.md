@@ -145,6 +145,38 @@ Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 - `title` - The title that should be shown on the accordion button
 - `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
 
+## Buttons
+
+To use the Solid Button and Outline Button components, add the following markup to your Blade template.
+
+```blade
+<x-kernl-button.solid color="black">
+    Button Text
+</x-kernl-button.solid>
+
+<!-- or -->
+
+<x-kernl-button.outline color="black">
+    Button Text
+</x-kernl-button.outline>
+```
+
+By default, the button components will render a `button` element. If you need an `anchor` element instead, just include the `href` prop.
+
+Any additional classes or attributes you put on the component will be passed through.
+
+```
+<x-kernl-button.solid color="white" class="rounded-full" @click="doSomething">
+    Button
+</x-kernl-button.solid>
+```
+
+#### `x-kernl-button.solid` and `x-kernl-button.outline` Props
+
+- color - The color the button should be. Options: `black`, `white`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
+- size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
+- href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
+
 ## Carousels
 
 ### Base and Base Slide

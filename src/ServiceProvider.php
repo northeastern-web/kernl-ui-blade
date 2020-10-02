@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Northeastern\Blade\Components\Accordion\Base as AccordionBase;
 use Northeastern\Blade\Components\Accordion\Item as AccordionItem;
 use Northeastern\Blade\Components\Accordion\WithLeftIcon as AccordionWithLeftIcon;
+use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
+use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
 use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
 use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
@@ -19,6 +21,8 @@ class ServiceProvider extends BaseServiceProvider
         AccordionBase::class => 'kernl-accordion.base',
         AccordionItem::class => 'kernl-accordion.item',
         AccordionWithLeftIcon::class => 'kernl-accordion.with-left-icon',
+        ButtonOutline::class => 'kernl-button.outline',
+        ButtonSolid::class => 'kernl-button.solid',
         CarouselBase::class => 'kernl-carousel.base',
         CarouselBaseSlide::class => 'kernl-carousel.base.slide',
         CarouselSplit::class => 'kernl-carousel.split',
