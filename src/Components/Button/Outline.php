@@ -21,7 +21,7 @@ class Outline extends Component
         'white' => 'text-white border-white hover:text-black',
         'gray-600' => 'text-gray-600 border-gray-600 hover:text-white hover:bg-gray-600',
         'gray-300' => 'text-gray-300 border-gray-300 hover:text-gray-900 hover:bg-gray-300',
-        'red' => 'text-red-700 border-red-700 hover:text-white hover:bg-red-700',
+        'red' => 'text-red-600 border-red-600 hover:text-white hover:bg-red-600',
         'blue' => 'text-blue-700 border-blue-700 hover:text-white hover:bg-blue-700',
         'green' => 'text-green-600 border-green-600 hover:text-white hover:bg-green-600',
     ];

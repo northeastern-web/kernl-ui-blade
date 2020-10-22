@@ -21,7 +21,7 @@ class Solid extends Component
         'white' => 'text-black bg-white hover:bg-gray-100',
         'gray-600' => 'text-white bg-gray-600 hover:bg-gray-700',
         'gray-300' => 'text-gray-900 bg-gray-300 hover:bg-gray-200',
-        'red' => 'text-white bg-red-700 hover:bg-red-800',
+        'red' => 'text-white bg-red-600 hover:bg-red-700',
         'blue' => 'text-white bg-blue-700 hover:bg-blue-800',
         'green' => 'text-white bg-green-600 hover:bg-green-700',
     ];
