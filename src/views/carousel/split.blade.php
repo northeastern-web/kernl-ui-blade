@@ -87,7 +87,7 @@
     }"
 >
     <div
-        class="relative h-128 overflow-hidden cursor-pointer sm:h-96"
+        class="relative overflow-hidden cursor-pointer {{ $heightClasses }}"
     >
         <div
             x-ref="slideContainer"

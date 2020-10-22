@@ -6,10 +6,12 @@ use Illuminate\View\Component;
 
 class Split extends Component
 {
+    public $heightClasses;
     public $delay;
 
-    public function __construct($delay = 5000)
+    public function __construct($heightClasses, $delay = 5000)
     {
+        $this->heightClasses = $heightClasses;
         $this->delay = $delay;
     }
 

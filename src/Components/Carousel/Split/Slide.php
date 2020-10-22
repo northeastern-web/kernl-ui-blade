@@ -7,14 +7,10 @@ use Illuminate\View\Component;
 class Slide extends Component
 {
     public $index;
-    public $backgroundClasses;
-    public $slotClasses;
 
-    public function __construct($index, $backgroundClasses = '', $slotClasses = '')
+    public function __construct($index)
     {
         $this->index = $index;
-        $this->backgroundClasses = $backgroundClasses;
-        $this->slotClasses = $slotClasses;
     }
 
     public function render()

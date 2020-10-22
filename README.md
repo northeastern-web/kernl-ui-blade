@@ -219,22 +219,14 @@ Any additional attributes you add to the Base Slide component (`style`, etc.), w
 To use the Split Carousel and Split Slide component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-carousel.split>
-    <x-kernl-carousel.split.slide
-        :index="0"
-        background-classes="text-white bg-red-800"
-        style="background-image: url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60')"
-    >
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo doloremque culpa iure cumque voluptatum! Iure provident eligendi ex. Quidem atque commodi vero facilis totam maxime alias, cum quod voluptate nulla!</p>
-    </x-kernl-carousel.split.slide>
-    <x-kernl-carousel.split.slide
-        :index="1"
-        background-classes="text-gray-200 bg-blue-800 bg-cover bg-no-repeat bg-center"
-        slot-classes="max-w-6xl"
-        style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60')"
-    >
-        <p>Northeastern takes learning to a deeper level. In every program—from certificate to doctorate degree—students turn their ideas into action.</p>
-        <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa omnis dicta, perspiciatis libero ipsam quae dolore facere atque ipsa.</p>
+<x-kernl-carousel.split height-classes="h-192 md:h-128 lg:h-96">
+    <x-kernl-carousel.split.slide :index="0" class="h-96 md:h-128 lg:h-96">
+        <div class="w-full flex items-center px-8 py-20 bg-black md:w-1/2 lg:w-2/3 lg:px-16">
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo doloremque culpa iure cumque voluptatum! Iure provident eligendi ex. Quidem atque commodi vero facilis totam maxime alias, cum quod voluptate nulla!</p>
+            </div>
+        </div>
+        <img class="h-96 md:h-128 lg:h-96 w-full object-cover md:w-1/2 lg:w-1/3" src="...image-url">
     </x-kernl-carousel.split.slide>
     <!-- More slides -->
 </x-kernl-carousel.split>
@@ -242,12 +234,12 @@ To use the Split Carousel and Split Slide component, add the following markup to
 
 #### `x-kernl-carousel.split` Props
 
+- `height-classes` - Classes to set the overall height on the carousel. Should be double each slide height when slides are stacked (mobile).
 - `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
 
 #### `x-kernl-carousel.split.slide` Props
 
 - `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
-- `background-classes` - (optional) Any classes you want to apply to the outter element.
-- `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
+- `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
