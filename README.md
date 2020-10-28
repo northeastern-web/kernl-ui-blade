@@ -42,6 +42,10 @@ module.exports = {
 
 ## Usage
 
+### Laravel app
+
+To use the components in a Laravel app, the Service Provider should be loaded automatically, requiring no extra configuration.
+
 ### Tighten Jigsaw
 
 To use the components in a [tightenco/jigsaw](https://jigsaw.tighten.co), load the `Northeastern\Blade\JigsawServiceProvider` class in the Jigsaw `beforeBuild` event:
