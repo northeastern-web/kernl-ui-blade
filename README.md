@@ -1,4 +1,4 @@
-# Northeastern Support
+# kernl(ui) Blade
 
 Package of Blade components for Northeastern University websites
 
