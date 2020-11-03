@@ -126,7 +126,7 @@ To use the accordion component, add the following markup to your Blade template.
 </x-kernl-accordion.base>
 ```
 
-Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for a slightly different design.
+Alternatively, you can use the `x-kernl-accordion.with-left-icon` component for a slightly different design.
 
 ```blade
 <x-kernl-accordion.base label="Leadership roles accordion" default-section="accordion-item-1">
@@ -148,6 +148,42 @@ Alertnatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 
 - `title` - The title that should be shown on the accordion button
 - `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
+
+## Alerts
+
+To use the alert components, add the following markup to your Blade template.
+
+```blade
+<x-kernl-alert.contained
+    label="COVID warning"
+    class="absolute bottom-0 inset-x-0 py-4"
+    :closable="false"
+    :remember="true"
+>
+    <p>Questions about campus opening and COVID-19 testing? Go here to get the latest...</p>
+</x-kernl-alert.contained>
+```
+
+Alternatively, you can use the `x-kernl-alert.full-width` component for a slightly different design.
+
+```blade
+<x-kernl-alert.full-width
+    label="COVID warning"
+    class="absolute bottom-0 inset-x-0"
+    :closable="false"
+    :remember="true"
+>
+    <p>Questions about campus opening and COVID-19 testing? Go here to get the latest...</p>
+</x-kernl-alert.full-width>
+```
+
+#### `x-kernl-alert.container` and `x-kernl-alert.full-width` Props
+
+- `label` - Used for the aria-label and "remember" functionality. Should be unique across your site if using the "remember" functionality.
+- `closeable` (optional) - If true, show the close button. If false, do not show the close button. Default is true.
+- `remember` (optional) - If true, the component will use localStorage to remember when the user has closed the alert and will not show it again.
+
+Any additional classes or attributes you put on the component will be passed through.
 
 ## Buttons
 
