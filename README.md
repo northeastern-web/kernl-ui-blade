@@ -149,7 +149,7 @@ Alternatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 - `title` - The title that should be shown on the accordion button
 - `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
 
-## Alerts
+### Alerts
 
 To use the alert components, add the following markup to your Blade template.
 
@@ -185,7 +185,7 @@ Alternatively, you can use the `x-kernl-alert.full-width` component for a slight
 
 Any additional classes or attributes you put on the component will be passed through.
 
-## Buttons
+### Buttons
 
 To use the Solid Button and Outline Button components, add the following markup to your Blade template.
 
@@ -217,7 +217,7 @@ Any additional classes or attributes you put on the component will be passed thr
 - size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
 - href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
 
-## Carousels
+### Carousels
 
 ### Base and Base Slide
 
