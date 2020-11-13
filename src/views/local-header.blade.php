@@ -43,11 +43,11 @@
                 data-toggle="collapse"
                 data-target="#navbarContent"
                 aria-controls="navbarContent"
-                :aria-expanded="navIsOpen"
+                :aria-expanded="navIsOpen ? 'true' : 'false'"
                 aria-label="Toggle navigation"
                 @click="navIsOpen = ! navIsOpen"
             >
-                <svg class="w-10 h-10 text-gray-900" viewBox="0 0 21 12" fill="none">
+                <svg aria-hidden="true" focusable="false" class="w-10 h-10 text-gray-900" viewBox="0 0 21 12" fill="none">
                     <g clip-path="url(#clip0)">
                         <path d="M20.35 10.13a.67.67 0 11-.96.92c-.8-.9-2.34-2.59-2.4-2.54a4.07 4.07 0 01-4.82.11 4.31 4.31 0 01-1.53-1.95 4.5 4.5 0 01.9-4.72 3.95 3.95 0 015.84 0 4.2 4.2 0 011.22 3.08c.01.9-.26 1.8-.77 2.54a36.2 36.2 0 002.52 2.56zm-7.9-2.98a2.77 2.77 0 003.14.65c.35-.15.67-.37.93-.65a2.87 2.87 0 00.85-2.12 3.12 3.12 0 00-.85-2.14A2.9 2.9 0 0014.47 2a2.67 2.67 0 00-2.04.89A2.96 2.96 0 0011.59 5a2.98 2.98 0 00.85 2.14zM.82 6.47c0-.37.3-.68.68-.68h5.24a.69.69 0 010 1.37H1.51a.69.69 0 01-.68-.69zm0-4.8c0-.38.3-.7.68-.7h5.9a.69.69 0 010 1.38h-5.9a.69.69 0 01-.68-.69zm0 9.6c0-.37.3-.68.68-.68h9.2a.69.69 0 110 1.37h-9.2a.69.69 0 01-.68-.68z" fill="#000"/>
                     </g>
@@ -90,11 +90,11 @@
                         data-toggle="collapse"
                         data-target="#navbarContent"
                         aria-controls="navbarContent"
-                        :aria-expanded="navIsOpen"
+                        :aria-expanded="navIsOpen ? 'true' : 'false'"
                         aria-label="Close navigation"
                         @click="navIsOpen = false"
                     >
-                        <svg class="w-6 h-6 text-gray-600" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-600" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                 </div>
 
@@ -109,13 +109,14 @@
                                     role="button"
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
-                                    :aria-expanded="activeSection === {{ $loop->index }}"
+                                    :aria-expanded="activeSection === {{ $loop->index }} ? 'true' : 'false'"
                                     @keydown.space.prevent="toggle({{ $loop->index }})"
                                     @click.prevent="toggle({{ $loop->index }})"
+                                    {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
                                 >
                                     {{ $link['text'] }}
 
-                                    <svg class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                    <svg aria-hidden="true" focusable="false" class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </a>
                                 <ul
                                     x-transition:enter="ease-out duration-300"
@@ -133,6 +134,7 @@
                                             <a
                                                 class="block py-4 pr-4 pl-6 hover:bg-gray-100 focus:outline-none focus:shadow-outline"
                                                 href="{{ $child['href'] }}"
+                                                {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
                                             >
                                                 {{ $child['text'] }}
                                             </a>
@@ -144,6 +146,7 @@
                                     <a
                                         class="inline-block w-full py-4 border-b rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
                                         href="{{ $link['href'] }}"
+                                        {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
                                     >
                                         {{ $link['text'] }}
                                     </a>
@@ -175,16 +178,17 @@
                                 role="button"
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
-                                :aria-expanded="activeSection === {{ $loop->index }}"
+                                :aria-expanded="activeSection === {{ $loop->index }} ? 'true' : 'false'"
                                 @keydown.space.prevent="toggle({{ $loop->index }})"
                                 @keydown.enter.prevent="toggle({{ $loop->index }})"
                                 @keydown.arrow-down.prevent="focusNextLink($event, {{ $loop->index }})"
+                                {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
                             >
                                 <span class="py-1 border-b-2 {{ isset($link['match']) && \Illuminate\Support\Str::of($currentPath)->start('/')->is($link['match']) ? 'border-gray-900' : 'border-transparent' }}">
                                     {{ $link['text'] }}
                                 </span>
 
-                                <svg class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                <svg aria-hidden="true" focusable="false" class="ml-2 w-4 h-4 text-gray-900" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </a>
                             <div
                                 :class="{ 'flex': activeSection === {{ $loop->index }}, 'hidden': activeSection !== {{ $loop->index }} }"
@@ -203,6 +207,7 @@
                                         @unless($loop->last)
                                             @keydown.arrow-down.prevent="focusNextLink"
                                         @endif
+                                        {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
                                     >
                                         <span
                                             class="block w-full px-2 border-l-2 {{ $currentPath === $child['href'] ? 'border-gray-600' : 'border-transparent' }}"
@@ -218,6 +223,7 @@
                             <a
                                 class="inline-flex px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
                                 href="{{ $link['href'] }}"
+                                {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
                             >
                                 <span class="py-1 border-b-2 {{ isset($link['match']) && \Illuminate\Support\Str::of($currentPath)->start('/')->is($link['match']) ? 'border-gray-900' : 'border-transparent' }}">
                                     {{ $link['text'] }}
