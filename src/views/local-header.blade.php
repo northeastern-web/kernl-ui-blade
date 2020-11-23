@@ -31,14 +31,15 @@
         }
     }"
     class="py-3 bg-white"
+    @keydown.window.escape="navIsOpen = false"
 >
     <div class="mx-auto px-4 text-gray-900 lg:flex lg:items-center lg:justify-between lg:px-16">
         <div class="flex items-center justify-between">
-            <a class="inline-block text-black focus:outline-none focus:shadow-outline" href="/">
+            <a class="inline-block text-black focus:outline-none focus:ring focus:ring-blue-500" href="/">
                 {{ $logo }}
             </a>
             <button
-                class="ml-6 flex-shrink-0 lg:hidden focus:outline-none focus:shadow-outline"
+                class="ml-6 flex-shrink-0 lg:hidden focus:outline-none focus:ring focus:ring-blue-500"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarContent"
@@ -65,7 +66,7 @@
                 x-transition:leave="ease-in duration-200"
                 x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0"
-                class="fixed inset-0 bg-black-semi-5 transition-opacity lg:hidden"
+                class="fixed inset-0 bg-black bg-opacity-75 transition-opacity lg:hidden"
                 @click="navIsOpen = false"
             ></div>
             <div
@@ -77,15 +78,15 @@
                 x-transition:leave="ease-in duration-200"
                 x-transition:leave-start="translate-x-0"
                 x-transition:leave-end="-translate-x-full"
-                class="fixed inset-y-0 left-0 max-w-sm w-full px-4 pt-6 pb-16 bg-white overflow-y-auto transition-transform lg:hidden"
+                class="transform fixed inset-y-0 left-0 max-w-sm w-full px-4 pt-6 pb-16 bg-white overflow-y-auto transition-transform lg:hidden"
             >
                 <div class="flex items-start justify-between">
-                    <a class="inline-block focus:outline-none focus:shadow-outline" href="/">
+                    <a class="inline-block focus:outline-none focus:ring focus:ring-blue-500" href="/">
                         {{ $logo }}
                     </a>
 
                     <button
-                        class="ml-8 focus:outline-none focus:shadow-outline"
+                        class="ml-8 focus:outline-none focus:ring focus:ring-blue-500"
                         type="button"
                         data-toggle="collapse"
                         data-target="#navbarContent"
@@ -104,7 +105,7 @@
                             @isset($link['children'])
                                 <a
                                     id="mobile-dropdown-{{ $loop->index }}"
-                                    class="flex items-center justify-between py-4 whitespace-wrap border-b rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                    class="flex items-center justify-between py-4 whitespace-wrap border-b rounded-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
                                     href="{{ $link['href'] }}"
                                     role="button"
                                     data-toggle="dropdown"
@@ -132,9 +133,10 @@
                                         <li class="relative border-b">
                                             <span aria-hidden class="absolute inset-y-0 left-0 ml-1 flex items-center text-gray-600 text-xl leading-none">&middot;</span>
                                             <a
-                                                class="block py-4 pr-4 pl-6 hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                                class="block py-4 pr-4 pl-6 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
                                                 href="{{ $child['href'] }}"
                                                 {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
+                                                {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                                             >
                                                 {{ $child['text'] }}
                                             </a>
@@ -144,9 +146,10 @@
                             @else
                                 <li class="block">
                                     <a
-                                        class="inline-block w-full py-4 border-b rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                        class="inline-block w-full py-4 border-b rounded-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
                                         href="{{ $link['href'] }}"
                                         {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
+                                        {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                                     >
                                         {{ $link['text'] }}
                                     </a>
@@ -173,7 +176,7 @@
                         >
                             <a
                                 id="navbar-dropdown-{{ $loop->index }}"
-                                class="inline-flex items-center px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                class="inline-flex items-center px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
                                 href="{{ $link['href'] }}"
                                 role="button"
                                 data-toggle="dropdown"
@@ -199,7 +202,7 @@
                                 @foreach ($link['children'] as $child)
                                     <a
                                         class="
-                                            block w-full py-2 px-3 text-sm leading-tight transition-colors duration-200 hover:text-gray-900 focus:outline-none focus:shadow-outline
+                                            block w-full py-2 px-3 text-sm leading-tight transition-colors duration-200 hover:text-gray-900 focus:outline-none focus:ring focus:ring-blue-500
                                             {{ $currentPath === $child['href'] ? 'text-gray-900' : 'text-gray-600' }}
                                         "
                                         href="{{ $child['href'] }}"
@@ -221,7 +224,7 @@
                     @else
                         <li>
                             <a
-                                class="inline-flex px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                class="inline-flex px-4 py-3 text-sm rounded-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
                                 href="{{ $link['href'] }}"
                                 {!! $currentPath == $link['href'] ? 'aria-current="page"' : '' !!}
                             >
