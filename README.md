@@ -117,7 +117,7 @@ To use the accordion component, add the following markup to your Blade template.
 
 ```blade
 <x-kernl-accordion.base label="Leadership roles accordion" default-section="accordion-item-1">
-    <x-kernl-accordion.item title="Accordion Item 1 Title" id="accordion-item-2">
+    <x-kernl-accordion.item title="Accordion Item 1 Title" id="accordion-item-1">
         Accordion Item 1 Content
     </x-kernl-accordion.item>
     <x-kernl-accordion.item title="Accordion Item 2 Title" id="accordion-item-2">
@@ -130,7 +130,7 @@ Alternatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 
 ```blade
 <x-kernl-accordion.base label="Leadership roles accordion" default-section="accordion-item-1">
-    <x-kernl-accordion.with-left-icon title="Accordion Item 1 Title" id="accordion-item-2">
+    <x-kernl-accordion.with-left-icon title="Accordion Item 1 Title" id="accordion-item-`">
         Accordion Item 1 Content
     </x-kernl-accordion.with-left-icon>
     <x-kernl-accordion.item title="Accordion Item 2 Title" id="accordion-item-2">

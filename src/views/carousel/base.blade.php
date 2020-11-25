@@ -109,7 +109,7 @@
                     type="button"
                     aria-label="Previous slide"
                     title="Previous slide"
-                    class="inline-flex p-1 text-white bg-black-semi-6 rounded md:p-2 focus:outline-none focus:shadow-outline"
+                    class="inline-flex p-1 text-white bg-black-semi-6 rounded md:p-2 focus:outline-none focus:ring focus:ring-blue-400"
                     @click="previous"
                 >
                     <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -122,7 +122,7 @@
                     type="button"
                     aria-label="Next slide"
                     title="Next slide"
-                    class="inline-flex p-1 text-white bg-black-semi-6 rounded md:p-2 focus:outline-none focus:shadow-outline"
+                    class="inline-flex p-1 text-white bg-black-semi-6 rounded md:p-2 focus:outline-none focus:ring focus:ring-blue-400"
                     @click="next"
                 >
                     <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -139,7 +139,7 @@
                                 :title="'Go to slide ' + (slide + 1)"
                                 type="button"
                                 :class="{ 'opacity-50': active !== slide }"
-                                class="h-3 w-3 bg-white rounded-full transition-opacity duration-200 focus:outline-none focus:shadow-outline"
+                                class="h-3 w-3 bg-white rounded-full transition-opacity duration-200 focus:outline-none focus:ring focus:ring-blue-400"
                                 @click="goTo(slide)"
                             ></button>
                         </div>

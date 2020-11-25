@@ -112,7 +112,7 @@
                             :title="'Go to slide ' + (slide + 1)"
                             type="button"
                             :class="{ 'bg-white': active == slide }"
-                            class="h-4 w-4 border border-white rounded-full transition-colors duration-200 focus:outline-none focus:shadow-outline"
+                            class="h-4 w-4 border border-white rounded-full transition-colors duration-200 focus:outline-none focus:ring focus:ring-blue-400"
                             @click="goTo(slide)"
                         ></button>
                     </div>
@@ -124,7 +124,7 @@
                 type="button"
                 aria-label="Previous slide"
                 title="Previous slide"
-                class="relative inline-flex p-2 text-gray-700 bg-gray-200 border md:p-4 hover:bg-white focus:outline-none focus:shadow-outline"
+                class="relative inline-flex p-2 text-gray-700 bg-gray-200 border md:p-4 hover:bg-white focus:outline-none focus:ring focus:ring-blue-400"
                 @click="previous"
             >
                 <svg class="w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -135,7 +135,7 @@
                 type="button"
                 aria-label="Next slide"
                 title="Next slide"
-                class="relative inline-flex p-2 text-gray-700 bg-gray-200 border md:p-4 hover:bg-white focus:outline-none focus:shadow-outline"
+                class="relative inline-flex p-2 text-gray-700 bg-gray-200 border md:p-4 hover:bg-white focus:outline-none focus:ring focus:ring-blue-400"
                 @click="next"
             >
                 <svg class="w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
