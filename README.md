@@ -110,6 +110,7 @@ To use the local header component, add the following markup to your Blade templa
     ];
     ```
 - `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
+- `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
 
 ### Accordions
 
