@@ -284,3 +284,29 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+### Loaders
+
+To use the Loader component, light or dark, add the following markup to your Blade template.
+
+#### Light
+```blade
+<x-kernl-loaders.light
+    x-show="busy"
+/>
+```
+
+#### Dark
+```blade
+<x-kernl-loaders.light
+    x-show="busy"
+/>
+```
+
+#### `x-kernl-loaders.light` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an AlpineJs property
+
+#### `x-kernl-loaders.dark` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an AlpineJs property
