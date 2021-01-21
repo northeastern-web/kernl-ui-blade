@@ -34,7 +34,7 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-end="transform opacity-0"
         role="alert"
-        class="bg-yellow-500"
+        class="bg-yellow-400"
     >
         <div class="flex items-center justify-between px-4 py-4 text-black lg:px-16">
             <div>
