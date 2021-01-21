@@ -284,3 +284,93 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+
+### Tabs
+
+### Underlined
+
+```blade
+<x-kernl-tabs.underlined
+    :tabs="['Zero', 'First', 'Second']"
+>
+    <x-kernl-tabs.underlined.item :index="0">
+        This is the content Zero
+    </x-kernl-tabs.underlined.item>
+
+    <x-kernl-tabs.underlined.item :index="1">
+        This is the content One
+    </x-kernl-tabs.underlined.item>
+
+    <x-kernl-tabs.underlined.item :index="2">
+        This is the content Two
+    </x-kernl-tabs.underlined.item>
+
+</x-kernl-tabs.underlined>
+```
+
+#### `x-kernl-tabs.underlined` Props
+
+- `tabs` - Array of tabs titles.
+
+#### `x-kernl-tabs.underlined.item` Props
+
+- `index` - The index position of the tab the content represents
+
+### Bordered
+
+```blade
+<x-kernl-tabs.bordered
+    :tabs="['Zero', 'First', 'Second']"
+>
+    <x-kernl-tabs.bordered.item :index="0">
+        This is the content Zero
+    </x-kernl-tabs.bordered.item>
+
+    <x-kernl-tabs.bordered.item :index="1">
+        This is the content One
+    </x-kernl-tabs.bordered.item>
+
+    <x-kernl-tabs.bordered.item :index="2">
+        This is the content Two
+    </x-kernl-tabs.bordered.item>
+
+</x-kernl-tabs.bordered>
+```
+
+#### `x-kernl-tabs.bordered` Props
+
+- `tabs` - Array of tabs titles.
+
+#### `x-kernl-tabs.bordered.item` Props
+
+- `index` - The index position of the tab the content represents
+
+### Detached
+
+```blade
+<x-kernl-tabs.detached
+    :tabs="['Zero', 'First', 'Second']"
+>
+    <x-kernl-tabs.detached.item :index="0">
+        This is the content Zero
+    </x-kernl-tabs.detached.item>
+
+    <x-kernl-tabs.detached.item :index="1">
+        This is the content One
+    </x-kernl-tabs.detached.item>
+
+    <x-kernl-tabs.detached.item :index="2">
+        This is the content Two
+    </x-kernl-tabs.detached.item>
+
+</x-kernl-tabs.detached>
+```
+
+#### `x-kernl-tabs.detached` Props
+
+- `tabs` - Array of tabs titles.
+
+#### `x-kernl-tabs.detached.item` Props
+
+- `index` - The index position of the tab the content represents
