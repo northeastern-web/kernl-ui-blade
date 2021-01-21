@@ -284,3 +284,39 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+
+### Banners
+
+### With Offset Card
+
+To use the With Offset Card Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.with-offset-card
+    :background-url="''"
+>
+    {{--Card content goes here--}}
+</x-kernl-banners.with-offset-card>
+```
+
+#### `x-kernl-banners.with-offset-card` Props
+
+- `background-url` - Url of background image to be applied. 
+
+
+### Bottom Title
+
+To use the Bottom Title Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.bottom-title
+    :background-url="''"
+    :title="''"
+/>
+```
+
+#### `x-kernl-banners.bottom-title` Props
+
+- `background-url` - Url of background image to be applied. 
+- `title` - Title to be presented. 
