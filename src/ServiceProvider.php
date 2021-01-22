@@ -15,8 +15,8 @@ use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
 use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
 use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\LocalHeader;
-use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 use Northeastern\Blade\Components\Tags\Outline as TagsOutline;
+use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 
 class ServiceProvider extends BaseServiceProvider
 {
