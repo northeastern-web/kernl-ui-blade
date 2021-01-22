@@ -284,3 +284,28 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+
+### Modals
+
+### Base Modal
+
+To use the Base Modal component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-modals.base
+    :modal-id="''"
+    :closeable="true|false"
+    :close-on-click-outside="true|false"
+    :close-on-escape-key="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-modals.base>
+```
+
+#### `x-kernl-modals.base` Props
+
+- `modal-id` - Id of the modal. Must be unique throughout the app. This id can be used with `window.NUModals` methods
+- `closeable` - (optional) Adds close button at the top right corner. `true` by default
+- `close-on-click-outside` - (optional) Adds behavior to close when clicking outside the modal. `true` by default
+- `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
