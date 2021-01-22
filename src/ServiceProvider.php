@@ -15,6 +15,8 @@ use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
 use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
 use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\LocalHeader;
+use Northeastern\Blade\Components\Modals\Base as ModalsBase;
+use Northeastern\Blade\Components\Scripts;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -31,5 +33,8 @@ class ServiceProvider extends BaseServiceProvider
         CarouselBaseSlide::class => 'kernl-carousel.base.slide',
         CarouselSplit::class => 'kernl-carousel.split',
         CarouselSplitSlide::class => 'kernl-carousel.split.slide',
+
+        ModalsBase::class => 'kernl-modals.base',
+        Scripts::class => 'kernl-scripts',
     ];
 }
