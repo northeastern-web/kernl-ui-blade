@@ -284,3 +284,46 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+### Tags
+
+### Solid
+
+To use the Solid Tag component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-tags.solid
+    :color="'black|white|red|gray-600|gray-300'"
+    :pill="true|false"
+    :uppercase="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-tags.solid>
+```
+
+#### `x-kernl-tags.solid` Props
+
+- `color` - Color for text/background. Default is `'black'`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
+
+
+### Outline
+
+To use the Outline Tag component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-tags.outline
+    :color="'black|white|red|gray-600|gray-300'"
+    :pill="true|false"
+    :uppercase="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-tags.outline>
+```
+
+#### `x-kernl-tags.outline` Props
+
+- `color` - Color for text/border. Default is `'black'`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
