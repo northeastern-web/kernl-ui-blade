@@ -186,6 +186,40 @@ Alternatively, you can use the `x-kernl-alert.full-width` component for a slight
 
 Any additional classes or attributes you put on the component will be passed through.
 
+### Banners
+
+### With Offset Card
+
+To use the With Offset Card Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.with-offset-card
+    background-url=""
+>
+    {{--Card content goes here--}}
+</x-kernl-banners.with-offset-card>
+```
+
+#### `x-kernl-banners.with-offset-card` Props
+
+- `background-url` - URL of background image to be applied.
+
+### Bottom Title
+
+To use the Bottom Title Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.bottom-title
+    background-url=""
+    title=""
+/>
+```
+
+#### `x-kernl-banners.bottom-title` Props
+
+- `background-url` - URL of background image to be applied.
+- `title` - Title to be presented.
+
 ### Buttons
 
 To use the Solid Button and Outline Button components, add the following markup to your Blade template.

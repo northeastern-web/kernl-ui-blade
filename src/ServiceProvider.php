@@ -8,6 +8,8 @@ use Northeastern\Blade\Components\Accordion\Item as AccordionItem;
 use Northeastern\Blade\Components\Accordion\WithLeftIcon as AccordionWithLeftIcon;
 use Northeastern\Blade\Components\Alert\Contained as AlertContained;
 use Northeastern\Blade\Components\Alert\FullWidth as AlertFullWidth;
+use Northeastern\Blade\Components\Banners\BottomTitle as BannersBottomTitle;
+use Northeastern\Blade\Components\Banners\WithOffsetCard as BannersWithOffsetCard;
 use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
@@ -27,13 +29,14 @@ class ServiceProvider extends BaseServiceProvider
         AccordionWithLeftIcon::class => 'kernl-accordion.with-left-icon',
         AlertContained::class => 'kernl-alert.contained',
         AlertFullWidth::class => 'kernl-alert.full-width',
+        BannersWithOffsetCard::class => 'kernl-banners.with-offset-card',
+        BannersBottomTitle::class => 'kernl-banners.bottom-title',
         ButtonOutline::class => 'kernl-button.outline',
         ButtonSolid::class => 'kernl-button.solid',
         CarouselBase::class => 'kernl-carousel.base',
         CarouselBaseSlide::class => 'kernl-carousel.base.slide',
         CarouselSplit::class => 'kernl-carousel.split',
         CarouselSplitSlide::class => 'kernl-carousel.split.slide',
-
         TagsSolid::class => 'kernl-tags.solid',
         TagsOutline::class => 'kernl-tags.outline',
     ];
