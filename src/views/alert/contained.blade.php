@@ -35,7 +35,7 @@
         x-transition:leave-end="transform opacity-0"
         class="container"
     >
-        <div role="alert" aria-label="{{ $label }}" class="flex items-start justify-between px-8 py-4 text-black bg-yellow-500 rounded-md shadow-sm">
+        <div role="alert" aria-label="{{ $label }}" class="flex items-start justify-between px-8 py-4 text-black bg-yellow-400 rounded-md shadow-sm">
             <div>
                 {{ $slot }}
             </div>
