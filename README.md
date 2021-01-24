@@ -186,6 +186,40 @@ Alternatively, you can use the `x-kernl-alert.full-width` component for a slight
 
 Any additional classes or attributes you put on the component will be passed through.
 
+### Banners
+
+### With Offset Card
+
+To use the With Offset Card Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.with-offset-card
+    background-url=""
+>
+    {{--Card content goes here--}}
+</x-kernl-banners.with-offset-card>
+```
+
+#### `x-kernl-banners.with-offset-card` Props
+
+- `background-url` - URL of background image to be applied.
+
+### Bottom Title
+
+To use the Bottom Title Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.bottom-title
+    background-url=""
+    title=""
+/>
+```
+
+#### `x-kernl-banners.bottom-title` Props
+
+- `background-url` - URL of background image to be applied.
+- `title` - Title to be presented.
+
 ### Buttons
 
 To use the Solid Button and Outline Button components, add the following markup to your Blade template.
@@ -285,38 +319,44 @@ To use the Split Carousel and Split Slide component, add the following markup to
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
 
+### Tags
 
-### Banners
+### Solid
 
-### With Offset Card
-
-To use the With Offset Card Banner component, add the following markup to your Blade template.
+To use the Solid Tag component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-banners.with-offset-card
-    :background-url="''"
+<x-kernl-tags.solid
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    :pill="true|false"
+    :uppercase="true|false"
 >
-    {{--Card content goes here--}}
-</x-kernl-banners.with-offset-card>
+    {{-- Content here --}}
+</x-kernl-tags.solid>
 ```
 
-#### `x-kernl-banners.with-offset-card` Props
+#### `x-kernl-tags.solid` Props
 
-- `background-url` - Url of background image to be applied. 
+- `color` - Color for text/background. Default is `black`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
 
+### Outline
 
-### Bottom Title
-
-To use the Bottom Title Banner component, add the following markup to your Blade template.
+To use the Outline Tag component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-banners.bottom-title
-    :background-url="''"
-    :title="''"
-/>
+<x-kernl-tags.outline
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    :pill="true|false"
+    :uppercase="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-tags.outline>
 ```
 
-#### `x-kernl-banners.bottom-title` Props
+#### `x-kernl-tags.outline` Props
 
-- `background-url` - Url of background image to be applied. 
-- `title` - Title to be presented. 
+- `color` - Color for text/border. Default is `black`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
