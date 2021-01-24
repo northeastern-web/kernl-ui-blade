@@ -293,7 +293,7 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 ```blade
 <x-kernl-tags.solid
-    :color="'black|white|red|gray-600|gray-300'"
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -303,10 +303,9 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 #### `x-kernl-tags.solid` Props
 
-- `color` - Color for text/background. Default is `'black'`
+- `color` - Color for text/background. Default is `black`
 - `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 - `uppercase` - (optional) Uppercase content. Default is `false`
-
 
 ### Outline
 
@@ -314,7 +313,7 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 ```blade
 <x-kernl-tags.outline
-    :color="'black|white|red|gray-600|gray-300'"
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -324,6 +323,6 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 #### `x-kernl-tags.outline` Props
 
-- `color` - Color for text/border. Default is `'black'`
+- `color` - Color for text/border. Default is `black`
 - `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 - `uppercase` - (optional) Uppercase content. Default is `false`

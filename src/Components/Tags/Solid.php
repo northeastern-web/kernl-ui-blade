@@ -19,6 +19,9 @@ class Solid extends Component
         'gray-600' => ['text-white', 'bg-gray-600'],
         'gray-300' => ['text-gray-900', 'bg-gray-300'],
         'red' => ['text-white', 'bg-red-600'],
+        'blue' => ['text-white', 'bg-blue-700'],
+        'green' => ['text-white', 'bg-green-600'],
+        'yellow' => ['text-black', 'bg-yellow-300'],
     ];
 
     public function __construct($color = 'black', $pill = false, $uppercase = false)

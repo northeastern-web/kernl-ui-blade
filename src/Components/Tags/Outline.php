@@ -19,6 +19,9 @@ class Outline extends Component
         'gray-600' => ['text-gray-600', 'border-gray-600'],
         'gray-300' => ['text-gray-300', 'border-gray-300'],
         'red' => ['text-red-600', 'border-red-600'],
+        'blue' => ['text-blue-700', 'border-blue-700'],
+        'green' => ['text-green-600', 'border-green-600'],
+        'yellow' => ['text-yellow-300', 'border-yellow-300'],
     ];
 
     public function __construct($color = 'black', $pill = false, $uppercase = false)
