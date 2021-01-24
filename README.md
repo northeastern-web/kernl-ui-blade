@@ -319,6 +319,40 @@ To use the Split Carousel and Split Slide component, add the following markup to
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
 
+### Loaders
+
+To use the Loader component, light or dark, add the following markup to your Blade template.
+
+#### Light
+
+```blade
+<div x-data="{ busy: true|false }" class="relative" >
+    {{-- Some other content --}}
+    <x-kernl-loaders.dark
+        x-show="busy"
+    />
+</div>
+```
+
+#### `x-kernl-loaders.light` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+
+#### Dark
+
+```blade
+<div x-data="{ busy: true|false }" class="relative" >
+    {{-- Some other content --}}
+    <x-kernl-loaders.light
+        x-show="busy"
+    />
+</div>
+```
+
+#### `x-kernl-loaders.dark` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+
 ### Tags
 
 ### Solid
