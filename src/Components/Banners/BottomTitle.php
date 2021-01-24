@@ -13,8 +13,7 @@ class BottomTitle extends Component
     public function __construct(
         $title = null,
         $backgroundUrl = null
-    )
-    {
+    ) {
         $this->title = $title;
         $this->backgroundUrl = $backgroundUrl;
     }
