@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 
 class Base extends Component
 {
-    public $modalId;
+    public $id;
 
     public $closeable;
 
@@ -15,9 +15,9 @@ class Base extends Component
 
     public $closeOnEscapeKey;
 
-    public function __construct($modalId, $closeable = true, $closeOnClickOutside = true, $closeOnEscapeKey = true)
+    public function __construct($id, $closeable = true, $closeOnClickOutside = true, $closeOnEscapeKey = true)
     {
-        $this->modalId = $modalId;
+        $this->id = $id;
 
         $this->closeable = $closeable;
 

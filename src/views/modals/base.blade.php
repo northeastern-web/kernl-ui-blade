@@ -1,7 +1,5 @@
 <div
     x-data="{ ...modal() }"
-    class="p-4 font-sans"
-
     x-on:keydown.window.tab="handleForwardTab"
     x-on:keydown.window.shift.tab="handleBackwardTab"
 
@@ -9,8 +7,8 @@
     x-on:keydown.window.escape="handleEscape"
     @endif
 
-    x-on:open-modal-{{ strtolower($modalId) }}.window="handleOpen"
-    x-on:close-modal-{{ strtolower($modalId) }}.window="handleClose"
+    x-on:open-modal-{{ strtolower($id) }}.window="handleOpen"
+    x-on:close-modal-{{ strtolower($id) }}.window="handleClose"
 
     x-cloak
 >

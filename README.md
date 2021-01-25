@@ -395,27 +395,29 @@ To use the Outline Tag component, add the following markup to your Blade templat
 - `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 - `uppercase` - (optional) Uppercase content. Default is `false`
 
-
 ### Modals
 
 ### Base Modal
 
-To use the Base Modal component, add the following markup to your Blade template.
+To use the Base Modal component, add the following markup to your Blade template. The modal can be triggered from anywhere on your page using the `NUModals.open` and `NUModals.close` methods.
 
 ```blade
 <x-kernl-modals.base
-    :modal-id="''"
+    id="unique-modal-id"
     :closeable="true|false"
     :close-on-click-outside="true|false"
     :close-on-escape-key="true|false"
 >
     {{-- Content here --}}
 </x-kernl-modals.base>
+
+<button x-data x-on:click="NUModals.open('unique-modal-id')">Open Modal</button>
+<button x-data x-on:click="NUModals.close('unique-modal-id')">Close Modal</button>
 ```
 
 #### `x-kernl-modals.base` Props
 
-- `modal-id` - Id of the modal. Must be unique throughout the app. This id can be used with `window.NUModals` methods
+- `id` - ID of the modal. Must be unique throughout the app. This ID can be used with `window.NUModals` methods
 - `closeable` - (optional) Adds close button at the top right corner. `true` by default
 - `close-on-click-outside` - (optional) Adds behavior to close when clicking outside the modal. `true` by default
 - `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
