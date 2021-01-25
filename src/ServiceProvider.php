@@ -19,6 +19,8 @@ use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\Loaders\Dark as LoadersDark;
 use Northeastern\Blade\Components\Loaders\Light as LoadersLight;
 use Northeastern\Blade\Components\LocalHeader;
+use Northeastern\Blade\Components\Modals\Base as ModalsBase;
+use Northeastern\Blade\Components\Scripts;
 use Northeastern\Blade\Components\Tags\Outline as TagsOutline;
 use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 
@@ -43,5 +45,7 @@ class ServiceProvider extends BaseServiceProvider
         LoadersDark::class => 'kernl-loaders.dark',
         TagsSolid::class => 'kernl-tags.solid',
         TagsOutline::class => 'kernl-tags.outline',
+        ModalsBase::class => 'kernl-modals.base',
+        Scripts::class => 'kernl-scripts',
     ];
 }
