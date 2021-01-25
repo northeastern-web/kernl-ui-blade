@@ -1,0 +1,3 @@
+<span {{ $compiledClasses() }}>
+    {{ $slot }}
+</span>

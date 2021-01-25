@@ -186,6 +186,40 @@ Alternatively, you can use the `x-kernl-alert.full-width` component for a slight
 
 Any additional classes or attributes you put on the component will be passed through.
 
+### Banners
+
+### With Offset Card
+
+To use the With Offset Card Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.with-offset-card
+    background-url=""
+>
+    {{--Card content goes here--}}
+</x-kernl-banners.with-offset-card>
+```
+
+#### `x-kernl-banners.with-offset-card` Props
+
+- `background-url` - URL of background image to be applied.
+
+### Bottom Title
+
+To use the Bottom Title Banner component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-banners.bottom-title
+    background-url=""
+    title=""
+/>
+```
+
+#### `x-kernl-banners.bottom-title` Props
+
+- `background-url` - URL of background image to be applied.
+- `title` - Title to be presented.
+
 ### Buttons
 
 To use the Solid Button and Outline Button components, add the following markup to your Blade template.
@@ -284,6 +318,82 @@ To use the Split Carousel and Split Slide component, add the following markup to
 - `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
+
+### Loaders
+
+To use the Loader component, light or dark, add the following markup to your Blade template.
+
+#### Light
+
+```blade
+<div x-data="{ busy: true|false }" class="relative" >
+    {{-- Some other content --}}
+    <x-kernl-loaders.dark
+        x-show="busy"
+    />
+</div>
+```
+
+#### `x-kernl-loaders.light` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+
+#### Dark
+
+```blade
+<div x-data="{ busy: true|false }" class="relative" >
+    {{-- Some other content --}}
+    <x-kernl-loaders.light
+        x-show="busy"
+    />
+</div>
+```
+
+#### `x-kernl-loaders.dark` Props
+
+- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+
+### Tags
+
+### Solid
+
+To use the Solid Tag component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-tags.solid
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    :pill="true|false"
+    :uppercase="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-tags.solid>
+```
+
+#### `x-kernl-tags.solid` Props
+
+- `color` - Color for text/background. Default is `black`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
+
+### Outline
+
+To use the Outline Tag component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-tags.outline
+    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    :pill="true|false"
+    :uppercase="true|false"
+>
+    {{-- Content here --}}
+</x-kernl-tags.outline>
+```
+
+#### `x-kernl-tags.outline` Props
+
+- `color` - Color for text/border. Default is `black`
+- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+- `uppercase` - (optional) Uppercase content. Default is `false`
 
 
 ### Modals
