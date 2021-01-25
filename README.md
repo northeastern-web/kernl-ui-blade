@@ -421,3 +421,60 @@ To use the Base Modal component, add the following markup to your Blade template
 - `closeable` - (optional) Adds close button at the top right corner. `true` by default
 - `close-on-click-outside` - (optional) Adds behavior to close when clicking outside the modal. `true` by default
 - `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
+
+
+### Footer
+
+### Local
+
+To use the Local Footer component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-footers.local 
+    :links="$links"
+    facebook-url=""    
+    youtube-url=""    
+    instagram-url=""    
+    snapchat-url=""    
+    linkedin-url=""    
+    twitter-url=""    
+>
+    <x-slot name="logo">
+        {{-- Insert SVG logo here --}}
+    </x-slot>
+    <x-slot name="title">
+        {{-- Insert title here --}}
+    </x-slot>
+    <x-slot name="address">
+        {{-- Insert address here --}}
+    </x-slot>
+</x-kernl-local-header>
+```
+
+#### Props
+
+- `links` = Array of titles for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title. Example:
+    ```php
+    $links = [
+        [
+            'text' => 'About',
+            'children' => [
+                [
+                    'text' => 'Careers',
+                    'href' => '/about/careers',
+                ],
+                [
+                    'text' => 'Staff',
+                    'href' => '/about/staff',
+                ],
+            ],
+        ],
+    ];
+    ```
+- `facebook-url` - (optional) Facebook url for the footer. Adding the url will display the social network respective icon.
+- `youtube-url` - (optional) Youtube url for the footer. Adding the url will display the social network respective icon.
+- `linkedin-url` - (optional) Linkedin url for the footer. Adding the url will display the social network respective icon.
+- `snapchat-url` - (optional) Snapchat url for the footer. Adding the url will display the social network respective icon.
+- `twitter-url` - (optional) Twitter url for the footer. Adding the url will display the social network respective icon.
+- `instagram-url` - (optional) Instagram url for the footer. Adding the url will display the social network respective icon.
+
