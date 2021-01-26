@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...underlinedTabs({{ count($tabs) }}) }"
+        x-data="{ ...tabs({{ count($tabs) }}, '{{ $activeTabClass }}', '{{ $inactiveTabClass }}') }"
     >
         <ul
             role="tablist"

@@ -8,6 +8,10 @@ class Bordered extends Component
 {
     public $tabs;
 
+    public $activeTabClass = 'text-gray-800 bg-white border-gray-300';
+
+    public $inactiveTabClass = 'text-gray-600 bg-transparent';
+
     public function __construct($tabs = [])
     {
         $this->tabs = $tabs;

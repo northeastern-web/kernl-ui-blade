@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...detachedTabs({{ count($tabs) }}) }"
+        x-data="{ ...tabs({{ count($tabs) }}, '{{ $activeTabClass }}', '{{ $inactiveTabClass }}') }"
     >
         <ul role="tablist" class="z-10 flex items-end space-x-12">
             @foreach($tabs as $tab)

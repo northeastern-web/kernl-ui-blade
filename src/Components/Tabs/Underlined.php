@@ -8,6 +8,10 @@ class Underlined extends Component
 {
     public $tabs;
 
+    public $activeTabClass = 'border-red-600 text-gray-800';
+
+    public $inactiveTabClass = 'text-gray-600';
+
     public function __construct($tabs = [])
     {
         $this->tabs = $tabs;

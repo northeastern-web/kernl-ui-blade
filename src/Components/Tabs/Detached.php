@@ -8,6 +8,10 @@ class Detached extends Component
 {
     public $tabs;
 
+    public $activeTabClass = 'border-gray-900 text-gray-900';
+
+    public $inactiveTabClass = 'text-gray-600 hover:border-gray-600';
+
     public function __construct($tabs = [])
     {
         $this->tabs = $tabs;
