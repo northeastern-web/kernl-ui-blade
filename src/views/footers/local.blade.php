@@ -6,9 +6,11 @@
                     {{ $logo ?? 'No logo' }}
                 </a>
 
-                <address class="mt-4 text-sm not-italic">
-                    {{ $address ?? 'No Address' }}<br>
-                </address>
+                @isset($address)
+                    <address class="mt-4 text-sm not-italic">
+                        {{ $address }}<br>
+                    </address>
+                @endisset
 
                 <div class="mt-8 flex items-center space-x-2">
                     @if($facebookUrl)
