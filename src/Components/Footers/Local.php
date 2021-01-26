@@ -31,8 +31,7 @@ class Local extends Component
         $linkedinUrl = null,
         $instagramUrl = null,
         $snapchatUrl = null
-    )
-    {
+    ) {
         $this->links = $links;
 
         $this->logoHref = $logoHref;
