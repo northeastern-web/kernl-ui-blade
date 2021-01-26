@@ -448,7 +448,7 @@ To use the Local Footer component, add the following markup to your Blade templa
     <x-slot name="address">
         {{-- Insert address here --}}
     </x-slot>
-</x-kernl-local-header>
+</x-kernl-footers.local>
 ```
 
 #### Props
