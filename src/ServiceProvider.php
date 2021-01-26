@@ -21,11 +21,11 @@ use Northeastern\Blade\Components\Loaders\Light as LoadersLight;
 use Northeastern\Blade\Components\LocalHeader;
 use Northeastern\Blade\Components\Modals\Base as ModalsBase;
 use Northeastern\Blade\Components\Scripts;
-use Northeastern\Blade\Components\Tags\Outline as TagsOutline;
-use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 use Northeastern\Blade\Components\Tabs\Bordered as TabsBordered;
 use Northeastern\Blade\Components\Tabs\Detached as TabsDetached;
 use Northeastern\Blade\Components\Tabs\Underlined as TabsUnderlined;
+use Northeastern\Blade\Components\Tags\Outline as TagsOutline;
+use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 
 class ServiceProvider extends BaseServiceProvider
 {
