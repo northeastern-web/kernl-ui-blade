@@ -456,6 +456,7 @@ To use the Local Footer component, add the following markup to your Blade templa
     $links = [
         [
             'text' => 'About',
+            'href' => '/about',
             'children' => [
                 [
                     'text' => 'Careers',

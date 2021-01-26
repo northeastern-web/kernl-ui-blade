@@ -50,9 +50,17 @@
             </div>
             @foreach($links as $link)
                 <div class="w-1/2 px-2 flex flex-col md:w-1/4 lg:w-auto">
-                    <h3 class="font-bold">
-                        {{ data_get($link, 'text', '') }}
-                    </h3>
+                    @isset($link['href'])
+                        <a href="{{ $link['href'] }}">
+                            <h3 class="font-bold">
+                                {{ data_get($link, 'text', '') }}
+                            </h3>
+                        </a>
+                    @else
+                        <h3 class="font-bold">
+                            {{ data_get($link, 'text', '') }}
+                        </h3>
+                    @endisset
                     @foreach(data_get($link, 'children', []) as $child)
                         <a
                             class="mt-2 text-sm text-gray-300 hover:text-gray-400 focus:outline-none focus:ring focus:ring-blue-400"
