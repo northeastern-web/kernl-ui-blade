@@ -442,9 +442,6 @@ To use the Local Footer component, add the following markup to your Blade templa
     <x-slot name="logo">
         {{-- Insert SVG logo here --}}
     </x-slot>
-    <x-slot name="title">
-        {{-- Insert title here --}}
-    </x-slot>
     <x-slot name="address">
         {{-- Insert address here --}}
     </x-slot>

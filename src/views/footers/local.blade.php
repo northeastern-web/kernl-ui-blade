@@ -4,10 +4,6 @@
             <div class="w-full px-2 lg:w-auto">
                 <a class="inline-block hover:text-gray-300 focus:outline-none focus:ring focus:ring-blue-400" href="#">
                     {{ $logo ?? 'No logo' }}
-
-                    <h2 class="mt-1 font-black">
-                        {{ $title ?? 'No title'}}
-                    </h2>
                 </a>
 
                 <address class="mt-4 text-sm not-italic">
