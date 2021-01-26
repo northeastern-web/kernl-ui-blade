@@ -432,6 +432,7 @@ To use the Local Footer component, add the following markup to your Blade templa
 ```blade
 <x-kernl-footers.local 
     :links="$links"
+    logo-href=""
     facebook-url=""    
     youtube-url=""    
     instagram-url=""    
@@ -468,6 +469,7 @@ To use the Local Footer component, add the following markup to your Blade templa
         ],
     ];
     ```
+- `logo-href` - (optional) Url for the footer logo.
 - `facebook-url` - (optional) Facebook url for the footer. Adding the url will display the social network respective icon.
 - `youtube-url` - (optional) Youtube url for the footer. Adding the url will display the social network respective icon.
 - `linkedin-url` - (optional) Linkedin url for the footer. Adding the url will display the social network respective icon.
