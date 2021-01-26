@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...borderedTabs() }"
+        x-data="{ ...borderedTabs({{ count($tabs) }}) }"
     >
         <ul role="tablist" class="-mb-px z-10 flex items-end">
             @foreach($tabs as $tab)
@@ -31,38 +31,3 @@
 
     </div>
 </div>
-
-<script>
-    const borderedTabs = () => {
-        return {
-            active: 0,
-
-            tabsCount: {{ count($tabs) }},
-
-            setActiveTab(index) {
-                if (index < 0 || index > this.tabsCount - 1) {
-                    return
-                }
-
-                this.active = index;
-
-                this.$refs['tab-' + index].focus();
-            },
-
-            isActiveTab(index) {
-                return this.active === index
-            },
-
-            tabClasses(index) {
-                return {
-                    'text-gray-800 bg-white border-gray-300': this.isActiveTab(index),
-                    'text-gray-600 bg-transparent': !this.isActiveTab(index)
-                }
-            },
-
-            tabIndex(index) {
-                return this.isActiveTab(index) ? '' : '-1'
-            }
-        }
-    }
-</script>

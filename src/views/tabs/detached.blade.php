@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...detachedTabs() }"
+        x-data="{ ...detachedTabs({{ count($tabs) }}) }"
         class="mt-8"
     >
         <ul role="tablist" class="z-10 flex items-end space-x-12">
@@ -32,38 +32,3 @@
 
     </div>
 </div>
-
-<script>
-    const detachedTabs = () => {
-        return {
-            active: 0,
-
-            tabsCount: {{ count($tabs) }},
-
-            setActiveTab(index) {
-                if (index < 0 || index > this.tabsCount - 1) {
-                    return
-                }
-
-                this.active = index;
-
-                this.$refs['tab-' + index].focus();
-            },
-
-            isActiveTab(index) {
-                return this.active === index
-            },
-
-            tabClasses(index) {
-                return {
-                    'border-gray-900 text-gray-900': this.isActiveTab(index),
-                    'text-gray-600 hover:border-gray-600': !this.isActiveTab(index)
-                }
-            },
-
-            tabIndex(index) {
-                return this.isActiveTab(index) ? '' : '-1'
-            }
-        }
-    }
-</script>

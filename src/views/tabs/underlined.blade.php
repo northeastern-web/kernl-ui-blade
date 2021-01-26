@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...underlinedTabs() }"
+        x-data="{ ...underlinedTabs({{ count($tabs) }}) }"
     >
         <ul
             role="tablist"
@@ -35,38 +35,3 @@
 
     </div>
 </div>
-
-<script>
-    const underlinedTabs = () => {
-        return {
-            active: 0,
-
-            tabsCount: {{ count($tabs) }},
-
-            setActiveTab(index) {
-                if (index < 0 || index > this.tabsCount - 1) {
-                    return
-                }
-
-                this.active = index;
-
-                this.$refs['tab-' + index].focus();
-            },
-
-            isActiveTab(index) {
-                return this.active === index
-            },
-
-            tabClasses(index) {
-                return {
-                    'border-red-600 text-gray-800': this.isActiveTab(index),
-                    'text-gray-600': !this.isActiveTab(index)
-                }
-            },
-
-            tabIndex(index) {
-                return this.isActiveTab(index) ? '' : '-1'
-            }
-        }
-    }
-</script>
