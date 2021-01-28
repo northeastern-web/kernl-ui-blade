@@ -24,6 +24,7 @@ class Solid extends Component
         'red' => 'text-white bg-red-600 hover:bg-red-700',
         'blue' => 'text-white bg-blue-700 hover:bg-blue-800',
         'green' => 'text-white bg-green-600 hover:bg-green-700',
+        'aqua' => 'text-white bg-aqua-500 hover:bg-aqua-600',
     ];
 
     public function __construct($color = 'black', $href = '', $size = '')
