@@ -24,6 +24,7 @@ class Outline extends Component
         'red' => 'text-red-600 border-red-600 hover:text-white hover:bg-red-600',
         'blue' => 'text-blue-700 border-blue-700 hover:text-white hover:bg-blue-700',
         'green' => 'text-green-600 border-green-600 hover:text-white hover:bg-green-600',
+        'aqua' => 'text-aqua-500 border-aqua-500 hover:text-white hover:bg-aqua-500',
     ];
 
     public function __construct($color = 'black', $href = '', $size = '')
