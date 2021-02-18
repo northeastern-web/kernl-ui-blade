@@ -6,7 +6,7 @@
                     class="inline-block hover:text-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
                     href="{{ $logoHref }}"
                 >
-                    {{ $logo ?? 'No logo' }}
+                    {{ $logo }}
                 </a>
 
                 @isset($address)
@@ -49,7 +49,7 @@
                 </div>
             </div>
             @foreach($links as $link)
-                <div class="w-1/2 px-2 flex flex-col md:w-1/4 lg:w-auto">
+                <div class="w-1/2 px-2 flex flex-col md:w-1/4 lg:w-1/6">
                     @isset($link['href'])
                         <a href="{{ $link['href'] }}">
                             <h3 class="font-bold">
