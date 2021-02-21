@@ -6,15 +6,15 @@ use Illuminate\View\Component;
 
 class Underlined extends Component
 {
-    public $tabs;
+    public $defaultActive;
 
     public $activeTabClass = 'border-red-600 text-gray-800';
 
     public $inactiveTabClass = 'text-gray-600';
 
-    public function __construct($tabs = [])
+    public function __construct($defaultActive = 0)
     {
-        $this->tabs = $tabs;
+        $this->defaultActive = $defaultActive;
     }
 
     public function render()
