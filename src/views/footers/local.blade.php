@@ -11,7 +11,7 @@
 
                 @isset($address)
                     <address class="mt-4 text-sm not-italic">
-                        {{ $address }}<br>
+                        {{ $address }}
                     </address>
                 @endisset
 
