@@ -4,7 +4,7 @@
             <div class="w-full px-2 lg:w-auto">
                 <a
                     class="inline-block hover:text-gray-300 focus:outline-none focus:ring focus:ring-blue-400"
-                    href="{{ $logoHref }}"
+                    href="{{ $logoUrl }}"
                 >
                     {{ $logo }}
                 </a>

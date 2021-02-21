@@ -8,7 +8,7 @@ class Local extends Component
 {
     public $links;
 
-    public $logoHref;
+    public $logoUrl;
 
     public $facebookUrl;
 
@@ -24,7 +24,7 @@ class Local extends Component
 
     public function __construct(
         $links = [],
-        $logoHref = '#',
+        $logoUrl = '#',
         $facebookUrl = null,
         $twitterUrl = null,
         $youtubeUrl = null,
@@ -34,7 +34,7 @@ class Local extends Component
     ) {
         $this->links = $links;
 
-        $this->logoHref = $logoHref;
+        $this->logoUrl = $logoUrl;
 
         $this->facebookUrl = $facebookUrl;
         $this->twitterUrl = $twitterUrl;
