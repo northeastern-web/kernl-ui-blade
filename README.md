@@ -423,6 +423,64 @@ To use the Base Modal component, add the following markup to your Blade template
 - `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
 
 
+### Footer
+
+### Local
+
+To use the Local Footer component, add the following markup to your Blade template.
+
+```blade
+<x-kernl-footers.local
+    :links="$links"
+    logo-url=""
+    facebook-url=""
+    youtube-url=""
+    instagram-url=""
+    snapchat-url=""
+    linkedin-url=""
+    twitter-url=""
+>
+    <x-slot name="logo">
+        {{-- Insert SVG logo here --}}
+    </x-slot>
+    <x-slot name="address">
+        {{-- Insert address here --}}
+    </x-slot>
+</x-kernl-footers.local>
+```
+
+#### Props
+
+- `links` = Array of titles and links for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title.
+Example:
+```php
+$links = [
+    [
+        'text' => 'About',
+        'href' => '/about', // (optional)
+        'children' => [
+            [
+                'text' => 'Careers',
+                'href' => '/about/careers',
+            ],
+            [
+                'text' => 'Staff',
+                'href' => '/about/staff',
+            ],
+        ],
+    ],
+    // ... More links
+];
+```
+- `logo-url` - (optional) URL for the footer logo.
+- `facebook-url` - (optional) Facebook URL for the footer. Adding the URL will display the respective social network icon.
+- `youtube-url` - (optional) Youtube URL for the footer. Adding the URL will display the respective social network icon.
+- `linkedin-url` - (optional) Linkedin URL for the footer. Adding the URL will display the respective social network icon.
+- `snapchat-url` - (optional) Snapchat URL for the footer. Adding the URL will display the respective social network icon.
+- `twitter-url` - (optional) Twitter URL for the footer. Adding the URL will display the respective social network icon.
+- `instagram-url` - (optional) Instagram URL for the footer. Adding the URL will display the respective social network icon.
+
+
 ### Tabs
 
 ### Underlined
