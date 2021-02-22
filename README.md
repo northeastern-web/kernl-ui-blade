@@ -430,15 +430,15 @@ To use the Base Modal component, add the following markup to your Blade template
 To use the Local Footer component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-footers.local 
+<x-kernl-footers.local
     :links="$links"
-    logo-href=""
-    facebook-url=""    
-    youtube-url=""    
-    instagram-url=""    
-    snapchat-url=""    
-    linkedin-url=""    
-    twitter-url=""    
+    logo-url=""
+    facebook-url=""
+    youtube-url=""
+    instagram-url=""
+    snapchat-url=""
+    linkedin-url=""
+    twitter-url=""
 >
     <x-slot name="logo">
         {{-- Insert SVG logo here --}}
@@ -477,4 +477,3 @@ To use the Local Footer component, add the following markup to your Blade templa
 - `snapchat-url` - (optional) Snapchat url for the footer. Adding the url will display the social network respective icon.
 - `twitter-url` - (optional) Twitter url for the footer. Adding the url will display the social network respective icon.
 - `instagram-url` - (optional) Instagram url for the footer. Adding the url will display the social network respective icon.
-
