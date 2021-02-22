@@ -6,11 +6,11 @@ use Illuminate\View\Component;
 
 class Item extends Component
 {
-    public $index;
+    public $title;
 
-    public function __construct($index = -1)
+    public function __construct($title)
     {
-        $this->index = $index;
+        $this->title = $title;
     }
 
     public function render()

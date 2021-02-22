@@ -1,7 +1,7 @@
 <section
     role="tabpanel"
     class="py-6"
-    {{ $attributes }}
+    data-title="{{ $title }}"
 >
     {{ $slot }}
 </section>
