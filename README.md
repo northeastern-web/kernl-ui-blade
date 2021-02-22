@@ -428,86 +428,77 @@ To use the Base Modal component, add the following markup to your Blade template
 ### Underlined
 
 ```blade
-<x-kernl-tabs.underlined
-    :tabs="['Zero', 'First', 'Second']"
->
-    <x-kernl-tabs.underlined.item :index="0">
+<x-kernl-tabs.underlined :default-active="0">
+    <x-kernl-tabs.underlined.item title="Zero">
         This is the content Zero
     </x-kernl-tabs.underlined.item>
 
-    <x-kernl-tabs.underlined.item :index="1">
+    <x-kernl-tabs.underlined.item title="One">
         This is the content One
     </x-kernl-tabs.underlined.item>
 
-    <x-kernl-tabs.underlined.item :index="2">
+    <x-kernl-tabs.underlined.item title="Two">
         This is the content Two
     </x-kernl-tabs.underlined.item>
-
 </x-kernl-tabs.underlined>
 ```
 
 #### `x-kernl-tabs.underlined` Props
 
-- `tabs` - Array of tabs titles.
+- `default-active` - Index of starting active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.underlined.item` Props
 
-- `index` - The index position of the tab the content represents
+- `title` - Title of the tab contents
 
 ### Bordered
 
 ```blade
-<x-kernl-tabs.bordered
-    :tabs="['Zero', 'First', 'Second']"
->
-    <x-kernl-tabs.bordered.item :index="0">
+<x-kernl-tabs.bordered :default-active="0">
+    <x-kernl-tabs.bordered.item title="Zero">
         This is the content Zero
     </x-kernl-tabs.bordered.item>
 
-    <x-kernl-tabs.bordered.item :index="1">
+    <x-kernl-tabs.bordered.item title="One">
         This is the content One
     </x-kernl-tabs.bordered.item>
 
-    <x-kernl-tabs.bordered.item :index="2">
+    <x-kernl-tabs.bordered.item title="Two">
         This is the content Two
     </x-kernl-tabs.bordered.item>
-
 </x-kernl-tabs.bordered>
 ```
 
 #### `x-kernl-tabs.bordered` Props
 
-- `tabs` - Array of tabs titles.
+- `default-active` - Index of starting active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.bordered.item` Props
 
-- `index` - The index position of the tab the content represents
+- `title` - Title of the tab contents
 
 ### Detached
 
 ```blade
-<x-kernl-tabs.detached
-    :tabs="['Zero', 'First', 'Second']"
->
-    <x-kernl-tabs.detached.item :index="0">
+<x-kernl-tabs.detached :default-active="0">
+    <x-kernl-tabs.detached.item title="Zero">
         This is the content Zero
     </x-kernl-tabs.detached.item>
 
-    <x-kernl-tabs.detached.item :index="1">
+    <x-kernl-tabs.detached.item title="One">
         This is the content One
     </x-kernl-tabs.detached.item>
 
-    <x-kernl-tabs.detached.item :index="2">
+    <x-kernl-tabs.detached.item title="Two">
         This is the content Two
     </x-kernl-tabs.detached.item>
-
 </x-kernl-tabs.detached>
 ```
 
 #### `x-kernl-tabs.detached` Props
 
-- `tabs` - Array of tabs titles.
+- `default-active` - Index of starting active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.detached.item` Props
 
-- `index` - The index position of the tab the content represents
+- `title` - Title of the tab contents
