@@ -1,6 +1,6 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...awesomeTabs() }"
+        x-data="{ ...tabs() }"
         x-init="() => {
             activeTabClass = '{{ $activeTabClass }}'
             inactiveTabClass = '{{ $inactiveTabClass }}'
@@ -11,6 +11,7 @@
         <ul
             role="tablist"
             class="z-10 flex items-end -mb-px border-b border-gray-300"
+            x-ref="tabs"
         >
             <template
                 x-for="(tabTitle, index) in tabTitles()"
@@ -34,7 +35,7 @@
             </template>
         </ul>
 
-        <div x-ref="tabs">
+        <div x-ref="tabItems">
             {{ $slot }}
         </div>
 

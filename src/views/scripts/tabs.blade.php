@@ -1,40 +1,5 @@
 <script>
-    const tabs = (tabsCount, activeTabClass, inactiveTabClass) => {
-        return {
-            active: 0,
-
-            tabsCount: tabsCount,
-
-            setActiveTab(index) {
-                if (index < 0 || index > this.tabsCount - 1) {
-                    return
-                }
-
-                this.active = index;
-
-                this.$refs['tab-' + index].focus();
-            },
-
-            isActiveTab(index) {
-                return this.active === index
-            },
-
-            tabClasses(index) {
-                return {
-                    [activeTabClass]: this.isActiveTab(index),
-                    [inactiveTabClass]: !this.isActiveTab(index)
-                }
-            },
-
-            tabIndex(index) {
-                return this.isActiveTab(index) ? '' : '-1'
-            }
-        }
-    }
-</script>
-
-<script>
-    const awesomeTabs = () => {
+    const tabs = () => {
         return {
             active: 0,
 
@@ -51,7 +16,13 @@
             },
 
             tabItems() {
-                return [].slice.call(this.$refs.tabs.children)
+                return [].slice.call(this.$refs.tabItems.children)
+            },
+
+            focusActiveTab() {
+                [].slice.call(this.$refs.tabs.getElementsByTagName('button'))
+                    .find(node => node.id === `tab-${this.active}`)
+                    ?.focus()
             },
 
             setActiveTab(index) {
@@ -61,7 +32,7 @@
 
                 this.active = index;
 
-                document.getElementById(`tab-${index}`).focus()
+                this.focusActiveTab()
 
                 this.tabItems().forEach(item => {
                     item.classList.add("hidden");

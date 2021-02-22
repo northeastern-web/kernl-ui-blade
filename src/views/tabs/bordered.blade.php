@@ -1,31 +1,46 @@
 <div class="container py-8 font-sans">
     <div
-        x-data="{ ...tabs({{ count($tabs) }}, '{{ $activeTabClass }}', '{{ $inactiveTabClass }}') }"
+        x-data="{ ...tabs() }"
+        x-init="() => {
+            activeTabClass = '{{ $activeTabClass }}'
+            inactiveTabClass = '{{ $inactiveTabClass }}'
+            init({{ $defaultActive }})
+        }
+        "
     >
-        <ul role="tablist" class="-mb-px z-10 flex items-end">
-            @foreach($tabs as $tab)
-            <li role="presentation" class="inline-flex">
-                <button
-                    id="tab-{{ $loop->index }}"
-                    class="px-6 py-3 font-bold border-t border-l border-r border-transparent hover:border-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
-                    role="tab"
+        <ul
+            role="tablist"
+            class="-mb-px z-10 flex items-end"
+            x-ref="tabs"
+        >
+            <template
+                x-for="(tabTitle, index) in tabTitles()"
+                x-bind:key="index"
+            >
+                <li role="presentation" class="inline-flex">
+                    <button
+                        class="px-6 py-3 font-bold border-t border-l border-r border-transparent hover:border-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
+                        role="tab"
 
-                    x-ref="tab-{{ $loop->index }}"
-                    x-bind:tabindex="tabIndex({{ $loop->index }})"
-                    x-bind:class="tabClasses({{ $loop->index }})"
-                    x-bind:aria-selected="isActiveTab({{ $loop->index }})"
+                        x-bind:id="`tab-${index}`"
+                        x-bind:class="tabClasses(index)"
+                        x-text="tabTitle"
 
-                    x-on:keydown.arrow-left="setActiveTab({{ $loop->index - 1 }})"
-                    x-on:click.prevent="setActiveTab({{ $loop->index }})"
-                    x-on:keydown.arrow-right="setActiveTab({{ $loop->index + 1 }})"
-                >
-                    Section 1
-                </button>
-            </li>
-            @endforeach
+                        x-bind:aria-selected="isActiveTab(index)"
+                        x-bind:tabindex="tabIndex(index)"
+
+                        x-on:keydown.arrow-left="setActiveTab(index - 1)"
+                        x-on:click.prevent="setActiveTab(index)"
+                        x-on:keydown.arrow-right="setActiveTab(index + 1)"
+                    ></button>
+                </li>
+            </template>
         </ul>
 
-        <div class="border border-gray-300">
+        <div
+            class="border border-gray-300"
+            x-ref="tabItems"
+        >
             {{ $slot }}
         </div>
 
