@@ -451,29 +451,31 @@ To use the Local Footer component, add the following markup to your Blade templa
 
 #### Props
 
-- `links` = Array of titles for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title. Example:
-    ```php
-    $links = [
-        [
-            'text' => 'About',
-            'href' => '/about',
-            'children' => [
-                [
-                    'text' => 'Careers',
-                    'href' => '/about/careers',
-                ],
-                [
-                    'text' => 'Staff',
-                    'href' => '/about/staff',
-                ],
+- `links` = Array of titles and links for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title.
+Example:
+```php
+$links = [
+    [
+        'text' => 'About',
+        'href' => '/about', // (optional)
+        'children' => [
+            [
+                'text' => 'Careers',
+                'href' => '/about/careers',
+            ],
+            [
+                'text' => 'Staff',
+                'href' => '/about/staff',
             ],
         ],
-    ];
-    ```
-- `logo-href` - (optional) Url for the footer logo.
-- `facebook-url` - (optional) Facebook url for the footer. Adding the url will display the social network respective icon.
-- `youtube-url` - (optional) Youtube url for the footer. Adding the url will display the social network respective icon.
-- `linkedin-url` - (optional) Linkedin url for the footer. Adding the url will display the social network respective icon.
-- `snapchat-url` - (optional) Snapchat url for the footer. Adding the url will display the social network respective icon.
-- `twitter-url` - (optional) Twitter url for the footer. Adding the url will display the social network respective icon.
-- `instagram-url` - (optional) Instagram url for the footer. Adding the url will display the social network respective icon.
+    ],
+    // ... More links
+];
+```
+- `logo-url` - (optional) URL for the footer logo.
+- `facebook-url` - (optional) Facebook URL for the footer. Adding the URL will display the respective social network icon.
+- `youtube-url` - (optional) Youtube URL for the footer. Adding the URL will display the respective social network icon.
+- `linkedin-url` - (optional) Linkedin URL for the footer. Adding the URL will display the respective social network icon.
+- `snapchat-url` - (optional) Snapchat URL for the footer. Adding the URL will display the respective social network icon.
+- `twitter-url` - (optional) Twitter URL for the footer. Adding the URL will display the respective social network icon.
+- `instagram-url` - (optional) Instagram URL for the footer. Adding the URL will display the respective social network icon.
