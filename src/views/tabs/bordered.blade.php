@@ -5,8 +5,7 @@
             activeTabClass = '{{ $activeTabClass }}'
             inactiveTabClass = '{{ $inactiveTabClass }}'
             init({{ $defaultActive }})
-        }
-        "
+        }"
     >
         <ul
             role="tablist"
@@ -24,7 +23,6 @@
 
                         x-bind:id="`tab-${index}`"
                         x-bind:class="tabClasses(index)"
-                        x-text="tabTitle"
 
                         x-bind:aria-selected="isActiveTab(index)"
                         x-bind:tabindex="tabIndex(index)"
@@ -32,6 +30,8 @@
                         x-on:keydown.arrow-left="setActiveTab(index - 1)"
                         x-on:click.prevent="setActiveTab(index)"
                         x-on:keydown.arrow-right="setActiveTab(index + 1)"
+
+                        x-text="tabTitle"
                     ></button>
                 </li>
             </template>
