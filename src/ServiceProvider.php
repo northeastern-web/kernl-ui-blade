@@ -22,6 +22,9 @@ use Northeastern\Blade\Components\Loaders\Light as LoadersLight;
 use Northeastern\Blade\Components\LocalHeader;
 use Northeastern\Blade\Components\Modals\Base as ModalsBase;
 use Northeastern\Blade\Components\Scripts;
+use Northeastern\Blade\Components\Tabs\Bordered as TabsBordered;
+use Northeastern\Blade\Components\Tabs\Detached as TabsDetached;
+use Northeastern\Blade\Components\Tabs\Underlined as TabsUnderlined;
 use Northeastern\Blade\Components\Tags\Outline as TagsOutline;
 use Northeastern\Blade\Components\Tags\Solid as TagsSolid;
 
@@ -49,5 +52,11 @@ class ServiceProvider extends BaseServiceProvider
         ModalsBase::class => 'kernl-modals.base',
         FooterLocal::class => 'kernl-footers.local',
         Scripts::class => 'kernl-scripts',
+        TabsUnderlined::class => 'kernl-tabs.underlined',
+        TabsUnderlined\Item::class => 'kernl-tabs.underlined.item',
+        TabsBordered::class => 'kernl-tabs.bordered',
+        TabsBordered\Item::class => 'kernl-tabs.bordered.item',
+        TabsDetached::class => 'kernl-tabs.detached',
+        TabsDetached\Item::class => 'kernl-tabs.detached.item',
     ];
 }
