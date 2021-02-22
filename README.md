@@ -488,75 +488,81 @@ $links = [
 ```blade
 <x-kernl-tabs.underlined :default-active="0">
     <x-kernl-tabs.underlined.item title="Zero">
-        This is the content Zero
+        Content for panel zero
     </x-kernl-tabs.underlined.item>
 
     <x-kernl-tabs.underlined.item title="One">
-        This is the content One
+        Content for panel one
     </x-kernl-tabs.underlined.item>
 
     <x-kernl-tabs.underlined.item title="Two">
-        This is the content Two
+        Content for panel two
     </x-kernl-tabs.underlined.item>
 </x-kernl-tabs.underlined>
 ```
 
 #### `x-kernl-tabs.underlined` Props
 
-- `default-active` - Index of starting active tab. Default is 0 (zero).
+- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.underlined.item` Props
 
 - `title` - Title of the tab contents
+
+Any additional classes or attributes you put on the `item` component will be passed through.
 
 ### Bordered
 
 ```blade
 <x-kernl-tabs.bordered :default-active="0">
     <x-kernl-tabs.bordered.item title="Zero">
-        This is the content Zero
+        Content for panel zero
     </x-kernl-tabs.bordered.item>
 
     <x-kernl-tabs.bordered.item title="One">
-        This is the content One
+        Content for panel one
     </x-kernl-tabs.bordered.item>
 
     <x-kernl-tabs.bordered.item title="Two">
-        This is the content Two
+        Content for panel two
     </x-kernl-tabs.bordered.item>
 </x-kernl-tabs.bordered>
 ```
 
 #### `x-kernl-tabs.bordered` Props
 
-- `default-active` - Index of starting active tab. Default is 0 (zero).
+- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.bordered.item` Props
 
 - `title` - Title of the tab contents
+
+Any additional classes or attributes you put on the `item` component will be passed through.
 
 ### Detached
 
 ```blade
 <x-kernl-tabs.detached :default-active="0">
     <x-kernl-tabs.detached.item title="Zero">
-        This is the content Zero
+        Content for panel zero
     </x-kernl-tabs.detached.item>
 
     <x-kernl-tabs.detached.item title="One">
-        This is the content One
+        Content for panel one
     </x-kernl-tabs.detached.item>
 
     <x-kernl-tabs.detached.item title="Two">
-        This is the content Two
+        Content for panel two
     </x-kernl-tabs.detached.item>
 </x-kernl-tabs.detached>
 ```
 
 #### `x-kernl-tabs.detached` Props
 
-- `default-active` - Index of starting active tab. Default is 0 (zero).
+- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.detached.item` Props
 
 - `title` - Title of the tab contents
+
+Any additional classes or attributes you put on the `item` component will be passed through.

@@ -1,7 +1,8 @@
 <section
     role="tabpanel"
-    class="py-8"
     data-title="{{ $title }}"
+    {{ $attributes }}
+    x-cloak
 >
     {{ $slot }}
 </section>

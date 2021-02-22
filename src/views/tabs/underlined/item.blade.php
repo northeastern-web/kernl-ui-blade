@@ -1,7 +1,8 @@
 <section
     role="tabpanel"
-    class="py-6"
     data-title="{{ $title }}"
+    {{ $attributes->merge(['class' => 'py-6']) }}
+    x-cloak
 >
     {{ $slot }}
 </section>
