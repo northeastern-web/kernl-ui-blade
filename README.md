@@ -566,3 +566,39 @@ Any additional classes or attributes you put on the `item` component will be pas
 - `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
+
+
+### Interior Navigation
+
+```blade
+<x-kernl-interior-navigation.base
+    title="About"
+    :links="[
+        [
+            'text' => 'Our Staff',
+            'href' => '#',
+        ],
+        [
+            'text' => 'Job Opportunities',
+            'expandable' => true,
+            'expanded' => true,
+            'children' => [
+                ['text' => 'Part Time', 'href' => '#'],
+                ['text' => 'Full Time', 'href' => '#'],
+            ],
+        ],
+    ]"
+/>
+```
+
+#### `x-kernl-interior-navigation.base` Props
+
+- `title` - Title for navigation
+- `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
+  - `text` - Text for navigation item
+  - `active` - Sets navigation item as active. Default is `false`
+  - `children` - Child navigation for navigation items.
+  - `expandable` - Sets whether the child navigation can be expandable/collapsible. Applies when `children` is used. Default is `false`.
+  - `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`.
+
+Any additional classes or attributes you put on the `base` component will be passed through the root div component.
