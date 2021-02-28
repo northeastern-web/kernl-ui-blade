@@ -262,6 +262,8 @@
                     @isset($afterLinksDesktop)
                         {{ $afterLinksDesktop }}
                     @endif
+
+                    @include('kernl-ui::includes.headers.search-desktop')
                 </ul>
             </div>
         </div>
@@ -489,6 +491,8 @@
                 @isset($afterLinksDesktop)
                     {{ $afterLinksDesktop }}
                 @endif
+
+                @include('kernl-ui::includes.headers.search-desktop')
             </ul>
         </div>
     </div>
