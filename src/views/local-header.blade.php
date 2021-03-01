@@ -102,6 +102,8 @@
                     </div>
 
                     <ul class="mt-8 w-full">
+                        @include('kernl-ui::includes.headers.search-mobile')
+
                         @foreach ($links as $link)
                             <li class="block">
                                 @isset($link['children'])
@@ -240,6 +242,8 @@
                     @isset($afterLinksDesktop)
                         {{ $afterLinksDesktop }}
                     @endif
+
+                    @include('kernl-ui::includes.headers.search-desktop')
                 </ul>
             </div>
         </div>
@@ -317,7 +321,7 @@
                 x-transition:leave="ease-in duration-200"
                 x-transition:leave-start="translate-x-0"
                 x-transition:leave-end="-translate-x-full"
-                class="fixed inset-y-0 left-0 transform px-4 pt-6 pb-16 bg-gray-800 overflow-y-auto transition-transform lg:hidden"
+                class="fixed inset-y-0 left-0 transform px-4 pt-6 pb-16 bg-gray-800 overflow-y-auto transition-transform lg:hidden max-w-sm w-full"
             >
                 <div class="flex items-start justify-between">
                     <a class="inline-block focus:outline-none focus:ring focus:ring-blue-500" href="/">
@@ -333,6 +337,8 @@
                 </div>
 
                 <ul class="mt-8 w-full">
+                    @include('kernl-ui::includes.headers.search-mobile')
+
                     @foreach ($links as $link)
                         <li class="block">
                             @isset($link['children'])
@@ -445,6 +451,8 @@
                 @isset($afterLinksDesktop)
                     {{ $afterLinksDesktop }}
                 @endif
+
+                @include('kernl-ui::includes.headers.search-desktop')
             </ul>
         </div>
     </div>

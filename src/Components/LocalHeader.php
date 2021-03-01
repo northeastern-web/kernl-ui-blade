@@ -9,12 +9,14 @@ class LocalHeader extends Component
     public $links;
     public $currentPath;
     public $dark;
+    public $action;
 
-    public function __construct($links, $currentPath, $dark = false)
+    public function __construct($links, $currentPath, $dark = false, $action = null)
     {
         $this->links = $links;
         $this->currentPath = $currentPath;
         $this->dark = $dark;
+        $this->action = $action;
     }
 
     public function render()
