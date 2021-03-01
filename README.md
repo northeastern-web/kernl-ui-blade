@@ -68,7 +68,7 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 To use the local header component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-local-header :links="$links" :current-path="$currentPath" action="#">
+<x-kernl-local-header :links="$links" :current-path="$currentPath" action="/search">
     <x-slot name="logo">
         <!-- Insert SVG logo here with class="w-full" applied -->
     </x-slot>
@@ -111,7 +111,7 @@ To use the local header component, add the following markup to your Blade templa
     ```
 - `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
 - `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
-- `action` (optional) - Adds search component to header. `action` should be the url the search form should GET to. `search` will be forwarded with the input value. 
+- `action` (optional) - Adds search component to header. `action` should be the url the search form should submit a GET request to. The input value will be submitted as a form parameter with the name `search`.
 
 ### Accordions
 

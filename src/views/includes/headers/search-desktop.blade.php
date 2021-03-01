@@ -55,7 +55,7 @@
                         <input
                             name="search"
                             type="text"
-                            class="block w-full h-full py-3 px-1 text-white text-xl bg-transparent border-0 border-b border-white placeholder-gray-200 md:text-2xl focus:ring-0 focus:border-blue-700"
+                            class="block w-full h-full py-3 px-1 text-white text-xl bg-transparent border-0 border-b border-white placeholder-gray-200 md:text-2xl focus:outline-none focus:ring-0 focus:border-blue-700"
                             placeholder="Search"
                         >
                         <button

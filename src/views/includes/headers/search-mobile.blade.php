@@ -24,9 +24,9 @@
                 name="search"
                 type="text"
                 @if($dark)
-                    class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b placeholder-gray-400 focus:ring-0 focus:border-blue-700"
+                    class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-700"
                 @else
-                    class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b border-gray-500 placeholder-gray-500 focus:ring-0 focus:border-blue-700"
+                    class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b border-gray-500 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-blue-700"
                 @endif
                 placeholder="Search"
             >
