@@ -567,3 +567,61 @@ Any additional classes or attributes you put on the `item` component will be pas
 - `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
+
+### Heroes
+
+### Split Layout Media Content
+
+```blade
+<x-kernl-heroes.split-layout-content-media
+    media-url="https://media-url"
+    title="Title"
+    body="Body"
+    call-to-action="Call to Action"
+    call-to-action-url="https://call-to-action-url"
+/>
+
+{{-- OR --}}
+<x-kernl-heroes.split-layout-content-media
+    media-url="https://media-url"
+>
+    {{-- Your content --}}
+</x-kernl-heroes.split-layout-content-media>
+```
+
+#### `x-kernl-heroes.split-layout-content-media` Props
+
+- `media-url` - Url of image to show
+- `title` - Title of content
+- `body` - Body of content
+- `call-to-action` - Call To Action button label
+- `call-to-action-url` - Url of call to action button
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
+
+### Full Background Media Centered Content
+
+```blade
+<x-kernl-heroes.full-centered-content
+    title="Title"
+    subtitle="Title"
+    body="Body"
+/>
+
+{{-- OR --}}
+<x-kernl-heroes.full-centered-content>
+    {{-- Your content --}}
+</x-kernl-heroes.full-centered-content>
+```
+
+#### `x-kernl-heroes.full-centered-content` Props
+
+- `title` - Title of content
+- `subtitle` - Subtitle of content
+- `body` - Body of content
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
