@@ -4,7 +4,7 @@ namespace Northeastern\Blade\Components\Heroes;
 use Illuminate\Support\Facades\View;
 use Illuminate\View\Component;
 
-class FullBackgroundMediaCenteredContent extends Component
+class CenteredContent extends Component
 {
     public $title;
     public $subtitle;
@@ -19,6 +19,6 @@ class FullBackgroundMediaCenteredContent extends Component
 
     public function render()
     {
-        return View::make('kernl-ui::heroes.full-background-media-centered-content');
+        return View::make('kernl-ui::heroes.centered-content');
     }
 }

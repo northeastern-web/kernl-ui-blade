@@ -17,7 +17,7 @@ use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
 use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
 use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\Footers\Local as FooterLocal;
-use Northeastern\Blade\Components\Heroes\FullBackgroundMediaCenteredContent as HeroesFullBackgroundMediaCenteredContent;
+use Northeastern\Blade\Components\Heroes\CenteredContent as HeroesCenteredContent;
 use Northeastern\Blade\Components\Heroes\SplitLayoutContentMedia as HeroesSplitLayoutContentMedia;
 use Northeastern\Blade\Components\Loaders\Dark as LoadersDark;
 use Northeastern\Blade\Components\Loaders\Light as LoadersLight;
@@ -61,6 +61,6 @@ class ServiceProvider extends BaseServiceProvider
         TabsDetached::class => 'kernl-tabs.detached',
         TabsDetached\Item::class => 'kernl-tabs.detached.item',
         HeroesSplitLayoutContentMedia::class => 'kernl-heroes.split-layout-content-media',
-        HeroesFullBackgroundMediaCenteredContent::class => 'kernl-heroes.full-background-media-centered-content',
+        HeroesCenteredContent::class => 'kernl-heroes.centered-content',
     ];
 }

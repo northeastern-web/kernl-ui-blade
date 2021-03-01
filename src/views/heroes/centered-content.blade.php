@@ -1,4 +1,4 @@
-<div class="pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-32 lg:pb-40">
+<div {{ $attributes->merge(['class' => 'pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-32 lg:pb-40']) }}>
     <div class="container sm:text-center">
         @if(!$slot->isEmpty())
             {{ $slot }}
