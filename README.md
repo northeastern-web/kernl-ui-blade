@@ -573,6 +573,7 @@ Any additional classes or attributes you put on the `item` component will be pas
 ```blade
 <x-kernl-interior-navigation.base
     title="About"
+    title-url="#"
     :links="[
         [
             'text' => 'Our Staff',
@@ -594,8 +595,10 @@ Any additional classes or attributes you put on the `item` component will be pas
 #### `x-kernl-interior-navigation.base` Props
 
 - `title` - Title for navigation
+- `title-url` - (optional) Url for navigation 
 - `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
   - `text` - Text for navigation item
+  - `href` - Url for navigation item
   - `active` - Sets navigation item as active. Default is `false`
   - `children` - Child navigation for navigation items.
   - `expandable` - Sets whether the child navigation can be expandable/collapsible. Applies when `children` is used. Default is `false`.
