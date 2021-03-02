@@ -8,11 +8,14 @@ class Base extends Component
 {
     public $title;
 
+    public $titleUrl;
+
     public $links;
 
-    public function __construct($title = null, $links = [])
+    public function __construct($title, $titleUrl = null, $links = [])
     {
         $this->title = $title;
+        $this->titleUrl = $titleUrl;
         $this->links = $links;
     }
 

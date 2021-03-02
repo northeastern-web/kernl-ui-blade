@@ -99,8 +99,8 @@
         aria-label="desktop {{ strtolower($title) }} navigation"
         class="hidden sticky top-0 py-8 text-gray-600 md:flex flex-col space-y-3"
     >
-        <a href="#" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
-            {{ $title ?? 'No title' }}
+        <a href="{{ $titleUrl ?? '#' }}" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
+            {{ $title }}
         </a>
         @foreach($links as $link)
             @if(count(data_get($link, 'children', [])) > 0)
