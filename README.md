@@ -68,7 +68,7 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 To use the local header component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-local-header :links="$links" :current-path="$currentPath">
+<x-kernl-local-header :links="$links" :current-path="$currentPath" action="/search">
     <x-slot name="logo">
         <!-- Insert SVG logo here with class="w-full" applied -->
     </x-slot>
@@ -111,6 +111,7 @@ To use the local header component, add the following markup to your Blade templa
     ```
 - `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
 - `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
+- `action` (optional) - Adds search component to header. `action` should be the url the search form should submit a GET request to. The input value will be submitted as a form parameter with the name `search`.
 
 ### Accordions
 
@@ -566,6 +567,64 @@ Any additional classes or attributes you put on the `item` component will be pas
 - `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
+
+### Heroes
+
+### Split Layout Media Content
+
+```blade
+<x-kernl-heroes.split-layout-content-media
+    media-url="https://media-url"
+    title="Title"
+    body="Body"
+    call-to-action="Call to Action"
+    call-to-action-url="https://call-to-action-url"
+/>
+
+{{-- OR --}}
+<x-kernl-heroes.split-layout-content-media
+    media-url="https://media-url"
+>
+    {{-- Your content --}}
+</x-kernl-heroes.split-layout-content-media>
+```
+
+#### `x-kernl-heroes.split-layout-content-media` Props
+
+- `media-url` - Url of image to show
+- `title` - Title of content
+- `body` - Body of content
+- `call-to-action` - Call To Action button label
+- `call-to-action-url` - Url of call to action button
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
+
+### Full Background Media Centered Content
+
+```blade
+<x-kernl-heroes.full-centered-content
+    title="Title"
+    subtitle="Title"
+    body="Body"
+/>
+
+{{-- OR --}}
+<x-kernl-heroes.full-centered-content>
+    {{-- Your content --}}
+</x-kernl-heroes.full-centered-content>
+```
+
+#### `x-kernl-heroes.full-centered-content` Props
+
+- `title` - Title of content
+- `subtitle` - Subtitle of content
+- `body` - Body of content
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
 
 
 ### Interior Navigation
