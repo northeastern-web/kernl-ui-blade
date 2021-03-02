@@ -44,7 +44,7 @@
     ></div>
 
     <nav
-        aria-label="mobile category navigation"
+        aria-label="mobile {{ strtolower($title) }} navigation"
         class="fixed inset-y-0 right-0 max-w-sm w-full py-12 px-6 text-gray-600 bg-white overflow-y-auto shadow md:hidden"
         style="display: none;"
 
@@ -96,7 +96,7 @@
     {{ $attributes->merge(['class' => 'px-4 md:w-1/3 lg:w-1/5']) }}
 >
     <nav
-        aria-label="desktop category navigation"
+        aria-label="desktop {{ strtolower($title) }} navigation"
         class="hidden sticky top-0 py-8 text-gray-600 md:flex flex-col space-y-3"
     >
         <a href="#" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
