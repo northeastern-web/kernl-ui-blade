@@ -19,7 +19,7 @@
         @endif
     >
         <span>
-            {{ data_get($link, 'text', 'No text') }}
+            {{ $link['text'] }}
         </span>
         @if(data_get($link, 'expandable', false))
             <svg

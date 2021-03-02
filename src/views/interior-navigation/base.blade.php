@@ -15,7 +15,7 @@
         class="btn text-gray-900 uppercase bg-gray-200 md:hidden hover:bg-gray-300"
         x-on:click="navIsOpen = true"
     >
-        {{ $title ?? 'No title' }}
+        {{ $title }}
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -59,7 +59,7 @@
         <div class="flex flex-col space-y-3">
             <div class="w-full flex items-center justify-between">
                 <a href="#" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
-                    {{ $title ?? 'No title' }}
+                    {{ $title }}
                 </a>
                 <button class="text-gray-500 md:hidden transition-colors hover:text-gray-600 focus:outline-none focus:ring focus:ring-blue-500" @click="navIsOpen = false">
                     <svg

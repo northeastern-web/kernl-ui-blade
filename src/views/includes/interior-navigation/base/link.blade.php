@@ -6,5 +6,5 @@
         class="px-2 border-l-2 transition-colors border-transparent hover:text-gray-900"
     @endif
 >
-    {{ data_get($link, 'text', 'No text') }}
+    {{ $link['text'] }}
 </a>
