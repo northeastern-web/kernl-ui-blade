@@ -14,6 +14,7 @@ use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
 use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
+use Northeastern\Blade\Components\Cards\SimpleLink as CardSimpleLink;
 use Northeastern\Blade\Components\Carousel\Split as CarouselSplit;
 use Northeastern\Blade\Components\Carousel\Split\Slide as CarouselSplitSlide;
 use Northeastern\Blade\Components\Footers\Local as FooterLocal;
@@ -62,5 +63,6 @@ class ServiceProvider extends BaseServiceProvider
         TabsDetached\Item::class => 'kernl-tabs.detached.item',
         HeroesSplitLayoutContentMedia::class => 'kernl-heroes.split-layout-content-media',
         HeroesCenteredContent::class => 'kernl-heroes.centered-content',
+        CardSimpleLink::class => 'kernl-cards.simple-link',
     ];
 }
