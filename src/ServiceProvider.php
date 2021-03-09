@@ -12,6 +12,7 @@ use Northeastern\Blade\Components\Banners\BottomTitle as BannersBottomTitle;
 use Northeastern\Blade\Components\Banners\WithOffsetCard as BannersWithOffsetCard;
 use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
+use Northeastern\Blade\Components\Cards\SimpleWithActions as CardSimpleWithActions;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
 use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;
 use Northeastern\Blade\Components\Cards\SimpleLink as CardSimpleLink;
@@ -64,5 +65,6 @@ class ServiceProvider extends BaseServiceProvider
         HeroesSplitLayoutContentMedia::class => 'kernl-heroes.split-layout-content-media',
         HeroesCenteredContent::class => 'kernl-heroes.centered-content',
         CardSimpleLink::class => 'kernl-cards.simple-link',
+        CardSimpleWithActions::class => 'kernl-cards.simple-with-actions',
     ];
 }
