@@ -11,10 +11,10 @@
         </p>
     @endif
 
-    @if(isset($actions))
-        {{ $actions }}
-    @else
-        <div class="mt-8 flex items-center">
+    <div class="mt-8 flex items-center">
+        @if(isset($actions))
+            {{ $actions }}
+        @else
             <a
                 href="{{ $primaryActionUrl }}"
                 class="{{ $primaryActionClasses() }}"
@@ -29,7 +29,7 @@
                     {{ $secondaryActionText }}
                 </a>
             @endif
-        </div>
-    @endif
+        @endif
+    </div>
 
 </div>

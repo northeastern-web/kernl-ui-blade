@@ -15,15 +15,15 @@
     @endif
 
     @if ($withFooter)
-        @if(isset($footer))
-            {{ $footer }}
-        @else
-            <footer class="mt-10 flex justify-between items-center">
-            <span class=" text-xs ">
-                {{ $footerText }}
-            </span>
-                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </footer>
-        @endif
+        <footer class="mt-10 flex justify-between items-center">
+            @if(isset($footer))
+                {{ $footer }}
+            @else
+                <span class=" text-xs ">
+                    {{ $footerText }}
+                </span>
+                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            @endif
+        </footer>
     @endif
 </a>
