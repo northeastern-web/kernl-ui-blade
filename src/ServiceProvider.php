@@ -12,6 +12,7 @@ use Northeastern\Blade\Components\Banners\BottomTitle as BannersBottomTitle;
 use Northeastern\Blade\Components\Banners\WithOffsetCard as BannersWithOffsetCard;
 use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
+use Northeastern\Blade\Components\Cards\LinkWithMediaAndActions as CardLinkWithMediaAndActions;
 use Northeastern\Blade\Components\Cards\SimpleLink as CardSimpleLink;
 use Northeastern\Blade\Components\Cards\LinkWithMedia as CardLinkWithMedia;
 use Northeastern\Blade\Components\Cards\SimpleWithActions as CardSimpleWithActions;
@@ -68,5 +69,6 @@ class ServiceProvider extends BaseServiceProvider
         CardSimpleLink::class => 'kernl-cards.simple-link',
         CardSimpleWithActions::class => 'kernl-cards.simple-with-actions',
         CardLinkWithMedia::class => 'kernl-cards.link-with-media',
+        CardLinkWithMediaAndActions::class => 'kernl-cards.link-with-media-and-actions',
     ];
 }
