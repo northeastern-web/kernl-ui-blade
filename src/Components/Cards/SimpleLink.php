@@ -15,7 +15,7 @@ class SimpleLink extends Component
     public $withFooter;
     public $footerText;
 
-    public function __construct($title, $body, $url = '#', $color = 'light', $size = 'default', $withFooter = false, $footerText = '')
+    public function __construct($title = null, $body = null, $url = '#', $color = 'light', $size = 'default', $withFooter = false, $footerText = '')
     {
         $this->title = $title;
         $this->body = $body;

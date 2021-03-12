@@ -3,18 +3,27 @@
     aria-label="{{ $title }}"
     class="{{ $cardClasses() }}"
 >
-    <h2 class="{{ $titleClasses() }}">
-        {{ $title }}
-    </h2>
-    <p class="{{ $bodyClasses() }}">
-        {{ $body }}
-    </p>
+    @if(isset($main))
+        {{ $main }}
+    @else
+        <h2 class="{{ $titleClasses() }}">
+            {{ $title }}
+        </h2>
+        <p class="{{ $bodyClasses() }}">
+            {{ $body }}
+        </p>
+    @endif
+
     @if ($withFooter)
-        <footer class="mt-10 flex justify-between items-center">
+        @if(isset($footer))
+            {{ $footer }}
+        @else
+            <footer class="mt-10 flex justify-between items-center">
             <span class=" text-xs ">
                 {{ $footerText }}
             </span>
-            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-        </footer>
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            </footer>
+        @endif
     @endif
 </a>
