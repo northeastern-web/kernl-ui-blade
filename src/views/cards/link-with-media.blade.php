@@ -20,25 +20,35 @@
         </div>
     </div>
     <div class="flex flex-col">
+
         <div class="{{ $bodyClasses() }}">
-            @if($preHeader)
-                <div class="{{ $preHeaderClasses() }}">
-                    {{ $preHeader }}
-                </div>
+            @if(isset($main))
+                {{ $main }}
+            @else
+                @if($preHeader)
+                    <div class="{{ $preHeaderClasses() }}">
+                        {{ $preHeader }}
+                    </div>
+                @endif
+                <h2 class="{{ $titleClasses() }}">
+                    {{ $title }}
+                </h2>
+                <p class="{{ $messageClasses() }}">
+                    {{ $body }}
+                </p>
             @endif
-            <h2 class="{{ $titleClasses() }}">
-                {{ $title }}
-            </h2>
-            <p class="{{ $messageClasses() }}">
-                {{ $body }}
-            </p>
         </div>
+
         @if($withFooter)
             <footer class="{{ $footerClasses() }}">
-                <span class="{{ $footerTextClasses() }}">
-                    {{ $footerText }}
-                </span>
-                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                @if(isset($footer))
+                    {{ $footer }}
+                @else
+                    <span class="{{ $footerTextClasses() }}">
+                        {{ $footerText }}
+                    </span>
+                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                @endif
             </footer>
         @endif
     </div>
