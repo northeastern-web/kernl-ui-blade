@@ -16,7 +16,7 @@ class SimpleWithActions extends Component
     public $secondaryActionText;
     public $secondaryActionUrl;
 
-    public function __construct($title, $body, $primaryActionText, $primaryActionUrl, $secondaryActionText = null, $secondaryActionUrl = null, $color = 'light', $size = 'default')
+    public function __construct($title = null, $body = null, $primaryActionText = null, $primaryActionUrl = null, $secondaryActionText = null, $secondaryActionUrl = null, $color = 'light', $size = 'default')
     {
         $this->title = $title;
         $this->body = $body;
