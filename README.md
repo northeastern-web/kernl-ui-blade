@@ -839,3 +839,56 @@ Any additional classes or attributes you put on the component will be passed thr
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
+
+
+### Event
+
+```blade
+<x-kernl-cards.event
+    title="Title text"
+    body="Body text"
+    url="Url on click"
+    image-url="Url to image"
+    color="light|light-gray|dark"
+    date="Date text"
+    time="Time text"
+    :with-footer="true|false"
+    footer-text="Footer text"
+/>
+
+{{-- OR --}}
+
+<x-kernl-cards.event
+    title="Title text"
+    body="Body text"
+    url="Url on click"
+    image-url="Url to image"
+    color="light|light-gray|dark"
+    date="Date text"
+    time="Time text"
+    :with-footer="true|false"
+>
+    <x-slot name="main">
+        {{-- Main Content --}} 
+    </x-slot>
+    <x-slot name="footer">
+        {{-- Footer Content --}}
+    </x-slot>
+</x-kernl-cards.event>
+```
+
+#### `x-kernl-cards.event` Props
+
+- `title` - Title text
+- `body` - Body text
+- `date` - Date to display
+- `time` - Time to display
+- `color` - (optional) Background color of the card. Defaults to 'light'
+- `url` - Url to navigate on click'
+- `image-url` - Url to image'
+- `:with-footer` - (optional) Shows/hides footer. Defaults to false
+- `footer-text` - (optional) Footer text
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
