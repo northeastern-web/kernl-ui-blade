@@ -625,3 +625,96 @@ Any additional classes or attributes you put on the component will be passed thr
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
+
+
+### Cards
+
+### Simple Link
+
+```blade
+<x-kernl-cards.simple-link
+    title="Title Text"
+    body="Body Text"
+    color="red|light|light-gray|dark"
+    size="sm|default"
+    :with-footer="true|false"
+    footer-text="Footer Text"
+    url="https://www.google.com"
+/>
+
+{{-- OR --}}
+
+<x-kernl-cards.simple-link
+    url="https://www.google.com"
+    :with-footer="true"
+>
+    <x-slot name="main">
+        {{-- Main Content --}}
+    </x-slot>
+    <x-slot name="footer">
+        {{-- Footer Content --}}
+    </x-slot>
+</x-kernl-cards.simple-link>
+```
+
+#### `x-kernl-cards.simple-link` Props
+
+- `title` - Title text
+- `body` - Body text
+- `color` - (optional) Background color of the card. Defaults to 'light'
+- `size` - (optional) Text size. Defaults to 'default'
+- `:with-footer` - (optional) Shows/hides footer. Default is false'
+- `footer-text` - Footer text
+- `url` - Url to navigate on card click 
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+
+### Simple With Actions
+
+```blade
+<x-kernl-cards.simple-with-actions
+    title="Title text"
+    body="Body text"
+    color="red|light|light-gray|dark"
+    size="sm|default"
+    primary-action-text="Primary action text"
+    primary-action-url="https://www.google.com"
+    secondary-action-text="Secondary action text"
+    secondary-action-url="https://www.google.com"
+/>
+
+{{-- OR --}}
+
+<x-kernl-cards.simple-with-actions
+    title="Title text"
+    body="Body text"
+    color="red"
+    color="red|light|light-gray|dark"
+    size="sm|default"
+>
+    <x-slot name="main">
+        {{-- Main Content --}}
+    </x-slot>
+    <x-slot name="actions">
+        {{-- Actions Content --}}
+    </x-slot>
+</x-kernl-cards.simple-with-actions>
+```
+
+#### `x-kernl-cards.simple-with-actions` Props
+
+- `title` - Title text
+- `body` - Body text
+- `color` - (optional) Background color of the card. Defaults to 'light'
+- `size` - (optional) Text size. Defaults to 'default'
+- `primary-action-text` - Text displayed for Primary Action'
+- `primary-action-url` - Url to navigate to when on Primary Action click'
+- `secondary-action-text` - (optional) Text displayed for Secondary Action'
+- `secondary-action-url` - (optional) Url to navigate to when on Secondary Action click'
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
+
