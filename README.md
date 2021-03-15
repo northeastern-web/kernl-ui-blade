@@ -718,3 +718,124 @@ Any additional classes or attributes you put on the component will be passed thr
 
 > Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
 
+
+### Link With Media
+
+```blade
+<x-kernl-cards.link-with-media
+    title="Title text"
+    body="Body text"
+    color="red|light|light-gray|dark"
+    aspect-ratio="1:1|16:9|4:5|5:4"
+    image-url="Url to image"
+    badge="Badget text"
+    orientation="vertical|horizontal|horizontal-flipped"
+    pre-header="Pre Header text"
+    :with-footer="true|false"
+    footer-text="Footer text"
+    url="Url on click"
+/>
+
+{{-- OR --}}
+
+<x-kernl-cards.link-with-media
+    title="Title text"
+    body="Body text"
+    color="red|light|light-gray|dark"
+    aspect-ratio="1:1|16:9|4:5|5:4"
+    image-url="Url to image"
+    url="Url on click"
+    orientation="vertical|horizontal|horizontal-flipped"
+    badge="Badget text"
+    pre-header="Pre Header text"
+    :with-footer="true|false"
+    footer-text="Footer text"
+>
+    <x-slot name="main">
+        {{-- Main Content --}}
+    </x-slot>
+    <x-slot name="footer">
+        {{-- Footer Content --}}
+    </x-slot>
+</x-kernl-cards.link-with-media>
+```
+
+#### `x-kernl-cards.link-with-media` Props
+
+- `title` - Title text
+- `body` - Body text
+- `color` - (optional) Background color of the card. Defaults to 'light'
+- `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
+- `image-url` - Url to image'
+- `url` - Url to navigate on click'
+- `orientation` - (optional) Orientation of image. Defaults to 'vertical'
+- `badge` - (optional) Badge text
+- `pre-header` - (optional) Pre header text
+- `:with-footer` - (optional) Shows/hides footer. Defaults to false
+- `footer-text` - (optional) Footer text
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+
+
+### Link With Media And Actions
+
+```blade
+<x-kernl-cards.link-with-media-and-actions
+    title="Title text"
+    body="Body text"
+    color="red|light|light-gray|dark"
+    aspect-ratio="1:1|16:9|4:5|5:4"
+    image-url="Url to image"
+    url="Url on click"
+    badge="Badget text"
+    orientation="vertical|horizontal|horizontal-flipped"
+    pre-header="Pre Header text"
+    primary-action-text="Primary action text"
+    primary-action-url="https://www.google.com"
+    secondary-action-text="Secondary action text"
+    secondary-action-url="https://www.google.com"
+/>
+
+{{-- OR --}}
+
+<x-kernl-cards.link-with-media-and-actions
+    title="Title text"
+    body="Body text"
+    color="red|light|light-gray|dark"
+    aspect-ratio="1:1|16:9|4:5|5:4"
+    image-url="Url to image"
+    url="Url on click"
+    badge="Badget text"
+    orientation="vertical|horizontal|horizontal-flipped"
+    pre-header="Pre Header text"
+>
+    <x-slot name="main">
+        {{-- Main Content --}}
+    </x-slot>
+    <x-slot name="actions">
+        {{-- Actions Content --}}
+    </x-slot>
+</x-kernl-cards.link-with-media-and-actions>
+```
+
+#### `x-kernl-cards.link-with-media-and-actions` Props
+
+- `title` - Title text
+- `body` - Body text
+- `color` - (optional) Background color of the card. Defaults to 'light'
+- `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
+- `image-url` - Url to image'
+- `url` - Url to navigate on click'
+- `orientation` - (optional) Orientation of image. Defaults to 'vertical'
+- `badge` - (optional) Badge text
+- `pre-header` - (optional) Pre header text
+- `primary-action-text` - Text displayed for Primary Action'
+- `primary-action-url` - Url to navigate to when on Primary Action click'
+- `secondary-action-text` - (optional) Text displayed for Secondary Action'
+- `secondary-action-url` - (optional) Url to navigate to when on Secondary Action click'
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
