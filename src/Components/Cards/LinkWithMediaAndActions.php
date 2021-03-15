@@ -13,8 +13,6 @@ class LinkWithMediaAndActions extends Component
     public $badge;
     public $preHeader;
     public $color;
-    public $withFooter;
-    public $footerText;
     public $aspectRatio;
     public $orientation;
     public $primaryActionText;
