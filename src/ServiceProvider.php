@@ -13,9 +13,9 @@ use Northeastern\Blade\Components\Banners\WithOffsetCard as BannersWithOffsetCar
 use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
 use Northeastern\Blade\Components\Cards\Event as CardEvent;
+use Northeastern\Blade\Components\Cards\LinkWithMedia as CardLinkWithMedia;
 use Northeastern\Blade\Components\Cards\LinkWithMediaAndActions as CardLinkWithMediaAndActions;
 use Northeastern\Blade\Components\Cards\SimpleLink as CardSimpleLink;
-use Northeastern\Blade\Components\Cards\LinkWithMedia as CardLinkWithMedia;
 use Northeastern\Blade\Components\Cards\SimpleWithActions as CardSimpleWithActions;
 use Northeastern\Blade\Components\Carousel\Base as CarouselBase;
 use Northeastern\Blade\Components\Carousel\Base\Slide as CarouselBaseSlide;

@@ -27,8 +27,7 @@ class Event extends Component
         $footerText = '',
         $date = null,
         $time = null
-    )
-    {
+    ) {
         $this->imageUrl = $imageUrl;
         $this->title = $title;
         $this->body = $body;
