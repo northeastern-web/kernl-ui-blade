@@ -61,7 +61,6 @@ class LinkWithMediaAndActions extends Component
         return collect()
             ->merge([
                 'block',
-                'w-full',
                 'shadow-sm',
             ])
             ->merge([

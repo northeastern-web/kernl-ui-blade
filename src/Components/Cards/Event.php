@@ -47,7 +47,6 @@ class Event extends Component
     {
         return collect()
             ->merge([
-                'w-full',
                 'shadow-sm',
                 'transition-colors',
                 'group',

@@ -52,10 +52,10 @@ class SimpleLink extends Component
             ])
             // Size
             ->when($this->size === 'default', function ($classes) {
-                return $classes->push('max-w-xs', 'w-full', 'px-6', 'py-8');
+                return $classes->push('px-6', 'py-8');
             })
             ->when($this->size === 'sm', function ($classes) {
-                return $classes->push('w-64', 'p-4');
+                return $classes->push('p-4');
             })
             // Color
             ->when($this->color === 'light', function ($classes) {
