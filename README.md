@@ -777,6 +777,8 @@ Any additional classes or attributes you put on the component will be passed thr
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+>
+> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
 
 
 ### Link With Media And Actions
@@ -838,7 +840,9 @@ Any additional classes or attributes you put on the component will be passed thr
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
+> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
+> 
+> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
 
 
 ### Event
@@ -892,3 +896,5 @@ Any additional classes or attributes you put on the component will be passed thr
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+>
+> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
