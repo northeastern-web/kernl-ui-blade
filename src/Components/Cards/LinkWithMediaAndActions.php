@@ -33,8 +33,7 @@ class LinkWithMediaAndActions extends Component
         $primaryActionUrl = null,
         $secondaryActionText = null,
         $secondaryActionUrl = null
-    )
-    {
+    ) {
         $this->imageUrl = $imageUrl;
         $this->title = $title;
         $this->body = $body;

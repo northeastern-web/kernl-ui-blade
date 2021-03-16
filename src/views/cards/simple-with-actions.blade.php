@@ -1,15 +1,17 @@
 <div class="{{ $cardClasses() }}">
 
-    @if(isset($main))
-        {{ $main }}
-    @else
-        <h2 class="{{ $titleClasses() }}">
-            {{ $title }}
-        </h2>
-        <p class="{{ $bodyClasses }}">
-            {{ $body }}
-        </p>
-    @endif
+    <div class="flex-1">
+        @if(isset($main))
+            {{ $main }}
+        @else
+            <h2 class="{{ $titleClasses() }}">
+                {{ $title }}
+            </h2>
+            <p class="{{ $bodyClasses }}">
+                {{ $body }}
+            </p>
+        @endif
+    </div>
 
     <div class="mt-8 flex items-center">
         @if(isset($actions))
