@@ -54,7 +54,6 @@ class Event extends Component
                 'focus:ring',
                 'focus:ring-blue-500',
                 'block',
-                'max-w-xs',
             ])
             ->merge([
                 $this->attributes->first('class'),

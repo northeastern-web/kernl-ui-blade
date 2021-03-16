@@ -68,13 +68,13 @@ class LinkWithMedia extends Component
             })
             // Orientation
             ->when($this->orientation === 'vertical', function ($classes) {
-                return $classes->push('block', 'max-w-xs');
+                return $classes->push('block');
             })
             ->when($this->orientation === 'horizontal', function ($classes) {
-                return $classes->push('flex', 'flex-col', 'max-w-sm', 'lg:flex-row', 'lg:max-w-xl');
+                return $classes->push('flex', 'flex-col', 'lg:flex-row');
             })
             ->when($this->orientation === 'horizontal-flipped', function ($classes) {
-                return $classes->push('flex', 'flex-col', 'max-w-sm', 'lg:flex-row-reverse', 'lg:max-w-xl');
+                return $classes->push('flex', 'flex-col', 'lg:flex-row-reverse');
             })
             ->join(' ')
             ;
@@ -167,7 +167,6 @@ class LinkWithMedia extends Component
                 'relative',
                 'w-full',
                 'bg-black',
-                'lg:max-w-xs',
             ])
             ->when($this->orientation !== 'vertical', function ($classes) {
                 return $classes->push('flex-shrink-0', 'lg:w-72');
