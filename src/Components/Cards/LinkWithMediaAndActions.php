@@ -78,7 +78,7 @@ class LinkWithMediaAndActions extends Component
             })
             // Orientation
             ->when($this->orientation === 'vertical', function ($classes) {
-                return $classes->push('');
+                return $classes->push('flex', 'flex-col');
             })
             ->when($this->orientation === 'horizontal', function ($classes) {
                 return $classes->push('flex', 'flex-col', 'lg:flex-row');

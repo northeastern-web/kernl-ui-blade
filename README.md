@@ -663,13 +663,13 @@ Any additional classes or attributes you put on the component will be passed thr
 - `body` - Body text
 - `color` - (optional) Background color of the card. Defaults to 'light'
 - `size` - (optional) Text size. Defaults to 'default'
-- `:with-footer` - (optional) Shows/hides footer. Default is false'
+- `:with-footer` - (optional) Shows/hides footer. Default is false
 - `footer-text` - Footer text
-- `url` - Url to navigate on card click 
+- `url` - URL to navigate on card click
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 
 ### Simple With Actions
 
@@ -709,15 +709,14 @@ Any additional classes or attributes you put on the component will be passed thr
 - `body` - Body text
 - `color` - (optional) Background color of the card. Defaults to 'light'
 - `size` - (optional) Text size. Defaults to 'default'
-- `primary-action-text` - Text displayed for Primary Action'
-- `primary-action-url` - Url to navigate to when on Primary Action click'
-- `secondary-action-text` - (optional) Text displayed for Secondary Action'
-- `secondary-action-url` - (optional) Url to navigate to when on Secondary Action click'
+- `primary-action-text` - Text displayed for Primary Action
+- `primary-action-url` - URL to navigate to when when the Primary Action is clicked
+- `secondary-action-text` - (optional) Text displayed for Secondary Action
+- `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.  
-
+> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
 
 ### Link With Media
 
@@ -727,13 +726,13 @@ Any additional classes or attributes you put on the component will be passed thr
     body="Body text"
     color="red|light|light-gray|dark"
     aspect-ratio="1:1|16:9|4:5|5:4"
-    image-url="Url to image"
-    badge="Badget text"
+    image-url="URL to image"
+    badge="Badge text"
     orientation="vertical|horizontal|horizontal-flipped"
     pre-header="Pre Header text"
     :with-footer="true|false"
     footer-text="Footer text"
-    url="Url on click"
+    url="URL for link"
 />
 
 {{-- OR --}}
@@ -743,10 +742,10 @@ Any additional classes or attributes you put on the component will be passed thr
     body="Body text"
     color="red|light|light-gray|dark"
     aspect-ratio="1:1|16:9|4:5|5:4"
-    image-url="Url to image"
-    url="Url on click"
+    image-url="URL to image"
+    url="URL for link"
     orientation="vertical|horizontal|horizontal-flipped"
-    badge="Badget text"
+    badge="Badge text"
     pre-header="Pre Header text"
     :with-footer="true|false"
     footer-text="Footer text"
@@ -766,8 +765,8 @@ Any additional classes or attributes you put on the component will be passed thr
 - `body` - Body text
 - `color` - (optional) Background color of the card. Defaults to 'light'
 - `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
-- `image-url` - Url to image'
-- `url` - Url to navigate on click'
+- `image-url` - URL to image
+- `url` - URL to navigate to on click
 - `orientation` - (optional) Orientation of image. Defaults to 'vertical'
 - `badge` - (optional) Badge text
 - `pre-header` - (optional) Pre header text
@@ -776,9 +775,9 @@ Any additional classes or attributes you put on the component will be passed thr
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 >
-> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
+> Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
 
 
 ### Link With Media And Actions
@@ -789,9 +788,9 @@ Any additional classes or attributes you put on the component will be passed thr
     body="Body text"
     color="red|light|light-gray|dark"
     aspect-ratio="1:1|16:9|4:5|5:4"
-    image-url="Url to image"
-    url="Url on click"
-    badge="Badget text"
+    image-url="URL to image"
+    url="URL for link"
+    badge="Badge text"
     orientation="vertical|horizontal|horizontal-flipped"
     pre-header="Pre Header text"
     primary-action-text="Primary action text"
@@ -807,9 +806,9 @@ Any additional classes or attributes you put on the component will be passed thr
     body="Body text"
     color="red|light|light-gray|dark"
     aspect-ratio="1:1|16:9|4:5|5:4"
-    image-url="Url to image"
-    url="Url on click"
-    badge="Badget text"
+    image-url="URL to image"
+    url="URL for link"
+    badge="Badge text"
     orientation="vertical|horizontal|horizontal-flipped"
     pre-header="Pre Header text"
 >
@@ -828,22 +827,21 @@ Any additional classes or attributes you put on the component will be passed thr
 - `body` - Body text
 - `color` - (optional) Background color of the card. Defaults to 'light'
 - `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
-- `image-url` - Url to image'
-- `url` - Url to navigate on click'
+- `image-url` - URL to image
+- `url` - URL to navigate to on click
 - `orientation` - (optional) Orientation of image. Defaults to 'vertical'
 - `badge` - (optional) Badge text
 - `pre-header` - (optional) Pre header text
-- `primary-action-text` - Text displayed for Primary Action'
-- `primary-action-url` - Url to navigate to when on Primary Action click'
-- `secondary-action-text` - (optional) Text displayed for Secondary Action'
-- `secondary-action-url` - (optional) Url to navigate to when on Secondary Action click'
+- `primary-action-text` - Text displayed for Primary Action
+- `primary-action-url` - URL to navigate to when when the Primary Action is clicked
+- `secondary-action-text` - (optional) Text displayed for Secondary Action
+- `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
 
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
-> 
-> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
-
+>
+> Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
 
 ### Event
 
@@ -851,8 +849,8 @@ Any additional classes or attributes you put on the component will be passed thr
 <x-kernl-cards.event
     title="Title text"
     body="Body text"
-    url="Url on click"
-    image-url="Url to image"
+    url="URL for link"
+    image-url="URL to image"
     color="light|light-gray|dark"
     date="Date text"
     time="Time text"
@@ -865,15 +863,15 @@ Any additional classes or attributes you put on the component will be passed thr
 <x-kernl-cards.event
     title="Title text"
     body="Body text"
-    url="Url on click"
-    image-url="Url to image"
+    url="URL for link"
+    image-url="URL to image"
     color="light|light-gray|dark"
     date="Date text"
     time="Time text"
     :with-footer="true|false"
 >
     <x-slot name="main">
-        {{-- Main Content --}} 
+        {{-- Main Content --}}
     </x-slot>
     <x-slot name="footer">
         {{-- Footer Content --}}
@@ -888,13 +886,13 @@ Any additional classes or attributes you put on the component will be passed thr
 - `date` - Date to display
 - `time` - Time to display
 - `color` - (optional) Background color of the card. Defaults to 'light'
-- `url` - Url to navigate on click'
-- `image-url` - Url to image'
+- `url` - URL to navigate to on click'
+- `image-url` - URL to image'
 - `:with-footer` - (optional) Shows/hides footer. Defaults to false
 - `footer-text` - (optional) Footer text
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.  
+> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 >
-> Note: Plugin `@tailwindcss/aspect-ratio` is required for `aspect-ratio` options to work. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
+> Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)

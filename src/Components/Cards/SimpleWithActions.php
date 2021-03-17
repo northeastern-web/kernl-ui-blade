@@ -41,6 +41,8 @@ class SimpleWithActions extends Component
     {
         return collect()
             ->merge([
+                'flex',
+                'flex-col',
                 'shadow-sm',
             ])
             ->merge([

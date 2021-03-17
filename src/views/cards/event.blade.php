@@ -12,8 +12,8 @@
             >
         </div>
     </div>
-    <div class="flex flex-col">
-        <div class="px-5 flex-1 pt-6 pb-8">
+    <div class="flex flex-col flex-1 pt-6 pb-8 px-5">
+        <div class="flex-1">
             @if(isset($main))
                 {{ $main }}
             @else
@@ -36,19 +36,19 @@
                     </p>
                 </div>
             @endif
-
-            @if($withFooter)
-                <footer class="{{ $footerClasses() }}">
-                    @if(isset($footer))
-                        {{ $footer }}
-                    @else
-                        <span class="{{ $footerTextClasses() }}">
-                        {{ $footerText }}
-                    </span>
-                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-                    @endif
-                </footer>
-            @endif
         </div>
+
+        @if($withFooter)
+            <footer class="{{ $footerClasses() }}">
+                @if(isset($footer))
+                    {{ $footer }}
+                @else
+                    <span class="{{ $footerTextClasses() }}">
+                    {{ $footerText }}
+                </span>
+                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                @endif
+            </footer>
+        @endif
     </div>
 </a>
