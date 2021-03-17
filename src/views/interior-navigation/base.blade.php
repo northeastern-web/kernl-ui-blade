@@ -58,7 +58,7 @@
     >
         <div class="flex flex-col space-y-3">
             <div class="w-full flex items-center justify-between">
-                <a href="#" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
+                <a href="{{ $titleUrl ?? '#' }}" class="px-2 uppercase tracking-wide text-gray-900 border-l-2 border-transparent">
                     {{ $title }}
                 </a>
                 <button class="text-gray-500 md:hidden transition-colors hover:text-gray-600 focus:outline-none focus:ring focus:ring-blue-500" @click="navIsOpen = false">
