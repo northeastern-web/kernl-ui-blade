@@ -653,14 +653,14 @@ Any additional classes or attributes you put on the component will be passed thr
 #### `x-kernl-interior-navigation.base` Props
 
 - `title` - Title for navigation
-- `title-url` - (optional) Url for navigation
+- `title-url` - (optional) URL for navigation
 - `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
-  - `text` - Text for navigation item
-  - `href` - Url for navigation item
-  - `active` - Sets navigation item as active. Default is `false`
-  - `children` - Child navigation for navigation items.
-  - `expandable` - Sets whether the child navigation can be expandable/collapsible. Applies when `children` is used. Default is `false`.
-  - `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`.
+  - `text` - Text for the navigation item
+  - `href` - URL for the navigation item
+  - `active` - Sets the navigation item as active. Default is `false`
+  - `children` - Child navigation for navigation items
+  - `expandable` - Sets whether the child navigation can be expanded/collapsed. Applies when `children` is used. Default is `false`
+  - `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`
 
 Any additional classes or attributes you put on the `base` component will be passed through the root div component.
 
