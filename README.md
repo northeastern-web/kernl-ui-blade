@@ -626,6 +626,43 @@ Any additional classes or attributes you put on the component will be passed thr
 
 > Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
 
+### Interior Navigation
+
+```blade
+<x-kernl-interior-navigation.base
+    title="About"
+    title-url="#"
+    :links="[
+        [
+            'text' => 'Our Staff',
+            'href' => '#',
+        ],
+        [
+            'text' => 'Job Opportunities',
+            'expandable' => true,
+            'expanded' => true,
+            'children' => [
+                ['text' => 'Part Time', 'href' => '#'],
+                ['text' => 'Full Time', 'href' => '#'],
+            ],
+        ],
+    ]"
+/>
+```
+
+#### `x-kernl-interior-navigation.base` Props
+
+- `title` - Title for navigation
+- `title-url` - (optional) URL for navigation
+- `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
+  - `text` - Text for the navigation item
+  - `href` - URL for the navigation item
+  - `active` - Sets the navigation item as active. Default is `false`
+  - `children` - Child navigation for navigation items
+  - `expandable` - Sets whether the child navigation can be expanded/collapsed. Applies when `children` is used. Default is `false`
+  - `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`
+
+Any additional classes or attributes you put on the `base` component will be passed through the root div component.
 
 ### Cards
 
