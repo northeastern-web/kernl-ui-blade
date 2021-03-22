@@ -1,6 +1,7 @@
 
 <div
-    class="relative w-full p-4"
+    {{ $attributes->merge(['class' => 'relative p-4']) }}
+
     x-data="{...select()}"
     x-init='() => {
         init("{{ $name }}", {{ $multiple ? 'true' : 'false' }}, "{{ $placeholder }}", $dispatch)
