@@ -13,12 +13,15 @@
     }'
     x-on:click.away="close()"
     x-on:keydown.prevent.stop.escape="close()"
+
+    x-on:keydown.arrow-down="navigateDown()"
+    x-on:keydown.arrow-up="navigateUp()"
 >
     <div class="inline-block relative w-full">
         <div class="w-full flex flex-wrap items-start">
             <div class="relative w-full mb-2 sm:mb-0">
                 <label for="{{ $name }}-input" class="sr-only">
-                    {{ $placeholder ?? '' }}
+                    {{ $placeholder }}
                 </label>
                 <input
                     id="{{ $name }}-input"
@@ -56,13 +59,16 @@
                     class="flex flex-col w-full overflow-y-auto h-64 outline-none focus:ring focus:ring-blue-500"
                     :aria-expanded="isOpen() ? 'true' : 'false'"
                     tabindex="0"
+                    x-ref="dropdown"
+                    x-on:keydown.prevent.stop.enter="updateValueWithFocusedNavIndex"
                 >
                     <template
-                        x-for="filteredOption in filteredOptions()"
+                        x-for="(filteredOption, index) in filteredOptions()"
                         x-bind:key="filteredOption.value"
                     >
                         <li
                             class="cursor-pointer px-3 w-full hover:bg-gray-100 hover:text-gray-900 duration-100 transition-colors"
+                            x-bind:class="{'bg-gray-200': navIndex === index}"
                         >
                             <div
                                 class="flex w-full items-center p-2 px-3 rounded-bottom-sm relative"
@@ -96,12 +102,15 @@
         isDropdownOpen: false,
         searchTerm: '',
 
+        navIndex: -1,
+
         init(name, multiple, placeholder, dispatch) {
             this.name = name
             this.multiple = multiple
             this.placeholder = placeholder
             this.dispatch = dispatch
             this.initValue()
+            this.resetNavigation()
         },
 
         setupOptions(options) {
@@ -147,6 +156,15 @@
             }
 
             this.close()
+        },
+
+        updateValueWithFocusedNavIndex() {
+            const option = this.filteredOptions()[this.navIndex]
+            if (!option) {
+                return
+            }
+
+            this.updateValue(option.value)
         },
 
         setupWatcher() {
@@ -237,6 +255,35 @@
         close() {
             this.isDropdownOpen = false
             this.clearSearchTerm()
+            this.resetNavigation()
         },
+
+        resetNavigation() {
+            this.navIndex = -1;
+        },
+
+        navigateDown() {
+            if (this.navIndex + 1 >= this.filteredOptions().length) {
+                return
+            }
+
+            this.navIndex += 1
+
+            if (this.navIndex > -1) {
+                this.$refs.dropdown.focus()
+            }
+        },
+
+        navigateUp() {
+            if (this.navIndex === -1) {
+                return
+            }
+
+            this.navIndex -= 1
+
+            if (this.navIndex === -1) {
+                this.$refs.searchInput.focus()
+            }
+        }
     })
 </script>
