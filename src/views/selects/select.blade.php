@@ -1,6 +1,6 @@
 
 <div
-    {{ $attributes->merge(['class' => 'relative p-4']) }}
+    {{ $attributes->merge(['class' => 'relative']) }}
 
     x-data="{...select()}"
     x-init='() => {
@@ -19,15 +19,15 @@
     x-on:keydown.arrow-up="navigateUp()"
 >
     <div class="inline-block relative w-full">
-        <div class="w-full flex flex-wrap items-start">
-            <div class="relative w-full mb-2 sm:mb-0">
+        <div class="w-full">
+            <div class="relative w-full">
                 <label for="{{ $name }}-input" class="sr-only">
                     {{ $placeholder }}
                 </label>
                 <input
                     id="{{ $name }}-input"
                     type="text"
-                    class="w-full h-full px-3 py-2 transition-colors border-0 border-b-2 outline-none focus:outline-none"
+                    class="w-full transition-colors border-0 border-b border-gray-400 focus:border-blue-600"
                     x-bind:class="{'border-red-600': isOpen()}"
                     x-ref="searchInput"
                     x-model="searchTerm"
@@ -54,10 +54,11 @@
             <div
                 x-cloak
                 x-show.transition.duration.300ms="isOpen()"
-                class="absolute shadow-lg border-1 border-gray-100 top-100 bg-white z-40 w-full rounded-t-0 rounded-sm left-0 max-h-select"
+                class="absolute shadow-lg border border-gray-100 bg-white z-40 w-full rounded-t-0 rounded-sm left-0"
             >
                 <ul
-                    class="flex flex-col w-full overflow-y-auto h-64 outline-none focus:ring focus:ring-blue-500"
+                    class="flex flex-col w-full overflow-y-auto focus:outline-none focus:ring focus:ring-blue-500"
+                    style="max-height: 16rem"
                     :aria-expanded="isOpen() ? 'true' : 'false'"
                     tabindex="0"
                     x-ref="dropdown"
@@ -68,11 +69,14 @@
                         x-bind:key="filteredOption.value"
                     >
                         <li
-                            class="cursor-pointer px-3 w-full hover:bg-gray-100 hover:text-gray-900 duration-100 transition-colors"
-                            x-bind:class="{'bg-gray-200': navIndex === index}"
+                            class="cursor-pointer w-full hover:bg-gray-100 hover:text-gray-900 duration-100 transition-colors"
+                            x-bind:class="{
+                                'bg-gray-200': navIndex === index,
+                                'bg-gray-100': isOptionValueSelected(filteredOption.value),
+                            }"
                         >
                             <div
-                                class="flex w-full items-center p-2 px-3 rounded-bottom-sm relative"
+                                class="flex w-full items-center py-2 px-3 rounded-bottom-sm relative"
                                 x-on:click="updateValue(filteredOption.value)"
                             >
                                 <div
