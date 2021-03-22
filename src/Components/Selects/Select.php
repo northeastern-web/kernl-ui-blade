@@ -10,13 +10,17 @@ class Select extends Component
     public $options;
     public $listens;
     public $initialValue;
+    public $multiple;
+    public $placeholder;
 
-    public function __construct($name, $options = [], $listens = [], $initialValue = null)
+    public function __construct($name, $options = [], $listens = [], $initialValue = null, $multiple = false, $placeholder = 'Select an option')
     {
         $this->name = $name;
         $this->options = $options;
         $this->listens = $listens;
         $this->initialValue = $initialValue;
+        $this->multiple = $multiple;
+        $this->placeholder = $placeholder;
     }
 
     public function render()
