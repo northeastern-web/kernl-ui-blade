@@ -54,7 +54,7 @@
             <div
                 x-cloak
                 x-show.transition.duration.300ms="isOpen()"
-                class="absolute shadow-lg border border-gray-100 bg-white z-40 w-full rounded-t-0 rounded-sm left-0"
+                class="absolute shadow-lg border border-gray-100 bg-white z-50 w-full rounded-t-0 rounded-sm left-0"
             >
                 <ul
                     class="flex flex-col w-full overflow-y-auto focus:outline-none focus:ring focus:ring-blue-500"
