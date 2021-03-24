@@ -173,6 +173,8 @@
         },
 
         navigateDown() {
+            this.open();
+
             if (this.navIndex + 1 >= this.filteredOptions().length) {
                 return
             }
