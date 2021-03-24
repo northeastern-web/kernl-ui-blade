@@ -933,3 +933,38 @@ Any additional classes or attributes you put on the component will be passed thr
 > Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 >
 > Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
+
+
+### Select
+
+```blade
+<x-kernl-selects.select
+    name="example-input"
+    :options="[
+        ['value' => 'value_1', 'label' => 'Value 1', 'category' => 'SINGLE'],
+        ['value' => 'value_2', 'label' => 'Value 2', 'category' => 'SINGLE'],
+        ['value' => 'value_3', 'label' => 'Value 3', 'category' => 'MULTI'],
+    ]"
+    :multiple="true|false"
+    placeholder="Placeholder text"
+    :listens="[
+        'category-changed' => ['filter' => 'category'],
+    ]"
+    x-on:example-input-changed="someMethod($event.detail.value)"
+/>
+```
+
+#### `x-kernl-selects.select` Props
+
+- `name` - Name of the input.
+- `:options` - Array of options to select. Must include at least `value` and `label` keys.
+- `:multiple` - (optional) Allow multiple options to be selected. Defaults to false.
+- `placeholder` - (optional) Text to be presented when no selection has been made.
+- `:listens` - (optional) Allows to filter options automatically when some other select input changes.
+Keyed array must have keys for `input-changed` event and `filter` with the desired attribute to filter options. Eg: when
+`category-changed` is received, `:options` will be filtered with the value present in `category` for each option.
+- `x-on:{input-name}-changed` - (optional) Listen for a change on the dropdown.
+
+Any additional classes or attributes you put on the component will be passed through.
+
+> Note: The `@tailwindcss/forms` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-forms)

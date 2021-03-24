@@ -30,6 +30,7 @@ use Northeastern\Blade\Components\Loaders\Light as LoadersLight;
 use Northeastern\Blade\Components\LocalHeader;
 use Northeastern\Blade\Components\Modals\Base as ModalsBase;
 use Northeastern\Blade\Components\Scripts;
+use Northeastern\Blade\Components\Selects\Select;
 use Northeastern\Blade\Components\Tabs\Bordered as TabsBordered;
 use Northeastern\Blade\Components\Tabs\Detached as TabsDetached;
 use Northeastern\Blade\Components\Tabs\Underlined as TabsUnderlined;
@@ -74,5 +75,6 @@ class ServiceProvider extends BaseServiceProvider
         CardLinkWithMedia::class => 'kernl-cards.link-with-media',
         CardLinkWithMediaAndActions::class => 'kernl-cards.link-with-media-and-actions',
         CardEvent::class => 'kernl-cards.event',
+        Select::class => 'kernl-selects.select',
     ];
 }
