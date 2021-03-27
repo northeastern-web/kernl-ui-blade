@@ -7,35 +7,40 @@ use Illuminate\View\Component;
 
 class Base extends Component
 {
-    public $name;
     public $mode;
     public $numberOfPages;
     public $currentPage;
     public $paginationUrl;
     public $queryParamName;
     public $appends;
+    public $emits;
 
     public function __construct(
-        $name = null,
         $mode = 'php',
         $numberOfPages = 0,
         $currentPage = null,
         $paginationUrl = '#',
         $queryParamName = 'page',
-        $appends = []
+        $appends = [],
+        $emits = 'page-changed'
     ) {
-        $this->name = $name;
         $this->mode = $mode;
         $this->numberOfPages = (int) $numberOfPages;
         $this->currentPage = $currentPage ? (int) $currentPage : 1;
         $this->paginationUrl = $paginationUrl;
         $this->queryParamName = $queryParamName;
         $this->appends = $appends;
+        $this->emits = $emits;
     }
 
     public function inPhpMode(): bool
     {
         return $this->mode === 'php';
+    }
+
+    public function inJsMode(): bool
+    {
+        return $this->mode === 'js';
     }
 
     public function pagePaginationUrl($page)
