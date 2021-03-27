@@ -968,3 +968,28 @@ Keyed array must have keys for `input-changed` event and `filter` with the desir
 Any additional classes or attributes you put on the component will be passed through.
 
 > Note: The `@tailwindcss/forms` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-forms)
+
+
+### Paginators
+
+```blade
+<x-kernl-paginators.base
+    :number-of-pages="available pages"
+    :current-page="current page"
+    mode="php|js"
+    pagination-url="url for pagination"
+    query-param-name="name of page query param"
+    :appends="extra values for pagination"
+    emits="name of the event to emit"
+/>
+```
+
+#### `x-kernl-paginators.base` Props
+
+- `:number-of-pages` - Number of available pages for pagination.
+- `:current-page` - Initial selected page.
+- `mode` - (optional) `php` or `js`. Defaults to `php`.
+- `pagination-url` - (`php` mode) Url used for pagination.
+- `query-param-name` - (optional - `php` mode) Name of the page query param. Defaults to `page`.
+- `:appends` - (optional - `php` mode) Extra keyed array values to attach to pagination url
+- `emits` - (optional - `js` mode) Name of event dispatched when switching pages
