@@ -1,4 +1,4 @@
-<div class="px-4 py-32 font-sans">
+<div class="font-sans">
     <div class="flex items-center justify-center space-x-2">
         {{-- Arrow Previous --}}
         <a
