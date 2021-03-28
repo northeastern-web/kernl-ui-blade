@@ -969,7 +969,6 @@ Any additional classes or attributes you put on the component will be passed thr
 
 > Note: The `@tailwindcss/forms` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-forms)
 
-
 ### Paginators
 
 ```blade
@@ -989,7 +988,9 @@ Any additional classes or attributes you put on the component will be passed thr
 - `:number-of-pages` - Number of available pages for pagination.
 - `:current-page` - Initial selected page.
 - `mode` - (optional) `php` or `js`. Defaults to `php`.
-- `pagination-url` - (`php` mode) Url used for pagination.
-- `query-param-name` - (optional - `php` mode) Name of the page query param. Defaults to `page`.
-- `:appends` - (optional - `php` mode) Extra keyed array values to attach to pagination url
-- `emits` - (optional - `js` mode) Name of event dispatched when switching pages
+- `pagination-url` - (`php` mode only) Base URL used for pagination links.
+- `query-param-name` - (optional - `php` mode only) Name of the page query parameter. Defaults to `page`.
+- `:appends` - (optional - `php` mode only) Keyed array of extra query parameters to attach to the pagination URL.
+- `emits` - (optional - `js` mode only) Name of event dispatched when switching pages.
+
+When listening for the page-changed event in `js` mode, you may access the new page via `$event.detail.page`.
