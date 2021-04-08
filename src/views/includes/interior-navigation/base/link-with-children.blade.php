@@ -61,7 +61,7 @@
             <li>
                 <a
                     href="{{ data_get($child, 'href', '#') }}"
-                    class="px-4 transition-colors hover:text-gray-900"
+                    class="px-4 transition-colors hover:text-gray-900 block"
                 >
                     {{ data_get($child, 'text', 'No text') }}
                 </a>
