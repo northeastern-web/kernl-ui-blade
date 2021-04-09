@@ -6,34 +6,37 @@
     @endif
 >
     @if(data_get($link, 'expandable', false))
-        <button
-            class="
-                w-full flex items-center justify-between text-left
-                @if(data_get($link, 'active', false))
-                    px-2 border-l-2 transition-colors text-gray-900 font-bold border-red-600
-                @else
-                    px-2 border-l-2 transition-colors border-transparent hover:text-gray-900
-                @endif
-            "
-            x-on:click="expanded = ! expanded"
-        >
-            <span>
-                {{ $link['text'] }}
-            </span>
-            <svg
-                class="ml-3 w-5 h-5 transform transition-transform rotate-180"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                x-bind:class="{ 'rotate-180': expanded }"
-                x-cloak
+        <div class="w-full flex items-center justify-between text-left">
+            <a
+                href="{{ data_get($link, 'href', '#') }}"
+                class="w-full leading-tight
+                    @if(data_get($link, 'active', false))
+                        px-2 border-l-2 transition-colors text-gray-900 font-bold border-red-600
+                    @else
+                        px-2 border-l-2 transition-colors border-transparent hover:text-gray-900
+                    @endif
+                "
             >
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </button>
+                {{ $link['text'] }}
+            </a>
+            <button
+                x-on:click="expanded = ! expanded"
+            >
+                <svg
+                    class="ml-3 w-5 h-5 transform transition-transform rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    x-bind:class="{ 'rotate-180': expanded }"
+                    x-cloak
+                >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
     @else
         <a
             href="{{ data_get($link, 'href', '#') }}"
