@@ -9,7 +9,13 @@
         setupFilters(@json($listens));
         setupWatcher();
         @if($initialValue)
-        updateValue("{{ $initialValue }}");
+            @if (is_array($initialValue))
+                @foreach ($initialValue as $value)            
+                    updateValue("{{ $value }}");
+                @endforeach
+            @else
+                updateValue("{{ $initialValue }}");
+            @endif
         @endif
     }'
     x-on:click.away="close()"
