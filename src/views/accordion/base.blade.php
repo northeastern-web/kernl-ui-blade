@@ -9,7 +9,7 @@
             }
         }
     }"
-    class="space-y-4"
+    class="space-y-4 w-full"
     aria-label="{{ $label }}"
     x-cloak
 >
