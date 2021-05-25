@@ -9,6 +9,7 @@ use Northeastern\Blade\Components\Accordion\WithLeftIcon as AccordionWithLeftIco
 use Northeastern\Blade\Components\Alert\Contained as AlertContained;
 use Northeastern\Blade\Components\Alert\FullWidth as AlertFullWidth;
 use Northeastern\Blade\Components\Banners\BottomTitle as BannersBottomTitle;
+use Northeastern\Blade\Components\Banners\WithFullWidthOverlay as BannersWithFullWidthOverlay;
 use Northeastern\Blade\Components\Banners\WithOffsetCard as BannersWithOffsetCard;
 use Northeastern\Blade\Components\Button\Outline as ButtonOutline;
 use Northeastern\Blade\Components\Button\Solid as ButtonSolid;
@@ -47,6 +48,7 @@ class ServiceProvider extends BaseServiceProvider
         AccordionWithLeftIcon::class => 'kernl-accordion.with-left-icon',
         AlertContained::class => 'kernl-alert.contained',
         AlertFullWidth::class => 'kernl-alert.full-width',
+        BannersWithFullWidthOverlay::class => 'kernl-banners.with-full-width-overlay',
         BannersWithOffsetCard::class => 'kernl-banners.with-offset-card',
         BannersBottomTitle::class => 'kernl-banners.bottom-title',
         ButtonOutline::class => 'kernl-button.outline',
