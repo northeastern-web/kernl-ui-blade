@@ -44,7 +44,7 @@
                 @if($secondaryActionText)
                     <a href="{{ $secondaryActionUrl }}" class="ml-1 btn btn-sm text-gray-900 bg-gray-100 hover:bg-gray-300">{{ $secondaryActionText }}</a>
                 @endif
-            </div>
-        @endif
+            @endif
+        </div>
     </div>
 </div>
