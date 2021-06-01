@@ -4,7 +4,7 @@
     class="{{ $cardClasses() }}"
 >
     <div class="relative w-full bg-black">
-        <div class="h-full aspect-w-16 aspect-h-9">
+        <div class="h-full {{ $imageInnerImageContainerClasses() }}">
             <img
                 src="{{ $imageUrl }}"
                 alt="{{ $title }}"
