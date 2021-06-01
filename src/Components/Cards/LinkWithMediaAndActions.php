@@ -51,7 +51,7 @@ class LinkWithMediaAndActions extends Component
             throw new Exception('Provided color is not supported');
         }
 
-        if (! collect(['16:9', '1:1', '4:5', '5:4'])->contains($this->aspectRatio)) {
+        if (! collect(['16:9', '1:1', '3:1', '3:4', '4:3', '4:5', '5:4'])->contains($this->aspectRatio)) {
             throw new Exception('Aspect ratio is not supported');
         }
     }
@@ -177,14 +177,23 @@ class LinkWithMediaAndActions extends Component
             ->when($this->aspectRatio === '1:1', function ($classes) {
                 return $classes->push('aspect-w-1', 'aspect-h-1');
             })
-            ->when($this->aspectRatio === '16:9', function ($classes) {
-                return $classes->push('aspect-w-16', 'aspect-h-9');
+            ->when($this->aspectRatio === '3:1', function ($classes) {
+                return $classes->push('aspect-w-3', 'aspect-h-1');
+            })
+            ->when($this->aspectRatio === '3:4', function ($classes) {
+                return $classes->push('aspect-w-3', 'aspect-h-4');
+            })
+            ->when($this->aspectRatio === '4:3', function ($classes) {
+                return $classes->push('aspect-w-4', 'aspect-h-3');
             })
             ->when($this->aspectRatio === '4:5', function ($classes) {
                 return $classes->push('aspect-w-4', 'aspect-h-5');
             })
             ->when($this->aspectRatio === '5:4', function ($classes) {
                 return $classes->push('aspect-w-5', 'aspect-h-4');
+            })
+            ->when($this->aspectRatio === '16:9', function ($classes) {
+                return $classes->push('aspect-w-16', 'aspect-h-9');
             })
             ->join(' ')
             ;
