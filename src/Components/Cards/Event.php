@@ -14,6 +14,7 @@ class Event extends Component
     public $url;
     public $withFooter;
     public $footerText;
+    public $aspectRatio;
     public $date;
     public $time;
 
@@ -25,6 +26,7 @@ class Event extends Component
         $color = 'light',
         $withFooter = false,
         $footerText = '',
+        $aspectRatio = '16:9',
         $date = null,
         $time = null
     ) {
@@ -35,6 +37,7 @@ class Event extends Component
         $this->url = $url;
         $this->withFooter = $withFooter;
         $this->footerText = $footerText;
+        $this->aspectRatio = $aspectRatio;
         $this->date = $date;
         $this->time = $time;
 
@@ -126,6 +129,51 @@ class Event extends Component
             })
             ->when($this->color !== 'dark', function ($classes) {
                 return $classes->push('text-gray-900');
+            })
+            ->join(' ');
+    }
+
+    public function imageOuterImageContainerClasses()
+    {
+        return collect()
+            ->merge([
+                'relative',
+                'w-full',
+                'bg-black',
+            ])
+            ->when($this->orientation !== 'vertical', function ($classes) {
+                return $classes->push('flex-shrink-0', 'lg:w-72');
+            })
+            ->join(' ')
+        ;
+    }
+
+    public function imageInnerImageContainerClasses()
+    {
+        return collect()
+            ->merge([
+                'h-full',
+            ])
+            ->when($this->aspectRatio === '1:1', function ($classes) {
+                return $classes->push('aspect-w-1', 'aspect-h-1');
+            })
+            ->when($this->aspectRatio === '3:1', function ($classes) {
+                return $classes->push('aspect-w-3', 'aspect-h-1');
+            })
+            ->when($this->aspectRatio === '3:4', function ($classes) {
+                return $classes->push('aspect-w-3', 'aspect-h-4');
+            })
+            ->when($this->aspectRatio === '4:3', function ($classes) {
+                return $classes->push('aspect-w-4', 'aspect-h-3');
+            })
+            ->when($this->aspectRatio === '4:5', function ($classes) {
+                return $classes->push('aspect-w-4', 'aspect-h-5');
+            })
+            ->when($this->aspectRatio === '5:4', function ($classes) {
+                return $classes->push('aspect-w-5', 'aspect-h-4');
+            })
+            ->when($this->aspectRatio === '16:9', function ($classes) {
+                return $classes->push('aspect-w-16', 'aspect-h-9');
             })
             ->join(' ');
     }
