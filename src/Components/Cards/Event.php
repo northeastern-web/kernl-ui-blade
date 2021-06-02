@@ -12,6 +12,7 @@ class Event extends Component
     public $body;
     public $color;
     public $url;
+    public $orientation;
     public $withFooter;
     public $footerText;
     public $aspectRatio;
@@ -24,6 +25,7 @@ class Event extends Component
         $imageUrl,
         $url = '#',
         $color = 'light',
+        $orientation = 'vertical',
         $withFooter = false,
         $footerText = '',
         $aspectRatio = '16:9',
@@ -35,6 +37,7 @@ class Event extends Component
         $this->body = $body;
         $this->color = $color;
         $this->url = $url;
+        $this->orientation = $orientation;
         $this->withFooter = $withFooter;
         $this->footerText = $footerText;
         $this->aspectRatio = $aspectRatio;
@@ -56,8 +59,6 @@ class Event extends Component
                 'focus:outline-none',
                 'focus:ring',
                 'focus:ring-blue-500',
-                'flex',
-                'flex-col',
             ])
             ->merge([
                 $this->attributes->first('class'),
@@ -71,6 +72,16 @@ class Event extends Component
             })
             ->when($this->color === 'dark', function ($classes) {
                 return $classes->push('bg-black', 'hover:bg-gray-800', 'text-white');
+            })
+            // Orientation
+            ->when($this->orientation === 'vertical', function ($classes) {
+                return $classes->push('flex', 'flex-col');
+            })
+            ->when($this->orientation === 'horizontal', function ($classes) {
+                return $classes->push('flex', 'flex-col', 'lg:flex-row');
+            })
+            ->when($this->orientation === 'horizontal-flipped', function ($classes) {
+                return $classes->push('flex', 'flex-col', 'lg:flex-row-reverse');
             })
             ->join(' ')
             ;
