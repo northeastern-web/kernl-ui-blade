@@ -3,8 +3,8 @@
     aria-label="{{ $title }}"
     class="{{ $cardClasses() }}"
 >
-    <div class="relative w-full bg-black">
-        <div class="h-full {{ $imageInnerImageContainerClasses() }}">
+    <div class="{{ $imageOuterImageContainerClasses() }}">
+        <div class="{{ $imageInnerImageContainerClasses() }}">
             <img
                 src="{{ $imageUrl }}"
                 alt="{{ $title }}"

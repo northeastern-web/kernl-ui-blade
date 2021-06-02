@@ -133,6 +133,21 @@ class Event extends Component
             ->join(' ');
     }
 
+    public function imageOuterImageContainerClasses()
+    {
+        return collect()
+            ->merge([
+                'relative',
+                'w-full',
+                'bg-black',
+            ])
+            ->when($this->orientation !== 'vertical', function ($classes) {
+                return $classes->push('flex-shrink-0', 'lg:w-72');
+            })
+            ->join(' ')
+        ;
+    }
+
     public function imageInnerImageContainerClasses()
     {
         return collect()
@@ -160,8 +175,7 @@ class Event extends Component
             ->when($this->aspectRatio === '16:9', function ($classes) {
                 return $classes->push('aspect-w-16', 'aspect-h-9');
             })
-            ->join(' ')
-            ;
+            ->join(' ');
     }
 
     public function footerClasses()
