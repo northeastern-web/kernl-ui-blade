@@ -36,7 +36,7 @@
         role="alert"
         {{ $attributes->merge(['class' => $colorClasses]) }}
     >
-        <div class="flex items-center justify-between px-4 py-4 text-black lg:px-16">
+        <div class="flex items-center justify-between px-4 py-4 lg:px-16">
             <div>
                 {{ $slot }}
             </div>
