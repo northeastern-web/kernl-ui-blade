@@ -35,12 +35,20 @@
         x-transition:leave-end="transform opacity-0"
         class="container"
     >
-        <div role="alert" aria-label="{{ $label }}" class="flex items-start justify-between px-8 py-4 text-black bg-yellow-400 rounded-md shadow-sm">
+        <div 
+            role="alert" 
+            aria-label="{{ $label }}" 
+            {{ $attributes->merge(['class' => 'alert flex items-start justify-between px-8 py-4 rounded-md shadow-sm ' . $colorClasses]) }}
+        >
             <div>
                 {{ $slot }}
             </div>
             @if ($closeable)
-                <button aria-label="close alert" class="ml-4 p-1 rounded-full transition-colors duration-200 hover:text-gray-800 focus:outline-none focus:ring focus:ring-blue-400" @click="close">
+                <button 
+                    aria-label="close alert" 
+                    class="ml-4 p-1 rounded-full transition-colors duration-200 hover:text-gray-800 focus:outline-none focus:ring focus:ring-blue-400" 
+                    @click="close"
+                >
                     <i data-feather="x-circle" class="w-5 h-5"></i>
                 </button>
             @endif
