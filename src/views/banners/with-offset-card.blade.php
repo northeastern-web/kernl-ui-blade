@@ -5,7 +5,7 @@
     !!}
 >
     <div class="container hidden sm:block">
-        <div class="max-w-2xl px-6 py-12 text-white bg-black bg-opacity-80 lg:px-12 lg:py-16">
+        <div class="max-w-1/2 lg:max-w-2xl px-6 py-12 text-white bg-black bg-opacity-80 lg:px-12 lg:py-16">
             {{ $slot }}
         </div>
     </div>
