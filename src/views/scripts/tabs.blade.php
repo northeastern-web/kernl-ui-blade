@@ -26,8 +26,10 @@
             },
 
             setActiveTab(index) {
-                if (index < 0 || index > this.tabItems().length - 1) {
-                    return
+                if (index < 0 )  {
+                    index = this.tabItems().length - 1;
+                } else if (index > this.tabItems().length - 1) {
+                    index = 0;
                 }
 
                 this.active = index;
