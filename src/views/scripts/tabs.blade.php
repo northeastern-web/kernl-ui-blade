@@ -34,7 +34,7 @@
 
                 this.active = index;
 
-                this.focusActiveTab()
+                // this.focusActiveTab() // This functionality is now in the blade files to prevent focus on page load. 
 
                 this.tabItems().forEach(item => {
                     item.classList.add("hidden");
