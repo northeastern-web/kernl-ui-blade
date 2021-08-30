@@ -3,7 +3,7 @@
     x-init="() => {
         activeTabClass = '{{ $activeTabClass }}'
         inactiveTabClass = '{{ $inactiveTabClass }}'
-        init({{ $defaultActive }})
+        {{-- init({{ $defaultActive }}) --}}
     }"
 >
     <ul
