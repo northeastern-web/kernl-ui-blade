@@ -27,9 +27,9 @@
                     x-bind:aria-selected="isActiveTab(index)"
                     x-bind:tabindex="tabIndex(index)"
 
-                    x-on:keydown.arrow-left="setActiveTab(index - 1)"
+                    x-on:keydown.arrow-left="setActiveTab(index - 1); focusActiveTab(index - 1);"
                     x-on:click.prevent="setActiveTab(index)"
-                    x-on:keydown.arrow-right="setActiveTab(index + 1)"
+                    x-on:keydown.arrow-right="setActiveTab(index + 1); focusActiveTab(index + 1);"
 
                     x-text="tabTitle"
                 ></button>
