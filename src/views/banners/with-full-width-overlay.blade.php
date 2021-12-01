@@ -11,7 +11,7 @@
             {{ 'bg-black' }}
         @endif
         bg-center bg-cover bg-no-repeat"
-        @if($includeImage)
+        @if($includeImage !== false)
         {!! 
             $backgroundUrl ? ' style="background-image: 
             linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), 
