@@ -15,7 +15,7 @@ class Column extends Component
     public function __construct(
         $featherIcon = null,
         $title = null,
-        $link =[],
+        $link = [],
         $description = null
     ) {
         $this->featherIcon = $featherIcon;
