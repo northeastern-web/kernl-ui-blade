@@ -6,12 +6,20 @@ use Illuminate\View\Component;
 
 class WithFullWidthOverlay extends Component
 {
+    public $includeImage;
     public $backgroundUrl;
+    public $height;
+    public $solidBackgroundColor;
 
-    public function __construct($backgroundUrl = null)
+    public function __construct($includeImage = null, $backgroundUrl = null, $height = null, $solidBackgroundColor = null)
     {
+        $this->includeImage = $includeImage;
         $this->backgroundUrl = $backgroundUrl;
+        $this->height = $height;
+        $this->solidBackgroundColor = $solidBackgroundColor;
     }
+
+
 
     public function render()
     {
