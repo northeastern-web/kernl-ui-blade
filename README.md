@@ -27,7 +27,7 @@ If your project is using PurgeCss, merge the default PurgeCss content from the `
 
 ```js
 // tailwind.config.js
-const defaultConfig = require('@northeastern-web/kernl-ui/defaultConfig');
+const defaultConfig = require("@northeastern-web/kernl-ui/defaultConfig");
 
 module.exports = {
     purge: {
@@ -37,7 +37,7 @@ module.exports = {
         ],
     },
     // Other stuff...
-}
+};
 ```
 
 ## Usage
@@ -83,7 +83,7 @@ To use the local header component, add the following markup to your Blade templa
 
 #### Props
 
-- `links` = Array of links for the navigation sections of the header. Each link can have a `children` key that's an array of more links. These links will be displayed in a dropdown under the parent link. Example:
+-   `links` = Array of links for the navigation sections of the header. Each link can have a `children` key that's an array of more links. These links will be displayed in a dropdown under the parent link. Example:
     ```php
     $links = [
         [
@@ -109,9 +109,9 @@ To use the local header component, add the following markup to your Blade templa
         ],
     ];
     ```
-- `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
-- `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
-- `action` (optional) - Adds search component to header. `action` should be the url the search form should submit a GET request to. The input value will be submitted as a form parameter with the name `search`.
+-   `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
+-   `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
+-   `action` (optional) - Adds search component to header. `action` should be the url the search form should submit a GET request to. The input value will be submitted as a form parameter with the name `search`.
 
 ### Accordions
 
@@ -143,13 +143,13 @@ Alternatively, you can use the `x-kernl-accordion.with-left-icon` component for 
 
 #### `x-kernl-accordion.base` Props
 
-- `label` = The aria-label for the accordion `ul` element
-- `default-section` (optional) = The `id` of the accordion item that should be open by default
+-   `label` = The aria-label for the accordion `ul` element
+-   `default-section` (optional) = The `id` of the accordion item that should be open by default
 
 #### `x-kernl-accordion.item`/`x-kernl-accordion.with-left-icon` Props
 
-- `title` - The title that should be shown on the accordion button
-- `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
+-   `title` - The title that should be shown on the accordion button
+-   `id` (optional) - The ID that should be assigned to the accordion. This should match the `default-section` prop passed to the base accordion component for the accordion item that should be open by default.
 
 ### Alerts
 
@@ -181,9 +181,9 @@ Alternatively, you can use the `x-kernl-alert.full-width` component for a slight
 
 #### `x-kernl-alert.container` and `x-kernl-alert.full-width` Props
 
-- `label` - Used for the aria-label and "remember" functionality. Should be unique across your site if using the "remember" functionality.
-- `closeable` (optional) - If true, show the close button. If false, do not show the close button. Default is true.
-- `remember` (optional) - If true, the component will use localStorage to remember when the user has closed the alert and will not show it again.
+-   `label` - Used for the aria-label and "remember" functionality. Should be unique across your site if using the "remember" functionality.
+-   `closeable` (optional) - If true, show the close button. If false, do not show the close button. Default is true.
+-   `remember` (optional) - If true, the component will use localStorage to remember when the user has closed the alert and will not show it again.
 
 Any additional classes or attributes you put on the component will be passed through.
 
@@ -203,7 +203,7 @@ To use the With Offset Card Banner component, add the following markup to your B
 
 #### `x-kernl-banners.with-offset-card` Props
 
-- `background-url` - URL of background image to be applied.
+-   `background-url` - URL of background image to be applied.
 
 ### Bottom Title
 
@@ -218,8 +218,8 @@ To use the Bottom Title Banner component, add the following markup to your Blade
 
 #### `x-kernl-banners.bottom-title` Props
 
-- `background-url` - URL of background image to be applied.
-- `title` - Title to be presented.
+-   `background-url` - URL of background image to be applied.
+-   `title` - Title to be presented.
 
 ### Buttons
 
@@ -249,9 +249,9 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-button.solid` and `x-kernl-button.outline` Props
 
-- color - The color the button should be. Options: `black`, `white`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
-- size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
-- href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
+-   color - The color the button should be. Options: `black`, `white`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
+-   size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
+-   href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
 
 ### Carousels
 
@@ -280,13 +280,13 @@ To use the Carousel Base and Base Slide component, add the following markup to y
 
 #### `x-kernl-carousel.base` Props
 
-- `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
+-   `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
 
 #### `x-kernl-carousel.base.slide` Props
 
-- `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
-- `background-classes` - (optional) Any classes you want to apply to the outter element.
-- `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
+-   `index` - The index of the slide. _Each slide's index should increase by 1, starting at 0._
+-   `background-classes` - (optional) Any classes you want to apply to the outter element.
+-   `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
 
 Any additional attributes you add to the Base Slide component (`style`, etc.), will be passed through to the background element.
 
@@ -310,13 +310,13 @@ To use the Split Carousel and Split Slide component, add the following markup to
 
 #### `x-kernl-carousel.split` Props
 
-- `height-classes` - Classes to set the overall height on the carousel. Should be double each slide height when slides are stacked (mobile).
-- `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
+-   `height-classes` - Classes to set the overall height on the carousel. Should be double each slide height when slides are stacked (mobile).
+-   `delay` - (optional) The delay that the slides should rotate at in milliseconds. Default value is 5000.
 
 #### `x-kernl-carousel.split.slide` Props
 
-- `index` - The index of the slide. *Each slide's index should increase by 1, starting at 0.*
-- `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
+-   `index` - The index of the slide. _Each slide's index should increase by 1, starting at 0._
+-   `class` - Any classes you want to apply to the element around the slot. This should be used to pass in the height classes.
 
 Any additional attributes you add to the Split Slide component (`style`, etc.), will be passed through to the background element.
 
@@ -337,7 +337,7 @@ To use the Loader component, light or dark, add the following markup to your Bla
 
 #### `x-kernl-loaders.light` Props
 
-- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+-   `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
 
 #### Dark
 
@@ -352,7 +352,7 @@ To use the Loader component, light or dark, add the following markup to your Bla
 
 #### `x-kernl-loaders.dark` Props
 
-- `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
+-   `x-show` - (optional) Used to show/hide the loader based on an Alpine.js property
 
 ### Tags
 
@@ -372,9 +372,9 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 #### `x-kernl-tags.solid` Props
 
-- `color` - Color for text/background. Default is `black`
-- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
-- `uppercase` - (optional) Uppercase content. Default is `false`
+-   `color` - Color for text/background. Default is `black`
+-   `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+-   `uppercase` - (optional) Uppercase content. Default is `false`
 
 ### Outline
 
@@ -392,9 +392,9 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 #### `x-kernl-tags.outline` Props
 
-- `color` - Color for text/border. Default is `black`
-- `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
-- `uppercase` - (optional) Uppercase content. Default is `false`
+-   `color` - Color for text/border. Default is `black`
+-   `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
+-   `uppercase` - (optional) Uppercase content. Default is `false`
 
 ### Modals
 
@@ -418,11 +418,10 @@ To use the Base Modal component, add the following markup to your Blade template
 
 #### `x-kernl-modals.base` Props
 
-- `id` - ID of the modal. Must be unique throughout the app. This ID can be used with `window.NUModals` methods
-- `closeable` - (optional) Adds close button at the top right corner. `true` by default
-- `close-on-click-outside` - (optional) Adds behavior to close when clicking outside the modal. `true` by default
-- `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
-
+-   `id` - ID of the modal. Must be unique throughout the app. This ID can be used with `window.NUModals` methods
+-   `closeable` - (optional) Adds close button at the top right corner. `true` by default
+-   `close-on-click-outside` - (optional) Adds behavior to close when clicking outside the modal. `true` by default
+-   `close-on-escape-key` - (optional) Adds behavior to close when pressing the Esc key. `true` by default
 
 ### Footer
 
@@ -452,8 +451,9 @@ To use the Local Footer component, add the following markup to your Blade templa
 
 #### Props
 
-- `links` = Array of titles and links for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title.
-Example:
+-   `links` = Array of titles and links for the navigation sections of the footer. Each title can have a `children` key that's an array of more titles/links. These titles/links will be displayed below the parent title.
+    Example:
+
 ```php
 $links = [
     [
@@ -473,14 +473,50 @@ $links = [
     // ... More links
 ];
 ```
-- `logo-url` - (optional) URL for the footer logo.
-- `facebook-url` - (optional) Facebook URL for the footer. Adding the URL will display the respective social network icon.
-- `youtube-url` - (optional) Youtube URL for the footer. Adding the URL will display the respective social network icon.
-- `linkedin-url` - (optional) Linkedin URL for the footer. Adding the URL will display the respective social network icon.
-- `snapchat-url` - (optional) Snapchat URL for the footer. Adding the URL will display the respective social network icon.
-- `twitter-url` - (optional) Twitter URL for the footer. Adding the URL will display the respective social network icon.
-- `instagram-url` - (optional) Instagram URL for the footer. Adding the URL will display the respective social network icon.
 
+-   `logo-url` - (optional) URL for the footer logo.
+-   `facebook-url` - (optional) Facebook URL for the footer. Adding the URL will display the respective social network icon.
+-   `youtube-url` - (optional) Youtube URL for the footer. Adding the URL will display the respective social network icon.
+-   `linkedin-url` - (optional) Linkedin URL for the footer. Adding the URL will display the respective social network icon.
+-   `snapchat-url` - (optional) Snapchat URL for the footer. Adding the URL will display the respective social network icon.
+-   `twitter-url` - (optional) Twitter URL for the footer. Adding the URL will display the respective social network icon.
+-   `instagram-url` - (optional) Instagram URL for the footer. Adding the URL will display the respective social network icon.
+
+## PreFooter
+
+To use the PreFooter component, use the following markup to your Blade Template. Note, for a multi-column layout the <x-kernl-footers.pre-footer.column> element will need to be wrapped in a foreach loop, or manually populated.
+
+```blade
+<x-kernl-footers.pre-footer.base
+    :columns="<integer value>"
+>
+      <x-kernl-footers.pre-footer.column
+        :featherIcon="<string value>"
+        :title="<string value>"
+        :link="<link array>"
+        :description="<string value>"
+      >
+      </x-kernl-footers.pre-footer.column>
+</x-kernl-footers.pre-footer.base>
+```
+
+#### `x-kernl-footers.base` Props
+
+-   `columns` - (optional) Set the number of grid columns to display on large screens. Default is 3.
+
+#### `x-kernl-footers.base` Props
+
+-   `featherIcon` - (optional) Choose a Feather Icon from https://feathericons.com/ and enter the name of it here.
+-   `title` - (required) The title of the PreFooter column.
+-   `description` - (required) A description of the PreFooter column.
+-   `link` - (required) This will be an array that must include a url, and optionally a target. Example:
+
+```php
+    $link = [
+        'url' => 'https://www.google.com',
+        'target' => '_blank'
+    ]
+```
 
 ### Tabs
 
@@ -504,11 +540,11 @@ $links = [
 
 #### `x-kernl-tabs.underlined` Props
 
-- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
+-   `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.underlined.item` Props
 
-- `title` - Title of the tab contents
+-   `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
 
@@ -532,11 +568,11 @@ Any additional classes or attributes you put on the `item` component will be pas
 
 #### `x-kernl-tabs.bordered` Props
 
-- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
+-   `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.bordered.item` Props
 
-- `title` - Title of the tab contents
+-   `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
 
@@ -560,11 +596,11 @@ Any additional classes or attributes you put on the `item` component will be pas
 
 #### `x-kernl-tabs.detached` Props
 
-- `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
+-   `default-active` - (optional) Index of the initial active tab. Default is 0 (zero).
 
 #### `x-kernl-tabs.detached.item` Props
 
-- `title` - Title of the tab contents
+-   `title` - Title of the tab contents
 
 Any additional classes or attributes you put on the `item` component will be passed through.
 
@@ -591,15 +627,15 @@ Any additional classes or attributes you put on the `item` component will be pas
 
 #### `x-kernl-heroes.split-layout-content-media` Props
 
-- `media-url` - Url of image to show
-- `title` - Title of content
-- `body` - Body of content
-- `call-to-action` - Call To Action button label
-- `call-to-action-url` - Url of call to action button
+-   `media-url` - Url of image to show
+-   `title` - Title of content
+-   `body` - Body of content
+-   `call-to-action` - Call To Action button label
+-   `call-to-action-url` - Url of call to action button
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
+> Note: when using the \$slot version, title, body, call-to-action and call-to-action-url are not required.
 
 ### Full Background Media Centered Content
 
@@ -618,13 +654,13 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-heroes.full-centered-content` Props
 
-- `title` - Title of content
-- `subtitle` - Subtitle of content
-- `body` - Body of content
+-   `title` - Title of content
+-   `subtitle` - Subtitle of content
+-   `body` - Body of content
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: when using the $slot version, title, body, call-to-action and call-to-action-url are not required.
+> Note: when using the \$slot version, title, body, call-to-action and call-to-action-url are not required.
 
 ### Interior Navigation
 
@@ -652,15 +688,15 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-interior-navigation.base` Props
 
-- `title` - Title for navigation
-- `title-url` - (optional) URL for navigation
-- `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
-  - `text` - Text for the navigation item
-  - `href` - URL for the navigation item
-  - `active` - Sets the navigation item as active. Default is `false`
-  - `children` - Child navigation for navigation items
-  - `expandable` - Sets whether the child navigation can be expanded/collapsed. Applies when `children` is used. Default is `false`
-  - `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`
+-   `title` - Title for navigation
+-   `title-url` - (optional) URL for navigation
+-   `links` - Array of navigation items. Supports child navigation via `children` key. Navigation items can have the following attributes:
+    -   `text` - Text for the navigation item
+    -   `href` - URL for the navigation item
+    -   `active` - Sets the navigation item as active. Default is `false`
+    -   `children` - Child navigation for navigation items
+    -   `expandable` - Sets whether the child navigation can be expanded/collapsed. Applies when `children` is used. Default is `false`
+    -   `expanded` - Sets whether the child navigation is expanded or not by default. Applies when `expandable` is used. Default is `false`
 
 Any additional classes or attributes you put on the `base` component will be passed through the root div component.
 
@@ -696,17 +732,17 @@ Any additional classes or attributes you put on the `base` component will be pas
 
 #### `x-kernl-cards.simple-link` Props
 
-- `title` - Title text
-- `body` - Body text
-- `color` - (optional) Background color of the card. Defaults to 'light'
-- `size` - (optional) Text size. Defaults to 'default'
-- `:with-footer` - (optional) Shows/hides footer. Default is false
-- `footer-text` - Footer text
-- `url` - URL to navigate on card click
+-   `title` - Title text
+-   `body` - Body text
+-   `color` - (optional) Background color of the card. Defaults to 'light'
+-   `size` - (optional) Text size. Defaults to 'default'
+-   `:with-footer` - (optional) Shows/hides footer. Default is false
+-   `footer-text` - Footer text
+-   `url` - URL to navigate on card click
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
+> Note: \$slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 
 ### Simple With Actions
 
@@ -742,18 +778,18 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-cards.simple-with-actions` Props
 
-- `title` - Title text
-- `body` - Body text
-- `color` - (optional) Background color of the card. Defaults to 'light'
-- `size` - (optional) Text size. Defaults to 'default'
-- `primary-action-text` - Text displayed for Primary Action
-- `primary-action-url` - URL to navigate to when when the Primary Action is clicked
-- `secondary-action-text` - (optional) Text displayed for Secondary Action
-- `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
+-   `title` - Title text
+-   `body` - Body text
+-   `color` - (optional) Background color of the card. Defaults to 'light'
+-   `size` - (optional) Text size. Defaults to 'default'
+-   `primary-action-text` - Text displayed for Primary Action
+-   `primary-action-url` - URL to navigate to when when the Primary Action is clicked
+-   `secondary-action-text` - (optional) Text displayed for Secondary Action
+-   `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
+> Note: \$slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
 
 ### Link With Media
 
@@ -798,24 +834,23 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-cards.link-with-media` Props
 
-- `title` - Title text
-- `body` - Body text
-- `color` - (optional) Background color of the card. Defaults to 'light'
-- `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
-- `image-url` - URL to image
-- `url` - URL to navigate to on click
-- `orientation` - (optional) Orientation of image. Defaults to 'vertical'
-- `badge` - (optional) Badge text
-- `pre-header` - (optional) Pre header text
-- `:with-footer` - (optional) Shows/hides footer. Defaults to false
-- `footer-text` - (optional) Footer text
+-   `title` - Title text
+-   `body` - Body text
+-   `color` - (optional) Background color of the card. Defaults to 'light'
+-   `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
+-   `image-url` - URL to image
+-   `url` - URL to navigate to on click
+-   `orientation` - (optional) Orientation of image. Defaults to 'vertical'
+-   `badge` - (optional) Badge text
+-   `pre-header` - (optional) Pre header text
+-   `:with-footer` - (optional) Shows/hides footer. Defaults to false
+-   `footer-text` - (optional) Footer text
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
+> Note: \$slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 >
 > Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
-
 
 ### Link With Media And Actions
 
@@ -860,23 +895,23 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-cards.link-with-media-and-actions` Props
 
-- `title` - Title text
-- `body` - Body text
-- `color` - (optional) Background color of the card. Defaults to 'light'
-- `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
-- `image-url` - URL to image
-- `url` - URL to navigate to on click
-- `orientation` - (optional) Orientation of image. Defaults to 'vertical'
-- `badge` - (optional) Badge text
-- `pre-header` - (optional) Pre header text
-- `primary-action-text` - Text displayed for Primary Action
-- `primary-action-url` - URL to navigate to when when the Primary Action is clicked
-- `secondary-action-text` - (optional) Text displayed for Secondary Action
-- `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
+-   `title` - Title text
+-   `body` - Body text
+-   `color` - (optional) Background color of the card. Defaults to 'light'
+-   `aspect-ratio` - (optional) Aspect ratio of image. Defaults to '16:9'
+-   `image-url` - URL to image
+-   `url` - URL to navigate to on click
+-   `orientation` - (optional) Orientation of image. Defaults to 'vertical'
+-   `badge` - (optional) Badge text
+-   `pre-header` - (optional) Pre header text
+-   `primary-action-text` - Text displayed for Primary Action
+-   `primary-action-url` - URL to navigate to when when the Primary Action is clicked
+-   `secondary-action-text` - (optional) Text displayed for Secondary Action
+-   `secondary-action-url` - (optional) URL to navigate to when the Secondary Action is clicked
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
+> Note: \$slot version has two named slots: 'main' and 'actions'. Use them to override the main and actions content respectively.
 >
 > Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
 
@@ -918,22 +953,21 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-cards.event` Props
 
-- `title` - Title text
-- `body` - Body text
-- `date` - Date to display
-- `time` - Time to display
-- `color` - (optional) Background color of the card. Defaults to 'light'
-- `url` - URL to navigate to on click'
-- `image-url` - URL to image'
-- `:with-footer` - (optional) Shows/hides footer. Defaults to false
-- `footer-text` - (optional) Footer text
+-   `title` - Title text
+-   `body` - Body text
+-   `date` - Date to display
+-   `time` - Time to display
+-   `color` - (optional) Background color of the card. Defaults to 'light'
+-   `url` - URL to navigate to on click'
+-   `image-url` - URL to image'
+-   `:with-footer` - (optional) Shows/hides footer. Defaults to false
+-   `footer-text` - (optional) Footer text
 
 Any additional classes or attributes you put on the component will be passed through.
 
-> Note: $slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
+> Note: \$slot version has two named slots: 'main' and 'footer'. Use them to override the main and footer content respectively.
 >
 > Note: The `@tailwindcss/aspect-ratio` plugin is required for the this component to work correctly. Please see [documentation](https://northeastern.netlify.app/docs/plugins/#tailwind-aspect-ratio)
-
 
 ### Select
 
@@ -956,14 +990,14 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-selects.select` Props
 
-- `name` - Name of the input.
-- `:options` - Array of options to select. Must include at least `value` and `label` keys.
-- `:multiple` - (optional) Allow multiple options to be selected. Defaults to false.
-- `placeholder` - (optional) Text to be presented when no selection has been made.
-- `:listens` - (optional) Allows to filter options automatically when some other select input changes.
-Keyed array must have keys for `input-changed` event and `filter` with the desired attribute to filter options. Eg: when
-`category-changed` is received, `:options` will be filtered with the value present in `category` for each option.
-- `x-on:{input-name}-changed` - (optional) Listen for a change on the dropdown.
+-   `name` - Name of the input.
+-   `:options` - Array of options to select. Must include at least `value` and `label` keys.
+-   `:multiple` - (optional) Allow multiple options to be selected. Defaults to false.
+-   `placeholder` - (optional) Text to be presented when no selection has been made.
+-   `:listens` - (optional) Allows to filter options automatically when some other select input changes.
+    Keyed array must have keys for `input-changed` event and `filter` with the desired attribute to filter options. Eg: when
+    `category-changed` is received, `:options` will be filtered with the value present in `category` for each option.
+-   `x-on:{input-name}-changed` - (optional) Listen for a change on the dropdown.
 
 Any additional classes or attributes you put on the component will be passed through.
 
@@ -985,12 +1019,12 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-paginators.base` Props
 
-- `:number-of-pages` - Number of available pages for pagination.
-- `:current-page` - Initial selected page.
-- `mode` - (optional) `php` or `js`. Defaults to `php`.
-- `pagination-url` - (`php` mode only) Base URL used for pagination links.
-- `query-param-name` - (optional - `php` mode only) Name of the page query parameter. Defaults to `page`.
-- `:appends` - (optional - `php` mode only) Keyed array of extra query parameters to attach to the pagination URL.
-- `emits` - (optional - `js` mode only) Name of event dispatched when switching pages.
+-   `:number-of-pages` - Number of available pages for pagination.
+-   `:current-page` - Initial selected page.
+-   `mode` - (optional) `php` or `js`. Defaults to `php`.
+-   `pagination-url` - (`php` mode only) Base URL used for pagination links.
+-   `query-param-name` - (optional - `php` mode only) Name of the page query parameter. Defaults to `page`.
+-   `:appends` - (optional - `php` mode only) Keyed array of extra query parameters to attach to the pagination URL.
+-   `emits` - (optional - `js` mode only) Name of event dispatched when switching pages.
 
 When listening for the page-changed event in `js` mode, you may access the new page via `$event.detail.page`.

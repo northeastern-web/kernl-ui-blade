@@ -1,6 +1,6 @@
     <a 
         href="{!! $link['url'] !!}"
-        target="{!! $$link['target'] !!}"
+        target="{!! $link['target'] !!}"
         class="p-2 hover:bg-gray-cool-50 block"
     >
         @if ($featherIcon || $title)
