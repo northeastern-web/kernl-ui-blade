@@ -34,7 +34,7 @@ class LocalHeader extends Component
         $menuStyle = null,
         $search = false,
         $searchName = null,
-        $siteName = null, 
+        $siteName = null,
         $supportNav = []
     ) {
         $this->action = $action;
