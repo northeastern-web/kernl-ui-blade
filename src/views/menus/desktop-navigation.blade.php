@@ -112,112 +112,11 @@
                 </li>
             @endif
         @endforeach
+        @isset($afterLinksDesktop)
+            {{ $afterLinksDesktop }}
+        @endif
         @if ($search)
-            <li 
-                x-data="{ ...searchModal() }"
-                x-on:keydown.window.tab="handleForwardTab"
-                x-on:keydown.window.shift.tab="handleBackwardTab"
-                x-on:keydown.window.escape="handleEscape"
-            >
-                <button 
-                    aria-label="Search"
-                    class="p-2 text-sm rounded-sm transition-colors 
-                    @if($dark)
-                        text-white
-                    @else
-                        text-gray-800
-                    @endif 
-                    hover:bg-gray-100 hover:text-gray-800 focus:outline-none focus:ring focus:ring-blue-500" 
-                    x-on:click="toggle"
-                >
-                    <svg 
-                        role="img"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"    
-                        class="w-8 h-4 mb-1" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor" 
-                        stroke-width="2" 
-                        fill="none" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"
-                    >
-                        <title>Search</title>
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-                <div
-                    role="dialog"
-                    aria-labelledby="dialog-title"
-                    x-ref="dialog"
-                    x-show="open"
-                    class="h-screen w-full fixed bottom-0 inset-x-0 z-50 sm:inset-0 sm:flex"
-                    x-cloak
-                >
-                    <div
-                        x-show.transition.opacity.duration.300ms="open"
-                        tabindex="-1"
-                    >
-                        <div class="absolute inset-0 bg-black bg-opacity-90"></div>
-                    </div>
-                    <div
-                        x-show="open"
-                        x-transition:enter="ease-out duration-300"
-                        x-transition:enter-start="opacity-0 scale-90"
-                        x-transition:enter-end="opacity-100 scale-100"
-                        x-transition:leave="ease-in duration-200"
-                        x-transition:leave-start="opacity-100 scale-100"
-                        x-transition:leave-end="opacity-0 scale-90"
-                        class="relative w-full h-full flex items-center justify-center p-4 transition-all"
-                    >
-                        <div
-                            style="max-height: 85vh"
-                            class="max-w-3xl w-full"
-                            x-on:click.away="toggle"
-                        >
-                            <form action="/" method="GET" class="relative" role="search">
-                                <input 
-                                    name="s" 
-                                    type="text" 
-                                    class="block w-full h-full py-3 px-1 
-                                    @if($dark)
-                                    text-white
-                                    @else
-                                        text-gray-800
-                                    @endif 
-                                    text-xl bg-transparent border-0 border-b border-white placeholder-gray-200 md:text-2xl focus:ring-0 focus:border-blue-700" 
-                                    placeholder="Search by keywords"
-                                >
-                                <button class="btn-sm py-0 px-3 absolute inset-y-0 right-0 my-1 
-                                text-white border-white md:my-3 hover:text-gray-800 hover:bg-white focus:outline-none focus:ring focus:ring-blue-500">
-                                    GO
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <button
-                        aria-label="Close dialog"
-                        title="Close dialog"
-                        type="button"
-                        class="hidden absolute top-0 right-0 m-4 text-gray-200 sm:inline-block hover:text-gray-300 focus:outline-none focus:ring"
-                        x-on:click.stop="toggle"
-                    >
-                        <svg 
-                            class="w-6 h-6" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor" 
-                            stroke-width="2" 
-                            fill="none" 
-                            stroke-linecap="round" 
-                            stroke-linejoin="round"
-                        >
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </li>
+            @include('kernl-ui::includes/headers/search-desktop')
         @endif
     </ul>
 @endif

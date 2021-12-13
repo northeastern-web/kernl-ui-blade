@@ -11,7 +11,7 @@
                 @if($dark)
                     text-gray-50 hover:bg-gray-700 py-4
                 @else
-                    text-gray-600 hover:text-gray-900
+                    text-gray-800 hover:text-gray-900
                 @endif
             "
             x-on:click="toggle"
@@ -30,7 +30,7 @@
                 x-show.transition.opacity.duration.300ms="open"
                 tabindex="-1"
             >
-                <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-90"></div>
             </div>
             <div
                 x-show="open"
@@ -53,7 +53,7 @@
                         class="relative"
                     >
                         <input
-                            name="search"
+                            name="{{$searchName ? $searchName : 'search'}}"
                             type="text"
                             class="block w-full h-full py-3 px-1 text-white text-xl bg-transparent border-0 border-b border-white placeholder-gray-200 md:text-2xl focus:outline-none focus:ring-0 focus:border-blue-700"
                             placeholder="Search"

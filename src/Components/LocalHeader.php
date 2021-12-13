@@ -17,6 +17,7 @@ class LocalHeader extends Component
     public $megaMenuCopy;
     public $menuStyle;
     public $search;
+    public $searchName;
     public $siteName;
     public $supportNav;
 
@@ -32,6 +33,7 @@ class LocalHeader extends Component
         $megaMenuCopy = null,
         $menuStyle = null,
         $search = false,
+        $searchName = null,
         $siteName = null, 
         $supportNav = []
     )
@@ -47,6 +49,7 @@ class LocalHeader extends Component
         $this->megaMenuCopy = $megaMenuCopy;
         $this->menuStyle = $menuStyle;
         $this->search = $search;
+        $this->searchName = $searchName;
         $this->siteName = $siteName;
         $this->supportNav = $supportNav;
     }
