@@ -1,5 +1,6 @@
-
+@include('kernl-ui::scripts.localHeaderNav')
+@include('kernl-ui::scripts.megaMenu')
 @include('kernl-ui::scripts.modals')
-@include('kernl-ui::scripts.tabs')
-@include('kernl-ui::scripts.selects')
 @include('kernl-ui::scripts.paginators')
+@include('kernl-ui::scripts.selects')
+@include('kernl-ui::scripts.tabs')

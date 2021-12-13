@@ -1,19 +1,35 @@
-<nav 
-    x-init="init" 
-    x-data="{ 
-        ...localHeaderNav()
-    }" 
-    class="pt-4 pb-3 {{ $dark ? 'bg-gray-800 text-gray-50' : 'text-gray-900 bg-white' }}"
+@php
+    $supportNav = $supportNav ? $supportNav : [];
+    $links = array_merge($links, $supportNav);
+@endphp
+
+<div 
+    class="relative z-50" 
+    x-cloak
 >
-    <div class="px-4 {{ $dark ? 'text-gray-50' : 'text-gray-900' }} xl:flex xl:items-center xl:justify-between xl:px-16">
-        <div class="flex items-center justify-between">
-            <a
-                id="logo"
-                alt="{!! $siteName !!} logo"
-                class="inline-block p-1 focus:outline-none focus:ring focus:ring-blue-400"
+    <div 
+        x-show.transition.opacity.duration.300ms="navIsOpen"
+        class="fixed inset-0 bg-black bg-opacity-50 transition-opacity xl:hidden" 
+        x-on:click="navIsOpen = false"
+    ></div>
+    <div 
+        id="navbarContent"
+        x-show="navIsOpen"
+        x-transition:enter="ease-out duration-300"
+        x-transition:enter-start="-translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="-translate-x-full"
+        class="fixed inset-y-0 left-0 transform px-4 pt-6 pb-16 overflow-y-auto transition-transform xl:hidden {{ $dark ? 'bg-gray-800 text-gray-50' : 'bg-white text-gray-900'}}"
+    >
+        <div class="flex items-start justify-between">
+            <a 
+                alt="{!! $siteName !!} logo" 
+                class="inline-block focus:outline-none focus:shadow-outline" 
                 href="{{ home_url('/') }}"
             >
-                @if ($dark)
+                @if($dark)
                     @if($logoWhite)
                         {!! $logoWhite !!}
                     @else
@@ -35,36 +51,90 @@
                     @endif
                 @endif
             </a>
+
             <button 
-                class="ml-6 xl:hidden focus:outline-none focus:ring focus:ring-blue-500"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarContent"
-                aria-controls="navbarContent"
-                x-bind:aria-expanded="navIsOpen ? 'true' : 'false' ? 'true' : 'false'"
-                aria-label="Toggle navigation"
-                x-on:click="navIsOpen = ! navIsOpen"
+                class="ml-8 focus:outline-none focus:shadow-outline" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarContent" 
+                aria-controls="navbarContent" 
+                :aria-expanded="navIsOpen ? 'true' : 'false'" 
+                aria-label="Close navigation" 
+                x-on:click="navIsOpen = false"
             >
-                <svg 
-                    class="w-8 h-8 {{ $dark ? 'text-gray-100' : 'text-gray-800' }}" 
-                    viewBox="0 0 21 12" fill="none"
-                >
-                    <g clip-path="url(#clip0)">
-                        <path d="M20.35 10.13a.67.67 0 11-.96.92c-.8-.9-2.34-2.59-2.4-2.54a4.07 4.07 0 01-4.82.11 4.31 4.31 0 01-1.53-1.95 4.5 4.5 0 01.9-4.72 3.95 3.95 0 015.84 0 4.2 4.2 0 011.22 3.08c.01.9-.26 1.8-.77 2.54a36.2 36.2 0 002.52 2.56zm-7.9-2.98a2.77 2.77 0 003.14.65c.35-.15.67-.37.93-.65a2.87 2.87 0 00.85-2.12 3.12 3.12 0 00-.85-2.14A2.9 2.9 0 0014.47 2a2.67 2.67 0 00-2.04.89A2.96 2.96 0 0011.59 5a2.98 2.98 0 00.85 2.14zM.82 6.47c0-.37.3-.68.68-.68h5.24a.69.69 0 010 1.37H1.51a.69.69 0 01-.68-.69zm0-4.8c0-.38.3-.7.68-.7h5.9a.69.69 0 010 1.38h-5.9a.69.69 0 01-.68-.69zm0 9.6c0-.37.3-.68.68-.68h9.2a.69.69 0 110 1.37h-9.2a.69.69 0 01-.68-.68z" fill="currentColor" />
-                    </g>
-                </svg>
+                <i data-feather="x" class="w-7 h-7 {{ $dark ? 'text-gray-200' : 'text-gray-600'}}"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation -->
-        @include('kernl-ui::/menus/mobile-navigation')
-        @if($menuStyle === 'mega')
-            <!-- Mega Menu Navigation -->
-            @include('kernl-ui::/menus/mega-menu')
-        @else
-            <!-- Desktop Navigation -->
-            @include('kernl-ui::/menus/desktop-navigation')
+        @if ($links)
+            <ul class="mt-8 w-full">
+                @if ($search)
+                    {{-- Search Form --}}
+                    <li class="block pb-4">
+                        <form action="/" method="GET" class="relative">
+                            <svg class="absolute top-3.5 left-0 w-4 h-4 {{ $dark ? 'text-gray-50' : 'text-gray-700'}} pointer-events-none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input name="s" type="text" class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b {{ $dark ? 'border-gray-50 placeholder-gray-100 focus:border-blue-70' : 'border-gray-500 placeholder-gray-500 focus:border-blue-700' }} focus:ring-0" placeholder="Search by keywords">
+                            <button class="btn-sm py-0 px-3 absolute inset-y-0 right-0 my-1 md:my-3 focus:outline-none focus:ring focus:ring-blue-500 {{ $dark ? 'text-gray-50 border-gray-50' : 'text-gray-600 border-gray-500'}}">GO</button>
+                        </form>
+                    </li>
+                @endif
+                @foreach ($links as $item)
+                    <li class="block leading-5">
+                        @if (!$item->children)
+                            <a
+                                class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}
+"
+                                href="{{ $item->url }}"
+                            >
+                            {!! $item->label !!} {{ $item->active ? '<span class="sr-only">(current)</span>' : '' }}
+                            </a>
+                        @else
+                            <div class="w-full flex items-center justify-between text-left w-full border-b rounded-sm focus:outline-none focus:shadow-outline {{ $dark ? ' hover:bg-gray-900 hover:text-gray-100' : 'hover:bg-gray-50 text-gray-900'}}">
+                                <a 
+                                    id="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                    class="inline-flex w-full items-center justify-between py-4 px-3"
+                                    href="{{ $item->url }}"
+                                >
+                                    {!! $item->label !!}
+                                </a>
+                                <button
+                                    class="px-3 py-4"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    :aria-expanded="activeSection === '{{ $item->slug }}' ? 'true' : 'false'"
+                                    x-on:keydown.space.prevent="toggle('{{ $item->slug }}')"
+                                    x-on:keydown.enter.prevent="toggle('{{ $item->slug }}')"
+                                    x-on:click.prevent="toggle('{{ $item->slug }}')"
+                                >
+                                    <i class="w-4 h-4 {{ $dark ? 'text-gray-50' : 'text-gray-900'}}" data-feather="chevron-down"></i>
+                                </button>
+                            </div>
+                            @if ($item->children)
+                                <ul 
+                                    x-show.transition.opacity.duration.300ms="activeSection == '{{ $item->slug }}'" 
+                                    aria-labelledby="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                >
+                                    @foreach ($item->children as $child)
+                                        <li class="relative w-full">
+                                            <span 
+                                                aria-hidden="true" 
+                                                class="absolute inset-y-0 left-0 ml-3 flex items-center text-xl leading-none"
+                                            >
+                                                &middot;
+                                            </span>
+                                            <a 
+                                                class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}} {{ $item->classes ?? '' }} {{ $child->active ? 'active' : '' }}"
+                                                href="{{ $child->url }}"
+                                            >
+                                                {!! $child->label !!}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
         @endif
-        {{-- {!! $slot !!} --}}
     </div>
-</nav>
+</div>
