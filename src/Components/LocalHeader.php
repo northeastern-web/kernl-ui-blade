@@ -21,21 +21,20 @@ class LocalHeader extends Component
     public $supportNav;
 
     public function __construct(
-        $action = null, 
-        $currentPath = null, 
-        $dark = false, 
-        $links = [], 
-        $logoBlack = null, 
-        $logoWhite =  null, 
+        $action = null,
+        $currentPath = null,
+        $dark = false,
+        $links = [],
+        $logoBlack = null,
+        $logoWhite = null,
         $megaMenuCta = [],
         $megaMenuAlert = null,
         $megaMenuCopy = null,
         $menuStyle = null,
         $search = false,
-        $siteName = null, 
+        $siteName = null,
         $supportNav = []
-    )
-    {
+    ) {
         $this->action = $action;
         $this->currentPath = $currentPath;
         $this->dark = $dark;
