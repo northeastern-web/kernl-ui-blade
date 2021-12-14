@@ -48,7 +48,7 @@
                     x-on:click.away="toggle"
                 >
                     <form
-                        action="{{ $action }}"
+                        action="{{ $action ? $action : '/' }}"
                         method="GET"
                         class="relative"
                     >

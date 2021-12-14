@@ -32,7 +32,7 @@ class LocalHeader extends Component
         $megaMenuAlert = null,
         $megaMenuCopy = null,
         $menuStyle = null,
-        $search = false,
+        $search = true,
         $searchName = null,
         $siteName = null,
         $supportNav = []

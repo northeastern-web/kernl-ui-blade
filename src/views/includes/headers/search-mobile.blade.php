@@ -1,7 +1,7 @@
 @if($action)
     <li class="block pb-4">
         <form
-            action="{{ $action }}"
+            action="{{ $action ? $action : '/' }}"
             method="GET"
             class="relative"
         >

@@ -68,50 +68,106 @@ $events->beforeBuild(function (Jigsaw $jigsaw) {
 To use the local header component, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-local-header :links="$links" :current-path="$currentPath" action="/search">
-    <x-slot name="logo">
-        <!-- Insert SVG logo here with class="w-full" applied -->
-    </x-slot>
-    <x-slot name="afterLinksMobile">
-        <!-- Insert any additional elements that should be included after the links in the mobile menu (logout forms, etc.). This slot it optional. -->
-    </x-slot>
-    <x-slot name="afterLinksDesktop">
-        <!-- Insert any additional elements that should be included after the links in the desktop menu (logout forms, search modal, etc.) -->
-    </x-slot>
+<x-kernl-local-header
+    :currentPath="$currentPath"
+    :links="$links"
+    :supportNav="$supportNav"
+    :dark="$dark"
+    :siteName="$siteName"
+    :logoBlack="$logoBlack"
+    :logoWhite="$logoWhite"
+    :menuStyle="$menuStyle"
+    :search="$search"
+    :searchName="$searchName"
+    :action="$action"
+    :megaMenuCta="$megaMenuCta"
+    :megaMenuAlert="$megaMenuAlert"
+    :megaMenuCopy="$megaMenuCopy"
+>
+    <!-- OPTIONAL SLOTS -->
+        <x-slot name="logo">
+            <!-- Insert SVG logo here with class="w-full" applied -->
+            NOTE: This logo will only be used if logoBlack/white are not provided.
+        </x-slot>
+        <x-slot name="afterLinksMobile">
+            <!-- Insert any additional elements that should be included after the links in the mobile menu (logout forms, etc.). This slot it optional. -->
+        </x-slot>
+        <x-slot name="afterLinksDesktop">
+            <!-- Insert any additional elements that should be included after the links in the desktop menu (logout forms, search modal, etc.).-->
+        </x-slot>
+    <!-- / OPTIONAL SLOTS -->
 </x-kernl-local-header>
 ```
 
 #### Props
 
--   `links` = Array of links for the navigation sections of the header. Each link can have a `children` key that's an array of more links. These links will be displayed in a dropdown under the parent link. Example:
+##### General Site Info
+
+-   `current-path` (optional) - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
+
+-   `siteName` = Provide the name of your site. Example: College of Science. This value will be used to populate various alt and name tags for accessibility purposes.
+
+-   `logoBlack` - An SVG of your site logo to be used on the default, light theme. Default is ITS Web Solutions Logo.
+
+-   `logoWhite` - An SVG of your site logo to be used if dark theme is being utilized. Default is ITS Web Solutions Logo.
+
+##### Menu Items
+
+-   `links` (optional) - Array of links for the navigation sections of the header. Each link can have a `children` key that's an array of more links. These links will be displayed in a dropdown under the parent link. Example:
     ```php
     $links = [
         [
-            'text' => 'Our Programs',
-            'href' => '/programs',
+            'label' => 'Our Programs',
+            'url' => '/programs',
             // The `match` key is used to determine if top-level links should have the active state show. Uses Laravel's Str::is() helper under the hood, so wildcards or arrays of possible matches are allowed. If no active state should be shown, omit this key.
             'match' => '/programs*',
         ],
         [
-            'text' => 'About',
-            'href' => '/about',
+            'label' => 'About',
+            'url' => '/about',
             'match' => '/about*',
             'children' => [
                 [
-                    'text' => 'Careers',
-                    'href' => '/about/careers',
+                    'label' => 'Careers',
+                    'url' => '/about/careers',
                 ],
                 [
-                    'text' => 'Staff',
-                    'href' => '/about/staff',
+                    'label' => 'Staff',
+                    'url' => '/about/staff',
                 ],
             ],
         ],
     ];
     ```
--   `current-path` - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
--   `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, be sure to update all fills in the logo you're using to white (#ffffff).
--   `action` (optional) - Adds search component to header. `action` should be the url the search form should submit a GET request to. The input value will be submitted as a form parameter with the name `search`.
+-   `supportNav` - Optional array of links for the support navigation section of the header. This array should be formatted exactly as they are in the `links` prop.
+
+##### Menu Options
+
+-   `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, you will need to provide a white logo to the logoWhite prop, or use a white logo in the logo x-slot.
+
+-   `menuStyle` - Pass one of two values into this: 'standard', or 'mega'. Default is 'standard.'
+
+##### Search Options
+
+-   `action` (optional) - The url the search form should submit a GET request to. The input value will be submitted as a form parameter. Note, if no action is supplied, search will not display on your site, even if you don't set the `search` prop to false.
+-   `search` - Add a search option to your local header. Default is true. Set to false to remove search functionality from your local header.
+-   `searchName` - This sets the `name` value of your search form input. Default is "search", but depending upon your site could be different. For instance, on WordPress sites that use the Relevanssi plugin, the searchName should be set to 's'.
+
+##### Mega Menu Options
+
+-   `megaMenuCta` - If you select 'mega' as your `menuStyle`, you can add a CTA to the footer of each menu item. It should be formatted as such:
+
+```php
+    $megaMenuCta = [
+        "title" => "Your Link Title",
+        "url" => "https://yourlinkurl.com",
+        "target" => "_blank"
+    ]
+```
+
+-   `megaMenuAlert` - This is an optional string that will place a badge next to the title of your CTA.
+
+-   `megaMenuCopy` - This is an optional string that will allow you to write some copy about your CTA for context.
 
 ### Accordions
 
