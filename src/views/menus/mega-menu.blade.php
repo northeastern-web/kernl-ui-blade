@@ -15,20 +15,20 @@
                                 let windowSize = screen.width;
                                 megaMenu($el, windowSize);
                             "
-                            @if($item->children)
+                            @if($item['children'])
                                 x-on:click.prevent
                             @endif
-                            href="{{ $item->url }}"
+                            href="{{ $item['href'] }}"
                             :class="isOpen ? 'bg-gray-100 text-gray-800' : ''"
                             class="inline-flex items-center pl-4 py-1 text-sm rounded-sm hover:bg-gray-100 transition duration-200 hover:text-gray-800 hover:cursor-pointer focus:outline-none focus:ring focus:ring-blue-400
                                 {{ $dark ? 'text-white' : 'text-gray-800' }}
-                                {{ !$item->children ? ' pr-4' :''}}
+                                {{ !$item['children'] ? ' pr-4' :''}}
                             " 
                             aria-expanded="false"
 
                         >
-                            <span class="py-1 border-b-2 border-transparent">{!! $item->label !!}</span>
-                            @if ($item->children)
+                            <span class="py-1 border-b-2 border-transparent">{!! $item['text'] !!}</span>
+                            @if ($item['children'])
                                 <svg 
                                     class="text-gray-400 mx-4 xl:ml-1 xl:mr-5 h-5 w-5 group-hover:text-gray-500 transition ease-in-out duration-150" 
                                     xmlns="http://www.w3.org/2000/svg" 
@@ -45,7 +45,7 @@
                             @endif
                         </a>
                     
-                    @if($item->children)
+                    @if($item['children'])
                         {{-- Mega Menu - Pop-out --}}
                         <div
                             x-show="isOpen"
@@ -64,33 +64,33 @@
                             <div class="pt-4 pl-8 pr-16 bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                                 <div class="relative bg-white px-5 py-3 mt-6">
                                     <a 
-                                        href="{!! $item->url !!}" 
+                                        href="{!! $item['href'] !!}" 
                                         class="-m-3 pr-1 flex mb-1 items-start  border-l-3 border-transparent hover:border-red-700 transition ease-in-out duration-150"
                                     >
                                         <div class="mx-4">
                                             <p class="text-base uppercase font-medium text-gray-800 text-sm leading-5">
-                                                {!! $item->label !!}
+                                                {!! $item['text'] !!}
                                             </p>
                                         </div>
                                     </a>
                                 </div>
                                 @php 
-                                    $childrenCount = count($item->children);
+                                    $childrenCount = count($item['children']);
                                     $cols = ceil($childrenCount/6);
                                 @endphp
                                 <ul class="relative grid gap-6 bg-white px-5 py-3 sm:gap-8 sm:p-8 lg:grid-cols-{!! $cols !!}">
-                                    @foreach ($item->children as $child)
+                                    @foreach ($item['children'] as $child)
                                         <li>
                                             <a 
-                                            @if($loop->last && !$mega_menu_cta )
+                                            @if($loop->last && !$megaMenuCta )
                                                 x-on:keydown.tab="isOpen = false"
                                             @endif
-                                            href="{!! $child->url !!}" 
+                                            href="{!! $child['href'] !!}" 
                                             class="-m-3 pr-1 flex mb-1 h-5 items-center border-l-3 border-transparent hover:border-red-700  transition ease-in-out duration-150"
                                         >
                                             <div class="mx-4">
                                                 <p class="text-base font-medium hover:underline text-gray-800 leading-5 hover:text-black">
-                                                    {!! $child->label !!}
+                                                    {!! $child['text'] !!}
                                                 </p>
                                             </div>
                                             </a>
@@ -100,30 +100,30 @@
                             </div>
 
                             {{-- Mega Menu CTA --}}
-                            @if($mega_menu_cta)
+                            @if($megaMenuCta)
                                 <div class="p-5 w-full bg-gray-cool-100 sm:p-8">
                                     <a 
                                         x-on:keydown.tab="isOpen = false"
-                                        target="{!! $mega_menu_cta['target'] !!}" 
-                                        href="{!! $mega_menu_cta['url'] !!}" 
+                                        target="{!! $megaMenuCta['target'] !!}" 
+                                        href="{!! $megaMenuCta['url'] !!}" 
                                         class="-m-3 p-1 flow-root rounded-md hover:bg-gray-100 transition ease-in-out duration-150"
                                     >
                                         <span class="flex items-center">
                                             <span class="text-base font-medium text-gray-800 leading-5">
-                                                {!! $mega_menu_cta['title'] !!}
+                                                {!! $megaMenuCta['title'] !!}
                                             </span>
                                         
-                                            @if ($mega_menu_alert)
+                                            @if ($megaMenuAlert)
                                                 <span class="ml-3 inline-flex items-center px-3 py-0.5 text-xs font-medium leading-5 bg-gray-cool-300">
-                                                    {!! $mega_menu_alert !!}
+                                                    {!! $megaMenuAlert !!}
                                                 </span>
                                             @endif
 
                                         </span>
                                         
-                                        @if($mega_menu_copy)
+                                        @if($megaMenuCopy)
                                             <span class="mt-1 block text-sm text-gray-500">
-                                                {!! $mega_menu_copy !!}
+                                                {!! $megaMenuCopy !!}
                                             </span>
                                         @endif
                                     </a>

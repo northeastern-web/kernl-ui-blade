@@ -76,41 +76,53 @@
                 @endif
                 @foreach ($links as $item)
                     <li class="block leading-5">
-                        @if (!$item->children)
+                        @if (!$item['children'])
                             <a
-                                class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}
-"
-                                href="{{ $item->url }}"
+                                class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}"
+                                href="{{ $item['href'] }}"
+                                {!! $currentPath == $item['href'] ? 'aria-current="page"' : '' !!}
+                                {!! \Illuminate\Support\Str::startsWith($item['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                             >
-                            {!! $item->label !!} {{ $item->active ? '<span class="sr-only">(current)</span>' : '' }}
+                                {{ $item['text'] }}
                             </a>
                         @else
                             <div class="w-full flex items-center justify-between text-left w-full border-b rounded-sm focus:outline-none focus:shadow-outline {{ $dark ? ' hover:bg-gray-900 hover:text-gray-100' : 'hover:bg-gray-50 text-gray-900'}}">
                                 <a 
                                     id="mobile-navbar-dropdown-{!! $loop->index !!}"
                                     class="inline-flex w-full items-center justify-between py-4 px-3"
-                                    href="{{ $item->url }}"
+                                    href="{{ $item['href'] }}"
                                 >
-                                    {!! $item->label !!}
+                                    {!! $item['text'] !!}
                                 </a>
                                 <button
                                     class="px-3 py-4"
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
-                                    :aria-expanded="activeSection === '{{ $item->slug }}' ? 'true' : 'false'"
-                                    x-on:keydown.space.prevent="toggle('{{ $item->slug }}')"
-                                    x-on:keydown.enter.prevent="toggle('{{ $item->slug }}')"
-                                    x-on:click.prevent="toggle('{{ $item->slug }}')"
+                                    @if ($item['slug'])
+                                        :aria-expanded="activeSection === '{{ $item['slug'] }}' ? 'true' : 'false'"
+                                        x-on:keydown.space.prevent="toggle('{{ $item['slug'] }}')"
+                                        x-on:keydown.enter.prevent="toggle('{{ $item['slug'] }}')"
+                                        x-on:click.prevent="toggle('{{ $item['slug'] }}')"
+                                    @else
+                                        :aria-expanded="activeSection === '{{ $loop->index }}' ? 'true' : 'false'"
+                                        x-on:keydown.space.prevent="toggle('{{ $loop->index }}')"
+                                        x-on:keydown.enter.prevent="toggle('{{ $loop->index }}')"
+                                        x-on:click.prevent="toggle('{{ $loop->index }}')"
+                                    @endif
                                 >
                                     <i class="w-4 h-4 {{ $dark ? 'text-gray-50' : 'text-gray-900'}}" data-feather="chevron-down"></i>
                                 </button>
                             </div>
-                            @if ($item->children)
+                            @if ($item['children'])
                                 <ul 
-                                    x-show.transition.opacity.duration.300ms="activeSection == '{{ $item->slug }}'" 
+                                    @if ($item['slug'])
+                                        x-show.transition.opacity.duration.300ms="activeSection == '{{ $item['slug'] }}'" 
+                                    @else
+                                        x-show.transition.opacity.duration.300ms="activeSection == '{{ $loop->index }}'" 
+                                    @endif
                                     aria-labelledby="mobile-navbar-dropdown-{!! $loop->index !!}"
                                 >
-                                    @foreach ($item->children as $child)
+                                    @foreach ($item['children'] as $child)
                                         <li class="relative w-full">
                                             <span 
                                                 aria-hidden="true" 
@@ -119,10 +131,12 @@
                                                 &middot;
                                             </span>
                                             <a 
-                                                class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}} {{ $item->classes ?? '' }} {{ $child->active ? 'active' : '' }}"
-                                                href="{{ $child->url }}"
+                                                class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}}"
+                                                href="{{ $child['href'] }}"
+                                                {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
+                                                {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                                             >
-                                                {!! $child->label !!}
+                                                {!! $child['text'] !!}
                                             </a>
                                         </li>
                                     @endforeach
