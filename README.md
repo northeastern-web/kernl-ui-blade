@@ -74,6 +74,7 @@ To use the local header component, add the following markup to your Blade templa
     :supportNav="$supportNav"
     :dark="$dark"
     :siteName="$siteName"
+    :siteHome="$siteHome"
     :logoBlack="$logoBlack"
     :logoWhite="$logoWhite"
     :menuStyle="$menuStyle"
@@ -106,6 +107,8 @@ To use the local header component, add the following markup to your Blade templa
 -   `current-path` (optional) - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
 
 -   `siteName` = Provide the name of your site. Example: College of Science. This value will be used to populate various alt and name tags for accessibility purposes.
+
+-   `siteHome` = Provide the home url of your site. Example: https://www.northeastern.edu/graduate. If no siteHome is provided, the default is '/'.
 
 -   `logoBlack` - An SVG of your site logo to be used on the default, light theme. Default is ITS Web Solutions Logo.
 

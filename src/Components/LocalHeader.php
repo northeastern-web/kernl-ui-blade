@@ -18,6 +18,7 @@ class LocalHeader extends Component
     public $menuStyle;
     public $search;
     public $searchName;
+    public $siteHome;
     public $siteName;
     public $supportNav;
 
@@ -34,6 +35,7 @@ class LocalHeader extends Component
         $menuStyle = null,
         $search = true,
         $searchName = null,
+        $siteHome = null,
         $siteName = null,
         $supportNav = []
     ) {
@@ -49,6 +51,7 @@ class LocalHeader extends Component
         $this->menuStyle = $menuStyle;
         $this->search = $search;
         $this->searchName = $searchName;
+        $this->siteHome = $siteHome;
         $this->siteName = $siteName;
         $this->supportNav = $supportNav;
     }

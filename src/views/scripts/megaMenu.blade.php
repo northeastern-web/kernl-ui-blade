@@ -1,5 +1,5 @@
 <script>
-    export default function megaMenu($el, windowSize) {
+    const megaMenu = ($el, windowSize) => {
         let menuPosition = $el.getBoundingClientRect().right;
         let edgeDistance = windowSize - menuPosition;
         let positionClass = "";

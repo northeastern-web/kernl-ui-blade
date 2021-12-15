@@ -1,8 +1,7 @@
 <nav 
+     
+    x-data="{ ...localHeaderNav() }"
     x-init="init" 
-    x-data="{ 
-        ...localHeaderNav()
-    }" 
     class="pt-4 pb-3 {{ $dark ? 'bg-gray-800 text-gray-50' : 'text-gray-900 bg-white' }}"
 >
     <div class="px-4 {{ $dark ? 'text-gray-50' : 'text-gray-900' }} xl:flex xl:items-center xl:justify-between xl:px-16">
@@ -11,7 +10,7 @@
                 id="logo"
                 alt="{!! $siteName !!} logo"
                 class="inline-block p-1 focus:outline-none focus:ring focus:ring-blue-400"
-                href="{{ home_url('/') }}"
+                href="{!! $siteHome ? $siteHome : '/' !!}"
             >
                 @if ($dark)
                     @if ($logoWhite)
@@ -61,13 +60,13 @@
         </div>
 
         <!-- Mobile Navigation -->
-        @include('kernl-ui::/menus/mobile-navigation')
+        @include('kernl-ui::menus.mobile-navigation')
         @if($menuStyle === 'mega')
             <!-- Mega Menu Navigation -->
-            @include('kernl-ui::/menus/mega-menu')
+            @include('kernl-ui::menus.mega-menu')
         @else
             <!-- Desktop Navigation -->
-            @include('kernl-ui::/menus/desktop-navigation')
+            @include('kernl-ui::menus.desktop-navigation')
         @endif
         {{-- {!! $slot !!} --}}
     </div>
