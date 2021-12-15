@@ -16,6 +16,12 @@ You can install the package via composer:
 composer require northeastern-web/kernl-ui-blade
 ```
 
+> Note: In order to load the scripts needed for the kernl-ui blade package, you will need to include the scripts just before the closing `</body>` tag in your main template. Example
+
+```php
+    @include('kernl-ui::scripts')
+```
+
 > Note: You may need to add the following to your `composer.json` file before installing the package.
 
 ```json
