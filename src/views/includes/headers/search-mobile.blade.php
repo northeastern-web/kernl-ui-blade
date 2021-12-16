@@ -1,7 +1,7 @@
 @if($action)
     <li class="block pb-4">
         <form
-            action="{{ $action }}"
+            action="{{ $action ? $action : '/' }}"
             method="GET"
             class="relative"
         >
@@ -21,7 +21,7 @@
                 <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
             <input
-                name="search"
+                name="{{$searchName ? $searchName : 'search'}}"
                 type="text"
                 @if($dark)
                     class="block w-full h-full py-3 pl-6 pr-1 bg-transparent border-0 border-b placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-blue-700"

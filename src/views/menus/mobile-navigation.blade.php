@@ -1,18 +1,30 @@
-<nav 
-     
-    x-data="{ ...localHeaderNav() }"
-    x-init="init" 
-    class="pt-4 pb-3 {{ $dark ? 'bg-gray-800 text-gray-50' : 'text-gray-900 bg-white' }}"
+<div 
+    class="relative z-50" 
+    x-cloak
 >
-    <div class="px-4 {{ $dark ? 'text-gray-50' : 'text-gray-900' }} xl:flex xl:items-center xl:justify-between xl:px-16">
-        <div class="flex items-center justify-between">
-            <a
-                id="logo"
-                alt="{!! $siteName !!} logo"
-                class="inline-block p-1 focus:outline-none focus:ring focus:ring-blue-400"
+    <div 
+        x-show.transition.opacity.duration.300ms="navIsOpen"
+        class="fixed inset-0 bg-black bg-opacity-50 transition-opacity xl:hidden" 
+        x-on:click="navIsOpen = false"
+    ></div>
+    <div 
+        id="navbarContent"
+        x-show="navIsOpen"
+        x-transition:enter="ease-out duration-300"
+        x-transition:enter-start="-translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="-translate-x-full"
+        class="fixed inset-y-0 left-0 transform px-4 pt-6 pb-16 overflow-y-auto transition-transform xl:hidden {{ $dark ? 'bg-gray-800 text-gray-50' : 'bg-white text-gray-900'}}"
+    >
+        <div class="flex items-start justify-between">
+            <a 
+                alt="{!! $siteName !!} logo" 
+                class="inline-block focus:outline-none focus:shadow-outline" 
                 href="{!! $siteHome ? $siteHome : '/' !!}"
             >
-                @if ($dark)
+                @if($dark)
                     @if ($logoWhite)
                         {!! $logoWhite !!}
                     @elseif ($logo)
@@ -38,36 +50,199 @@
                     @endif
                 @endif
             </a>
+
             <button 
-                class="ml-6 xl:hidden focus:outline-none focus:ring focus:ring-blue-500"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarContent"
-                aria-controls="navbarContent"
-                x-bind:aria-expanded="navIsOpen ? 'true' : 'false' ? 'true' : 'false'"
-                aria-label="Toggle navigation"
-                x-on:click="navIsOpen = ! navIsOpen"
+                class="ml-8 focus:outline-none focus:shadow-outline" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navbarContent" 
+                aria-controls="navbarContent" 
+                :aria-expanded="navIsOpen ? 'true' : 'false'" 
+                aria-label="Close navigation" 
+                x-on:click="navIsOpen = false"
             >
-                <svg 
-                    class="w-8 h-8 {{ $dark ? 'text-gray-100' : 'text-gray-800' }}" 
-                    viewBox="0 0 21 12" fill="none"
-                >
-                    <g clip-path="url(#clip0)">
-                        <path d="M20.35 10.13a.67.67 0 11-.96.92c-.8-.9-2.34-2.59-2.4-2.54a4.07 4.07 0 01-4.82.11 4.31 4.31 0 01-1.53-1.95 4.5 4.5 0 01.9-4.72 3.95 3.95 0 015.84 0 4.2 4.2 0 011.22 3.08c.01.9-.26 1.8-.77 2.54a36.2 36.2 0 002.52 2.56zm-7.9-2.98a2.77 2.77 0 003.14.65c.35-.15.67-.37.93-.65a2.87 2.87 0 00.85-2.12 3.12 3.12 0 00-.85-2.14A2.9 2.9 0 0014.47 2a2.67 2.67 0 00-2.04.89A2.96 2.96 0 0011.59 5a2.98 2.98 0 00.85 2.14zM.82 6.47c0-.37.3-.68.68-.68h5.24a.69.69 0 010 1.37H1.51a.69.69 0 01-.68-.69zm0-4.8c0-.38.3-.7.68-.7h5.9a.69.69 0 010 1.38h-5.9a.69.69 0 01-.68-.69zm0 9.6c0-.37.3-.68.68-.68h9.2a.69.69 0 110 1.37h-9.2a.69.69 0 01-.68-.68z" fill="currentColor" />
-                    </g>
-                </svg>
+                <i data-feather="x" class="w-7 h-7 {{ $dark ? 'text-gray-200' : 'text-gray-600'}}"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation -->
-        @include('kernl-ui::menus.mobile-navigation')
-        @if($menuStyle === 'mega')
-            <!-- Mega Menu Navigation -->
-            @include('kernl-ui::menus.mega-menu')
-        @else
-            <!-- Desktop Navigation -->
-            @include('kernl-ui::menus.desktop-navigation')
+        @if ($links)
+            <ul class="mt-8 w-full">
+                @if ($search)
+                    @include('kernl-ui::includes.headers.search-mobile')
+                @endif
+                <!-- Primary Navigation -->
+                @foreach ($links as $item)
+                    <li class="block leading-5">
+                        @isset($item['children'])
+                            @if(count($item['children']) > 0)
+                                <div class="w-full flex items-center justify-between text-left w-full border-b rounded-sm focus:outline-none focus:shadow-outline {{ $dark ? ' hover:bg-gray-900 hover:text-gray-100' : 'hover:bg-gray-50 text-gray-900'}}">
+                                    <a 
+                                        id="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                        class="inline-flex w-full items-center justify-between py-4 px-3"
+                                        href="{{ $item['href'] }}"
+                                    >
+                                        {!! $item['text'] !!}
+                                    </a>
+                                    <button
+                                        class="px-3 py-4"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        @isset ($item['slug'])
+                                            :aria-expanded="activeSection === '{{ $item['slug'] }}' ? 'true' : 'false'"
+                                            x-on:keydown.space.prevent="toggle('{{ $item['slug'] }}')"
+                                            x-on:keydown.enter.prevent="toggle('{{ $item['slug'] }}')"
+                                            x-on:click.prevent="toggle('{{ $item['slug'] }}')"
+                                        @else
+                                            :aria-expanded="activeSection === '{{ $loop->index }}' ? 'true' : 'false'"
+                                            x-on:keydown.space.prevent="toggle('{{ $loop->index }}')"
+                                            x-on:keydown.enter.prevent="toggle('{{ $loop->index }}')"
+                                            x-on:click.prevent="toggle('{{ $loop->index }}')"
+                                        @endif
+                                    >
+                                        <i class="w-4 h-4 {{ $dark ? 'text-gray-50' : 'text-gray-900'}}" data-feather="chevron-down"></i>
+                                    </button>
+                                </div>
+                                @isset ($item['children'])
+                                    @if(count($item['children']) > 0)
+                                        <ul 
+                                            @isset ($item['slug'])
+                                                x-show.transition.opacity.duration.300ms="activeSection == '{{ $item['slug'] }}'" 
+                                            @else
+                                                x-show.transition.opacity.duration.300ms="activeSection == '{{ $loop->index }}'" 
+                                            @endif
+                                            aria-labelledby="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                        >
+                                            @foreach ($item['children'] as $child)
+                                                <li class="relative w-full">
+                                                    <span 
+                                                        aria-hidden="true" 
+                                                        class="absolute inset-y-0 left-0 ml-3 flex items-center text-xl leading-none"
+                                                    >
+                                                        &middot;
+                                                    </span>
+                                                    <a 
+                                                        class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}}"
+                                                        href="{{ $child['href'] }}"
+                                                        {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
+                                                        {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                                    >
+                                                        {!! $child['text'] !!}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                @endif
+                            @else
+                                <a
+                                    class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}"
+                                    href="{{ $item['href'] }}"
+                                    {!! $currentPath == $item['href'] ? 'aria-current="page"' : '' !!}
+                                    {!! \Illuminate\Support\Str::startsWith($item['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                >
+                                    {{ $item['text'] }}
+                                </a>
+                            @endif
+                        @else
+                            <a
+                                class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}"
+                                href="{{ $item['href'] }}"
+                                {!! $currentPath == $item['href'] ? 'aria-current="page"' : '' !!}
+                                {!! \Illuminate\Support\Str::startsWith($item['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                            >
+                                {{ $item['text'] }}
+                            </a>
+                        @endif
+                    </li>
+                @endforeach
+                <!-- Support Navigation -->
+                @foreach ($supportNav as $item)
+                    <li class="block leading-5">
+                        @isset($item['children'])
+                            @if(count($item['children']) > 0)
+                                <div class="w-full flex items-center justify-between text-left w-full border-b rounded-sm focus:outline-none focus:shadow-outline {{ $dark ? ' hover:bg-gray-900 hover:text-gray-100' : 'hover:bg-gray-50 text-gray-900'}}">
+                                    <a 
+                                        id="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                        class="inline-flex w-full items-center justify-between py-4 px-3"
+                                        href="{{ $item['href'] }}"
+                                    >
+                                        {!! $item['text'] !!}
+                                    </a>
+                                    <button
+                                        class="px-3 py-4"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        @isset ($item['slug'])
+                                            :aria-expanded="activeSection === '{{ $item['slug'] }}' ? 'true' : 'false'"
+                                            x-on:keydown.space.prevent="toggle('{{ $item['slug'] }}')"
+                                            x-on:keydown.enter.prevent="toggle('{{ $item['slug'] }}')"
+                                            x-on:click.prevent="toggle('{{ $item['slug'] }}')"
+                                        @else
+                                            :aria-expanded="activeSection === '{{ $loop->index }}' ? 'true' : 'false'"
+                                            x-on:keydown.space.prevent="toggle('{{ $loop->index }}')"
+                                            x-on:keydown.enter.prevent="toggle('{{ $loop->index }}')"
+                                            x-on:click.prevent="toggle('{{ $loop->index }}')"
+                                        @endif
+                                    >
+                                        <i class="w-4 h-4 {{ $dark ? 'text-gray-50' : 'text-gray-900'}}" data-feather="chevron-down"></i>
+                                    </button>
+                                </div>
+                                @isset ($item['children'])
+                                    @if(count($item['children']) > 0)
+                                        <ul 
+                                            @isset ($item['slug'])
+                                                x-show.transition.opacity.duration.300ms="activeSection == '{{ $item['slug'] }}'" 
+                                            @else
+                                                x-show.transition.opacity.duration.300ms="activeSection == '{{ $loop->index }}'" 
+                                            @endif
+                                            aria-labelledby="mobile-navbar-dropdown-{!! $loop->index !!}"
+                                        >
+                                            @foreach ($item['children'] as $child)
+                                                <li class="relative w-full">
+                                                    <span 
+                                                        aria-hidden="true" 
+                                                        class="absolute inset-y-0 left-0 ml-3 flex items-center text-xl leading-none"
+                                                    >
+                                                        &middot;
+                                                    </span>
+                                                    <a 
+                                                        class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}}"
+                                                        href="{{ $child['href'] }}"
+                                                        {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
+                                                        {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                                    >
+                                                        {!! $child['text'] !!}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                @endif
+                            @else
+                                <a
+                                    class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}"
+                                    href="{{ $item['href'] }}"
+                                    {!! $currentPath == $item['href'] ? 'aria-current="page"' : '' !!}
+                                    {!! \Illuminate\Support\Str::startsWith($item['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                >
+                                    {{ $item['text'] }}
+                                </a>
+                            @endif
+                        @else
+                            <a
+                                class="inline-block w-full py-4 px-3 border-b rounded-sm focus:outline-none focus:shadow-outline {{ $item->classes ?? '' }}{{ $item->active ? 'active' : '' }}{{ $dark ? 'hover:text-gray-50 hover:bg-gray-900' : 'hover:text-gray-900 hover:bg-gray-50'}}"
+                                href="{{ $item['href'] }}"
+                                {!! $currentPath == $item['href'] ? 'aria-current="page"' : '' !!}
+                                {!! \Illuminate\Support\Str::startsWith($item['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                            >
+                                {{ $item['text'] }}
+                            </a>
+                        @endif
+                    </li>
+                @endforeach
+                @isset($afterLinksMobile)
+                    {{ $afterLinksMobile }}
+                @endif
+            </ul>
         @endif
-        {{-- {!! $slot !!} --}}
     </div>
-</nav>
+</div>
