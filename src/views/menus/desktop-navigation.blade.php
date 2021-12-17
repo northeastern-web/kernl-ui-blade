@@ -3,7 +3,7 @@
         @include('kernl-ui::/menus/support-navigation')
     @endif
     @if ($links)
-        <ul class="-mx-2 flex {{ $supportNav ? 'items-end my-3 text-right' : 'items-center' }}">
+        <ul class="-mx-2 flex {{ $supportNav ? 'items-center my-3 text-right' : 'items-center' }}">
             @foreach ($links as $item)
                 @isset($item['children'])
                     @if(count($item['children']) > 0)

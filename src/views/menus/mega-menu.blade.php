@@ -4,7 +4,7 @@
     @endif
 
     @if ($links)
-        <ul class="-mx-2 flex {{ $supportNav ? 'items-start my-3' : 'items-center' }}">
+        <ul class="-mx-2 flex {{ $supportNav ? 'items-center my-3' : 'items-center' }}">
             @foreach ($links as $item)
                 <div x-data="{isOpen: false} "class="relative" role="listitem">
                     {{-- Mega Menu Item --}}
