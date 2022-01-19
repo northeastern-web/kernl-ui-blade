@@ -123,7 +123,7 @@
                                                         class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}}"
                                                         href="{{ $child['href'] }}"
                                                         {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
-                                                        {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                                        {!! \Illuminate\Support\Str::startsWith($child['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                                                     >
                                                         {!! $child['text'] !!}
                                                     </a>
@@ -208,7 +208,7 @@
                                                         class="block py-4 pr-4 pl-8 whitespace-no-wrap focus:outline-none focus:shadow-outline {{ $dark ? 'text-gray-50 hover:bg-gray-50 hover:text-gray-900' : 'text-gray-900 hover:text-gray-50 hover:bg-gray-900'}}"
                                                         href="{{ $child['href'] }}"
                                                         {!! $currentPath == $child['href'] ? 'aria-current="page"' : '' !!}
-                                                        {!! \Illuminate\Support\Str::startsWith($link['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
+                                                        {!! \Illuminate\Support\Str::startsWith($child['href'], '#') ? '@click="navIsOpen = false"' : '' !!}
                                                     >
                                                         {!! $child['text'] !!}
                                                     </a>
