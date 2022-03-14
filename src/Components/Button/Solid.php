@@ -17,17 +17,17 @@ class Solid extends Component
     ];
 
     protected $colors = [
-        'black' => 'text-white bg-black hover:bg-gray-900',
-        'white' => 'text-black bg-white hover:bg-gray-100',
-        'gray-600' => 'text-white bg-gray-600 hover:bg-gray-700',
-        'gray-300' => 'text-gray-900 bg-gray-300 hover:bg-gray-200',
+        'dark' => 'text-white bg-black hover:bg-gray-900',
+        'light' => 'text-black bg-white hover:bg-gray-100',
+        'medium-gray' => 'text-white bg-gray-600 hover:bg-gray-700',
+        'light-gray' => 'text-gray-900 bg-gray-300 hover:bg-gray-200',
         'red' => 'text-white bg-red-600 hover:bg-red-700',
         'blue' => 'text-white bg-blue-700 hover:bg-blue-800',
         'green' => 'text-white bg-green-600 hover:bg-green-700',
         'aqua' => 'text-white bg-aqua-500 hover:bg-aqua-600',
     ];
 
-    public function __construct($color = 'black', $href = '', $size = '')
+    public function __construct($color = 'dark', $href = '', $size = '')
     {
         if (isset($this->colors[$color])) {
             $this->colorClasses = $this->colors[$color];
