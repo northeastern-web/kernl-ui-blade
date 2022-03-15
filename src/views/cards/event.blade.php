@@ -29,7 +29,7 @@
                 </div>
                 <div class="mt-5">
                     <h2 class="{{ $titleClasses() }}">
-                        {{ $title }}
+                        {!! $title !!}
                     </h2>
                     <p class="{{ $bodyClasses() }}">
                         {{ $body }}
