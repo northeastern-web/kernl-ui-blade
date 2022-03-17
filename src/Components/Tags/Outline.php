@@ -14,10 +14,10 @@ class Outline extends Component
     public $uppercase;
 
     protected $colors = [
-        'black' => ['text-black', 'border-black'],
-        'white' => ['text-white', 'border-white'],
-        'gray-600' => ['text-gray-600', 'border-gray-600'],
-        'gray-300' => ['text-gray-300', 'border-gray-300'],
+        'dark' => ['text-black', 'border-black'],
+        'light' => ['text-white', 'border-white'],
+        'medium-gray' => ['text-gray-600', 'border-gray-600'],
+        'light-gray' => ['text-gray-300', 'border-gray-300'],
         'red' => ['text-red-600', 'border-red-600'],
         'blue' => ['text-blue-700', 'border-blue-700'],
         'green' => ['text-green-600', 'border-green-600'],
