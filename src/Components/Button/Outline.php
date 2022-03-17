@@ -27,7 +27,7 @@ class Outline extends Component
         'aqua' => 'text-aqua-500 border-aqua-500 hover:text-white hover:bg-aqua-500',
     ];
 
-    public function __construct($color = 'black', $href = '', $size = '')
+    public function __construct($color = 'dark', $href = '', $size = '')
     {
         if (isset($this->colors[$color])) {
             $this->colorClasses = $this->colors[$color];
