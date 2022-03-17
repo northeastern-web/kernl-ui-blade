@@ -27,9 +27,9 @@
                         <p class="text-sm font-bold">{{ $time }}</p>
                     </div>
                 </div>
-                <div class="mt-5">
+                <div class="mt-5 tester">
                     <h2 class="{{ $titleClasses() }}">
-                        {{ $title }}
+                        {!! $title !!}
                     </h2>
                     <p class="{{ $bodyClasses() }}">
                         {{ $body }}
