@@ -10,8 +10,8 @@ class LocalHeader extends Component
     public $currentPath;
     public $dark;
     public $links;
-    public $logoBlack;
-    public $logoWhite;
+    public $logoDark;
+    public $logoLight;
     public $megaMenuCta;
     public $megaMenuAlert;
     public $megaMenuCopy;
@@ -27,8 +27,8 @@ class LocalHeader extends Component
         $currentPath = null,
         $dark = false,
         $links = [],
-        $logoBlack = null,
-        $logoWhite = null,
+        $logoDark = null,
+        $logoLight = null,
         $megaMenuCta = [],
         $megaMenuAlert = null,
         $megaMenuCopy = null,
@@ -43,8 +43,8 @@ class LocalHeader extends Component
         $this->currentPath = $currentPath;
         $this->dark = $dark;
         $this->links = $links;
-        $this->logoBlack = $logoBlack;
-        $this->logoWhite = $logoWhite;
+        $this->logoDark = $logoDark;
+        $this->logoLight = $logoLight;
         $this->megaMenuCta = $megaMenuCta;
         $this->megaMenuAlert = $megaMenuAlert;
         $this->megaMenuCopy = $megaMenuCopy;

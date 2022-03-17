@@ -13,8 +13,8 @@
                 href="{!! $siteHome ? $siteHome : '/' !!}"
             >
                 @if ($dark)
-                    @if ($logoWhite)
-                        {!! $logoWhite !!}
+                    @if ($logoLight)
+                        {!! $logoLight !!}
                     @elseif ($logo)
                         {{ $logo }}
                     @else
@@ -25,8 +25,8 @@
                         </svg>
                     @endif
                 @else
-                    @if ($logoBlack)
-                        {!! $logoBlack !!}
+                    @if ($logoDark)
+                        {!! $logoDark !!}
                     @elseif ($logo)
                         {{ $logo }}
                     @else
