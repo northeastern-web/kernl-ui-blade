@@ -14,10 +14,10 @@ class Solid extends Component
     public $uppercase;
 
     protected $colors = [
-        'black' => ['text-white', 'bg-black'],
-        'white' => ['text-gray-900', 'bg-white'],
-        'gray-600' => ['text-white', 'bg-gray-600'],
-        'gray-300' => ['text-gray-900', 'bg-gray-300'],
+        'dark' => ['text-white', 'bg-black'],
+        'light' => ['text-gray-900', 'bg-white'],
+        'medium-gray' => ['text-white', 'bg-gray-600'],
+        'light-gray' => ['text-gray-900', 'bg-gray-300'],
         'red' => ['text-white', 'bg-red-600'],
         'blue' => ['text-white', 'bg-blue-700'],
         'green' => ['text-white', 'bg-green-600'],
