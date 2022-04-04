@@ -4,9 +4,9 @@ Package of Blade components for Northeastern University websites
 
 ## Prequisites
 
-In order to use this package, your project must be using the [@northeastern-web/kernl-ui JavaScript and CSS package](https://npmjs.com/package/@northeastern-web/kernl-ui).
-
-Your project also must support the new Laravel Blade 7 components.
+In order to use this package
+- Your project must be using the [@northeastern-web/kernl-ui JavaScript and CSS package](https://npmjs.com/package/@northeastern-web/kernl-ui).
+- Your project also must support the new [Laravel Blade 7 components](https://laravel.com/docs/7.x/blade#components).
 
 ## Installation
 
@@ -18,8 +18,22 @@ composer require northeastern-web/kernl-ui-blade
 
 > Note: In order to load the scripts needed for the kernl-ui blade package, you will need to include the scripts just before the closing `</body>` tag in your main template. Example
 
-```php
+**Blade Template**
+```blade
+    {{-- Include the scripts needed for the kernl-ui blade package --}}
     @include('kernl-ui::scripts')
+```
+
+**WordPress Example (via index.php)**
+```php
+
+<?php 
+    if (!is_admin()) { 
+        // Example using the Sage 10 package 
+        // and Laravel to render a blade template for 'scripts'
+        echo \Roots\view('kernl-ui::scripts')->render(); 
+    } 
+?>
 ```
 
 > Note: You may need to add the following to your `composer.json` file before installing the package.
@@ -81,8 +95,8 @@ To use the local header component, add the following markup to your Blade templa
     :dark="$dark"
     :siteName="$siteName"
     :siteHome="$siteHome"
-    :logoBlack="$logoBlack"
-    :logoWhite="$logoWhite"
+    :logoDark="$logoDark"
+    :logoLight="$logoLight"
     :menuStyle="$menuStyle"
     :search="$search"
     :searchName="$searchName"
@@ -91,18 +105,18 @@ To use the local header component, add the following markup to your Blade templa
     :megaMenuAlert="$megaMenuAlert"
     :megaMenuCopy="$megaMenuCopy"
 >
-    <!-- OPTIONAL SLOTS -->
+    {{-- OPTIONAL SLOTS --}}
         <x-slot name="logo">
-            <!-- Insert SVG logo here with class="w-full" applied -->
-            NOTE: This logo will only be used if logoBlack/white are not provided.
+            {{-- Insert SVG logo here with class="w-full" applied --}}
+            {{-- NOTE: This logo will only be used if `logoDark`/`logoLight` are not provided. --}}
         </x-slot>
         <x-slot name="afterLinksMobile">
-            <!-- Insert any additional elements that should be included after the links in the mobile menu (logout forms, etc.). This slot it optional. -->
+            {{-- Insert any additional elements that should be included after the links in the mobile menu (logout forms, etc.). This slot it optional. --}}
         </x-slot>
         <x-slot name="afterLinksDesktop">
-            <!-- Insert any additional elements that should be included after the links in the desktop menu (logout forms, search modal, etc.).-->
+            {{-- Insert any additional elements that should be included after the links in the desktop menu (logout forms, search modal, etc.).--}}
         </x-slot>
-    <!-- / OPTIONAL SLOTS -->
+    {{-- / OPTIONAL SLOTS --}}
 </x-kernl-local-header>
 ```
 
@@ -112,13 +126,13 @@ To use the local header component, add the following markup to your Blade templa
 
 -   `current-path` (optional) - Used to display the active state on each link. Pass the relative path of the current page (`/about/staff`).
 
--   `siteName` = Provide the name of your site. Example: College of Science. This value will be used to populate various alt and name tags for accessibility purposes.
+-   `siteName` - Provide the name of your site. Example: College of Science. This value will be used to populate various alt and name tags for accessibility purposes.
 
--   `siteHome` = Provide the home url of your site. Example: https://www.northeastern.edu/graduate. If no siteHome is provided, the default is '/'.
+-   `siteHome` - Provide the home url of your site. Example: https://www.northeastern.edu/graduate. If no siteHome is provided, the default is '/'.
 
--   `logoBlack` - An SVG of your site logo to be used on the default, light theme. Default is ITS Web Solutions Logo.
+-   `logoDark` - An SVG of your site logo to be used on the default, light theme. Default is ITS Web Solutions Logo.
 
--   `logoWhite` - An SVG of your site logo to be used if dark theme is being utilized. Default is ITS Web Solutions Logo.
+-   `logoLight` - An SVG of your site logo to be used if dark theme is being utilized. Default is ITS Web Solutions Logo.
 
 ##### Menu Items
 
@@ -291,13 +305,13 @@ To use the Bottom Title Banner component, add the following markup to your Blade
 To use the Solid Button and Outline Button components, add the following markup to your Blade template.
 
 ```blade
-<x-kernl-button.solid color="black">
+<x-kernl-button.solid color="dark">
     Button Text
 </x-kernl-button.solid>
 
 <!-- or -->
 
-<x-kernl-button.outline color="black">
+<x-kernl-button.outline color="dark">
     Button Text
 </x-kernl-button.outline>
 ```
@@ -306,8 +320,8 @@ By default, the button components will render a `button` element. If you need an
 
 Any additional classes or attributes you put on the component will be passed through.
 
-```
-<x-kernl-button.solid color="white" class="rounded-full" @click="doSomething">
+```blade
+<x-kernl-button.solid color="light" class="rounded-full" @click="doSomething">
     Button
 </x-kernl-button.solid>
 ```
