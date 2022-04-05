@@ -166,7 +166,7 @@ To use the local header component, add the following markup to your Blade templa
 
 ##### Menu Options
 
--   `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, you will need to provide a white logo to the logoWhite prop, or use a white logo in the logo x-slot.
+-   `dark` (optional) - Set the color scheme to dark. Default is false. If using dark mode, you will need to provide a light logo to the logoLight prop, or use a light logo in the logo `x-slot`.
 
 -   `menuStyle` - Pass one of two values into this: 'standard', or 'mega'. Default is 'standard.'
 
@@ -328,7 +328,7 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-button.solid` and `x-kernl-button.outline` Props
 
--   color - The color the button should be. Options: `black`, `white`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
+-   color - The color the button should be. Options: `dark`, `light`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
 -   size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
 -   href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
 
@@ -363,7 +363,7 @@ To use the Carousel Base and Base Slide component, add the following markup to y
 
 #### `x-kernl-carousel.base.slide` Props
 
--   `index` - The index of the slide. _Each slide's index should increase by 1, starting at 0._
+-   `index` - The index of the slide. _Each slide's index should increment by 1, starting at 0._
 -   `background-classes` - (optional) Any classes you want to apply to the outter element.
 -   `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
 
@@ -441,7 +441,11 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 ```blade
 <x-kernl-tags.solid
+<<<<<<< HEAD
     color="black|white|red|medium-gray|light-gray|blue|green|yellow"
+=======
+    color="dark|light|red|gray-600|gray-300|blue|green|yellow"
+>>>>>>> b88d762480e93e96fcea84cb0a74280d1277c9ca
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -451,7 +455,7 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 #### `x-kernl-tags.solid` Props
 
--   `color` - Color for text/background. Default is `black`
+-   `color` - Color for text/background. Default is `dark`
 -   `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 -   `uppercase` - (optional) Uppercase content. Default is `false`
 
@@ -461,7 +465,11 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 ```blade
 <x-kernl-tags.outline
+<<<<<<< HEAD
     color="black|white|red|medium-gray|light-gray|blue|green|yellow"
+=======
+    color="dark|light|red|gray-600|gray-300|blue|green|yellow"
+>>>>>>> b88d762480e93e96fcea84cb0a74280d1277c9ca
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -471,7 +479,7 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 #### `x-kernl-tags.outline` Props
 
--   `color` - Color for text/border. Default is `black`
+-   `color` - Color for text/border. Default is `dark`
 -   `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 -   `uppercase` - (optional) Uppercase content. Default is `false`
 

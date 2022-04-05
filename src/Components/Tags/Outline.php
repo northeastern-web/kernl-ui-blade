@@ -24,7 +24,7 @@ class Outline extends Component
         'yellow' => ['text-yellow-300', 'border-yellow-300'],
     ];
 
-    public function __construct($color = 'black', $pill = false, $uppercase = false)
+    public function __construct($color = 'dark', $pill = false, $uppercase = false)
     {
         if (! array_key_exists($color, $this->colors)) {
             throw new InvalidArgumentException('`' . $color . '` is not a supported color option.');
