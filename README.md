@@ -451,7 +451,7 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 #### `x-kernl-tags.solid` Props
 
--   `color` - Color for text/background. Default is `light`
+-   `color` - Color for text/background. Default is `dark`
 -   `pill` - (optional) Rounds corners for a pill-like appearance. Default is `false`
 -   `uppercase` - (optional) Uppercase content. Default is `false`
 
