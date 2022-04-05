@@ -441,7 +441,7 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 ```blade
 <x-kernl-tags.solid
-    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    color="black|white|red|medium-gray|light-gray|blue|green|yellow"
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -461,7 +461,7 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 ```blade
 <x-kernl-tags.outline
-    color="black|white|red|gray-600|gray-300|blue|green|yellow"
+    color="black|white|red|medium-gray|light-gray|blue|green|yellow"
     :pill="true|false"
     :uppercase="true|false"
 >
