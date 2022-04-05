@@ -328,7 +328,7 @@ Any additional classes or attributes you put on the component will be passed thr
 
 #### `x-kernl-button.solid` and `x-kernl-button.outline` Props
 
--   color - The color the button should be. Options: `dark`, `light`, `gray-600`, `gray-300`, `red`, `blue`, and `green`.
+-   color - The color the button should be. Options: `dark`, `light`, `medium-gray`, `light-gray`, `red`, `blue`, and `green`.
 -   size - (optional) Determines if the button should be smaller or larger than the default size. Options: `small` and `large`.
 -   href - (optional) Determines if the button should be rendered as an anchor tag and where the anchor should link to.
 
@@ -364,7 +364,7 @@ To use the Carousel Base and Base Slide component, add the following markup to y
 #### `x-kernl-carousel.base.slide` Props
 
 -   `index` - The index of the slide. _Each slide's index should increment by 1, starting at 0._
--   `background-classes` - (optional) Any classes you want to apply to the outter element.
+-   `background-classes` - (optional) Any classes you want to apply to the outer element.
 -   `slot-classes` - (optional) Any classes you want to apply to the element around the slot.
 
 Any additional attributes you add to the Base Slide component (`style`, etc.), will be passed through to the background element.
@@ -441,11 +441,7 @@ To use the Solid Tag component, add the following markup to your Blade template.
 
 ```blade
 <x-kernl-tags.solid
-<<<<<<< HEAD
     color="black|white|red|medium-gray|light-gray|blue|green|yellow"
-=======
-    color="dark|light|red|gray-600|gray-300|blue|green|yellow"
->>>>>>> b88d762480e93e96fcea84cb0a74280d1277c9ca
     :pill="true|false"
     :uppercase="true|false"
 >
@@ -465,11 +461,7 @@ To use the Outline Tag component, add the following markup to your Blade templat
 
 ```blade
 <x-kernl-tags.outline
-<<<<<<< HEAD
     color="black|white|red|medium-gray|light-gray|blue|green|yellow"
-=======
-    color="dark|light|red|gray-600|gray-300|blue|green|yellow"
->>>>>>> b88d762480e93e96fcea84cb0a74280d1277c9ca
     :pill="true|false"
     :uppercase="true|false"
 >
